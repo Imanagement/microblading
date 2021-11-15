@@ -2,7 +2,6 @@ venv
 env
 **/*.pyc
 **/__pycache__
-media
 .DS_Store
 *.sql# Byte-compiled / optimized / DLL files
 __pycache__/
