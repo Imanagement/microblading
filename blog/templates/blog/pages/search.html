@@ -1,0 +1,63 @@
+{% extends 'blog/base.html' %}
+
+{% block blog_content %}
+    <div class="content_block row hasRS">
+       <div class="fl-container ">
+          <div class="posts-block ">
+             <div class="contentarea">
+                <div class="gt3_blog_listing">
+                   <div class="search_wrapper search_found">
+                      <form name="search_form" method="get" action="{% url 'blog:search' %}" class="search_form">
+                         <input type="text" name="s" placeholder="Search">
+                         <div class="gt3_form_button_wrapper">
+                             <span>
+                                 <input type="submit" value="Search">
+                             </span>
+                         </div>
+                      </form>
+                   </div>
+                   <div class="blog_post_preview search_post_preview  post-1649 post type-post status-publish format-standard has-post-thumbnail hentry category-eyebrow category-microblading category-permanent tag-makeup tag-permanent">
+                      <div class="preview_content">
+                         <div class="preview_top_wrapper">
+                            <div class="post_meta">
+                               <div class="meta-item">March 21, 2018</div>
+                               <div class="meta-item"><a href="https://livewp.site/wp/md/browcraft/author/john-2-2/">John</a></div>
+                               <div class="meta-item"><a href="https://livewp.site/wp/md/browcraft/2018/03/21/permanent-makeup-methods/#respond">0 Comments</a></div>
+                            </div>
+                            <!-- .post_meta -->
+                            <div class="post_title">
+                               <div class="blog_listing_title"><a href="https://livewp.site/wp/md/browcraft/2018/03/21/permanent-makeup-methods/">Permanent Makeup Methods</a></div>
+                            </div>
+                         </div>
+                         <div class="post_footer">
+                            <div class="post_footer_lp">
+                               <a href="https://livewp.site/wp/md/browcraft/2018/03/21/permanent-makeup-methods/" class="preview_read_more shortcode_button"><span>read more</span></a>
+                            </div>
+                            <div class="post_footer_rp">
+                               <div class="preview_share_wrapper">
+                                  <div class="preview_share_block">
+                                     <a target="_blank" href="https://www.facebook.com/share.php?u=https://livewp.site/wp/md/browcraft/2018/03/21/permanent-makeup-methods/" class="share_facebook"><i class="fa fa-facebook"></i></a>
+                                     <a target="_blank" href="https://twitter.com/intent/tweet?text=Permanent%20Makeup%20Methods&amp;url=https://livewp.site/wp/md/browcraft/2018/03/21/permanent-makeup-methods/" class="share_twitter"><i class="fa fa-twitter"></i></a>
+                                     <a target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Flivewp.site%2Fwp%2Fmd%2Fbrowcraft%2F2018%2F03%2F21%2Fpermanent-makeup-methods%2F" class="share_gplus"><i class="fa fa-google-plus"></i></a>
+                                     <a target="_blank" href="https://pinterest.com/pin/create/button/?url=https://livewp.site/wp/md/browcraft/2018/03/21/permanent-makeup-methods/&amp;media=https://livewp.site/wp/md/browcraft/wp-content/uploads/sites/7/2018/03/blog_img-1.jpg" class="share_pinterest"><i class="fa fa-pinterest-p"></i></a>
+                                  </div>
+                               </div>
+                               <!-- Share Wrapper -->
+                               <div class="gb_meta_item post_likes post_likes_add " data-attachid="1649" data-modify="like_post">
+                                  <i class="fa fa-heart-o"></i>
+                                  <span class="portfolio_likes_text">0 Likes</span>
+                               </div>
+                               <!-- .post_likes -->
+                            </div>
+                            <div class="clear"></div>
+                         </div>
+                         <!-- .post_footer -->
+                      </div>
+                   </div>
+                   <!--.blog_post_preview -->
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+{% endblock %}

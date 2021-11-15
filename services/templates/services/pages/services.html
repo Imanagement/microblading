@@ -1,0 +1,219 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'core/css/vc_carousel.min.css' %}">
+    <style>
+        .vc_custom_1522315484246 {
+            background-image: url("{% static 'core/img/bg_services_01-1.jpg' %}") !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+        .vc_custom_1519393801789{
+            padding-top: 0 !important;
+        }
+        .vc_custom_1522221334236{
+            margin-bottom: -7px !important;
+            padding-bottom: 0 !important;
+        }
+        .vc_custom_1522663195400{
+            margin-bottom: 28px !important;
+        }
+        .vc_custom_1522221799046{
+            margin-bottom: -7px !important;
+            padding-bottom: 0 !important;}
+        .vc_custom_1520246365222{
+            padding-right: 4.4% !important;
+            padding-left: 4.4% !important;
+        }
+        .vc_custom_1522221852293{
+            margin-bottom: -7px !important;
+            padding-bottom: 0 !important;
+        }
+        .vc_custom_1560936430810{
+            border-top-width: 0 !important;
+            border-right-width: 0 !important;
+            border-bottom-width: 0 !important;
+            border-left-width: 0 !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;}
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="title_block_wrapper block_has_bg_img" data-image-src="{% static 'core/img/title_bg_03.jpg' %}" style="background-image: url("{% static 'core/img/title_bg_03.jpg' %}");">
+   <div class="container">
+      <div class="page_title_block">
+         <h1 class="title">Service</h1>
+         <div class="breadcrumbs"><a href="{% url 'core:index' %}">Home</a><span>Service</span></div>
+      </div>
+   </div>
+</div>
+<div class="container">
+   <div class="content_block row no-sidebar">
+      <div class="fl-container ">
+         <div class="posts-block ">
+            <div class="contentarea">
+               <div class="vc_row wpb_row vc_row-fluid">
+                  <div class="wpb_column vc_column_container vc_col-sm-12">
+                     <div class="vc_column-inner vc_custom_1519393801789">
+                        <div class="wpb_wrapper">
+                           <div class="gt3_spacing">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:83px;"></div>
+                           </div>
+                           <h6 style="color: #fb90b1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">WHAT WE DO</h6>
+                           <h2 style="color: #202020;line-height: 1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">What We Offer for You</h2>
+                           <div class="gt3_spacing">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:16px;"></div>
+                           </div>
+                           <div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1522221334236">
+                              <figure class="wpb_wrapper vc_figure">
+                                 <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="72" height="6" src="{% static 'core/img/divider.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+                              </figure>
+                           </div>
+                           <div class="gt3_spacing">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:10px;"></div>
+                           </div>
+                           <div style="font-size: 16px;line-height: 30px;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">If you have patchy eyebrows or simply wish you had more brows, eyebrow embroidery is your answer. The natural look achieved by 3D eyebrow microblading is incomparable to other solutions like eyebrow tattoos</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               {% include 'services/components/services-list.html' %}
+               <div data-vc-full-width="true" data-vc-full-width-init="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding" style="position: relative; left: -622.5px; box-sizing: border-box; width: 2445px;">
+                  <div class="wpb_column vc_column_container vc_col-sm-12">
+                     <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                           <div class="gt3_spacing">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:49px;"></div>
+                           </div>
+                           <div class="wpb_images_carousel wpb_content_element vc_clearfix vc_custom_1522663195400">
+                              <div class="wpb_wrapper">
+                                 <div id="vc_images-carousel-1-1627732164" data-ride="vc_carousel" data-wrap="true" style="width: 100%;" data-interval="0" data-auto-height="yes" data-mode="horizontal" data-partial="false" data-per-view="4" data-hide-on-end="true" class="vc_slide vc_images_carousel vc_per-view-more vc_per-view-4 vc_build">
+                                    <div class="vc_carousel-inner">
+                                       <div class="vc_carousel-slideline">
+                                          <div class="vc_carousel-slideline-inner">
+                                             <div class="vc_item" style="">
+                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_03.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
+                                             </div>
+                                             <div class="vc_item" style="">
+                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_04.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
+                                             </div>
+                                             <div class="vc_item" style="">
+                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_05.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
+                                             </div>
+                                             <div class="vc_item" style="">
+                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_06.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
+                                             </div>
+                                             <div class="vc_item" style="">
+                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_07.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
+                                             </div>
+                                             <div class="vc_item" style="">
+                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_08.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
+                                             </div>
+                                             <div class="vc_item" style="">
+                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_10.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
+                                             </div>
+                                             <div class="vc_item" style="">
+                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_09.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <a class="vc_left vc_carousel-control" href="#vc_images-carousel-1-1627732164" data-slide="prev"><span class="icon-prev"></span></a><a class="vc_right vc_carousel-control" href="#vc_images-carousel-1-1627732164" data-slide="next"><span class="icon-next"></span></a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="vc_row-full-width vc_clearfix"></div>
+               <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1522315484246 vc_row-has-fill" style="position: relative; left: -622.5px; box-sizing: border-box; width: 2445px; padding-left: 622.5px; padding-right: 622.5px;">
+                  <div class="wpb_column vc_column_container vc_col-sm-12">
+                     <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                           <div class="gt3_spacing">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:58px;"></div>
+                           </div>
+                           <h6 style="color: #fb90b1;text-align: center" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">YOUR BEST SOLUTION</h6>
+                           <h2 style="color: #202020;line-height: 1;text-align: center" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">Our Services</h2>
+                           <div class="gt3_spacing">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:16px;"></div>
+                           </div>
+                           <div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1522221799046">
+                              <figure class="wpb_wrapper vc_figure">
+                                 <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="72" height="6" src="{% static 'core/img/divider.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+                              </figure>
+                           </div>
+                           <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                              <div class="wpb_column vc_column_container vc_col-sm-10 vc_col-sm-offset-1">
+                                 <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                       <div class="gt3_spacing">
+                                          <div class="gt3_spacing-height gt3_spacing-height_default" style="height:19px;"></div>
+                                       </div>
+                                       <div class="wpb_text_column wpb_content_element  vc_custom_1520246365222">
+                                          <div class="wpb_wrapper">
+                                             <p style="line-height: 30px;text-align: center">Microblading is a semi-permanent eyebrow procedure that yields natural, crisp strokes that resemble hair. It is done by hand, using a very fine blade to deposit a small amount of ink into the skin. What our clients say about this procedure</p>
+                                          </div>
+                                       </div>
+                                       <div class="gt3_spacing">
+                                          <div class="gt3_spacing-height gt3_spacing-height_default" style="height:6px;"></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           {% include 'services/components/pricing-list.html' %}
+                           <div class="gt3_spacing">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:70px;"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="vc_row-full-width vc_clearfix"></div>
+               {% include 'core/components/faq.html' %}
+               <div class="vc_row wpb_row vc_row-fluid">
+                  <div class="wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp wpb_column vc_column_container vc_col-sm-12">
+                     <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                           {% for faq_item in faq %}
+                                <div id="faq-{{ forloop.counter }}" class="vc_toggle vc_toggle_gt3_alternative">
+                                  <div class="vc_toggle_title">
+                                     <h4>{{ faq_item.question }}</h4>
+                                     <i class="vc_toggle_icon"></i>
+                                  </div>
+                                  <div class="vc_toggle_content">
+                                     <p>{% autoescape off %}{{ faq_item.answer }}{% endautoescape %}</p>
+                                  </div>
+                               </div>
+                           {% endfor %}
+                           </div>
+                           <div class="gt3_spacing">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:100px;"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               {% include 'appointments/appointment.html' %}
+               <div class="vc_row-full-width vc_clearfix"></div>
+               <div class="clea_r"></div>
+               <div class="clea_r"></div>
+            </div>
+         </div>
+      </div>
+      <div class="clear"></div>
+   </div>
+</div>
+{% endblock %}
+
+{% block additional_scripts %}
+    <script src="{% static 'core/js/vc_carousel.js' %}"></script>
+    <script src="{% static 'core/js/images-loaded.js' %}"></script>
+    <script src="{% static 'core/js/vc_transition.js' %}"></script>
+
+{% endblock %}

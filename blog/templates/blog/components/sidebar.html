@@ -1,0 +1,33 @@
+{% load static cache %}
+<div class="right-sidebar-block">
+    <div class="sidepanel widget_text">
+        <div class="textwidget">
+            <p>
+                <img loading="lazy" class="rounded size-full wp-image-2435 aligncenter" style="margin-bottom: 0" src="{% static 'blog/img/img_sidebar_01.jpg' %}" alt="" width="150" height="150">
+                <br> Brofcraft offers a wide array of eyebrow and skin care treatments using world renowned techniques
+            </p>
+            <div class="gt3_social" style="text-align: center">
+                <a style="color: #7aafea" href="javascript:void(0)">TW</a>
+                <a style="color: #122d71" href="javascript:void(0)">FB</a>
+                <a style="color: #ba0a0a" href="javascript:void(0)">PN</a>
+            </div>
+        </div>
+    </div>
+    <div class="sidepanel widget_search">
+        <form name="search_form" method="GET" action="{% url 'blog:search' %}" class="search_form">
+            <input type="text" name="s" placeholder="Search">
+            <div class="gt3_form_button_wrapper"><span><input type="submit" value="Search"></span></div>
+        </form>
+    </div>
+    {% cache 84000 categories %}
+        <div class="sidepanel widget_categories">
+            <h6 class="widget_title">Categories</h6>
+            <ul>
+                {% for blog_category in categories %}
+                    <li class="cat-item cat-item-{{ forloop.counter }}"><a href="{{ blog_category.get_absolute_url }}">{{ blog_category.name }}</a> </li>
+                {% endfor %}
+                <li class="cat-item"><a href="{% url 'blog:blog-category-list' 'uncategorized' %}">Uncategorized</a> </li>
+            </ul>
+        </div>
+    {% endcache %}
+</div>

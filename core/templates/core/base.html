@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="{% block meta %}{% endblock %}">
+        {% include 'core/components/head.html' %}
+        {% block extra_css %}{% endblock %}
+    </head>
+
+    <body class="home page-template-default page page-id-1137 theme-browcraft woocommerce-js wpb-js-composer js-comp-ver-6.6.0 vc_responsive">
+
+        {% block header %}
+            {% include 'core/components/header.html' %}
+        {% endblock %}
+
+        <div class="site_wrapper fadeOnLoad">
+                <div class="main_wrapper">
+                    {% block content %}{% endblock %}
+                </div>
+        </div>
+
+        {% block footer %}
+            {% include 'core/components/footer.html' %}
+        {% endblock %}
+
+        {% block scripts %}
+            {% include 'core/components/scripts.html' %}
+        {% endblock %}
+
+        {% block additional_scripts %}{% endblock %}
+        {#    <script src="{% static 'core/js/albums_gallery.js' %}"></script>#}
+        {#    <script src="{% static 'core/js/jquery.countdown.min.js' %}"></script>#}
+        {#    <script src="{% static 'core/js/sorting.js' %}"></script>#}
+        {#    <script src="{% static 'core/js/sorting_gallery.js' %}"></script>#}
+        {#    <script src="{% static 'core/js/sorting_packery.js' %}"></script>#}
+    </body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block content %}
+    <div class="title_block_wrapper block_has_bg_img" style="background-image: url({% block banner_image %}{% endblock %});">
+		<div class="container">
+			<div class="page_title_block">
+				<h1 class="title">Blog</h1>
+				<div class="breadcrumbs"><a href="{% url 'core:index' %}">Home</a><span>Blog</span></div>
+			</div>
+		</div>
+	</div>
+    <div class="container">
+		<div class="content_block row right-sidebar">
+            {% block blog_content %}{% endblock %}
+                {% include 'blog/components/sidebar.html' %}
+                <div class="clear"></div>
+        </div>
+    </div>
+{% endblock %}
+
+

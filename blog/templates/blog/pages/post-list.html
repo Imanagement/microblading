@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block banner_image %}{% static 'blog/img/title_bg_02.jpg' %}{% endblock %}
+
+{% block blog_content %}
+        <div class="fl-container hasRS">
+            <div class="posts-block ">
+                <div class="contentarea">
+                    <div class="vc_row wpb_row vc_row-fluid vc_custom_1488792104548">
+                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                            <div class="vc_column-inner">
+                                <div class="wpb_wrapper">
+                                    <div class="gt3_blog_listing  ">
+                                        {% for post in post_list %}
+                                            {% include 'blog/components/post-teaser.html' %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clea_r"></div>
+                    <div class="clea_r"></div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<div class="blog_post_preview standart_post ">
+    <div class="preview_content">
+        <div class="pf_output_container pf_tag_ post_has_image "><img width="1170" height="740" src="{{ post.image.url }}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""></div>
+        <div class="preview_top_wrapper">
+            <div class="post_meta">
+                <div class="meta-item">{{ post.created }}</div>
+                <div class="meta-item"><a href="javascript:void(0)">{{ post.author.first_name }}</a></div>
+                <div class="meta-item"><a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a></div>
+{#                <div class="meta-item"><a href="https://livewp.site/wp/md/browcraft/2018/03/21/permanent-makeup-methods/#respond">0 Comments</a></div>#}
+            </div>
+            <!-- .post_meta -->
+            <div class="post_title">
+                <div class="blog_listing_title"><a href="{{ post.get_absolute_url }}">{{ post.name }}</a></div>
+            </div>
+            <!-- .page_title -->
+        </div>
+        <article class="contentarea">
+            <h3 class="hidden">{{ post.title }}</h3>{{ post.get_teaser_description }}</article>
+        <div class="post_footer">
+            <div class="post_footer_lp"> <a href="{{ post.get_absolute_url }}" class="preview_read_more shortcode_button"><span>read more</span></a> </div>
+            <div class="clear"></div>
+        </div>
+        <!-- .post_footer -->
+    </div>
+</div>
