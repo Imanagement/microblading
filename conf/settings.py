@@ -95,7 +95,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'allesthetics_db',
         'HOST': 'localhost',
-        'USER': 'allesthetics_user',
+        'USER': 'allesthetic_user',
         'PASSWORD': os.getenv('DB_PASSWORD')
     }
 }
