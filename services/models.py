@@ -9,7 +9,7 @@ from filer.fields.image import FilerImageField
 class Service(models.Model):
     name = models.CharField(
         verbose_name=_('Название услуги'),
-        max_length=155
+        max_length=255
     )
     slug = models.SlugField(
         verbose_name=_('Slug услуги'),
