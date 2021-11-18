@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'filer',
     'mptt',
+    'pipeline',
     'silk'
 ]
 
@@ -143,6 +144,57 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+STATICFILES_STORAGE = 'pipeline.storage.PipelineManifestStorage'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+)
+
+PIPELINE = {
+    'STYLESHEETS': {
+        'main': {
+            'source_filenames': (
+                'core/css/font-awesome.min.css',
+                'core/css/photo_modules.css',
+                'core/css/theme.css',
+                'core/css/swipebox.min.css',
+                'core/css/responsive.css',
+                'core/css/extra.css'
+            ),
+            'output_filename': 'core/css/main.min.css',
+            'variant': 'datauri'
+        },
+    },
+    'JAVASCRIPT': {
+        'main': {
+            'source_filenames': (
+                'core/js/jquery-3.5.1.min.js',
+                'core/js/jquery.isotope.min.js',
+                'core/js/extra.js',
+                'core/js/jquery.swipebox.min.js',
+                'core/js/jquery.mousewheel.js',
+                'core/js/theme.js',
+                'core/js/jquery.cookie.js',
+                'core/js/slick.min.js',
+                'core/js/waypoint.js',
+                'core/js/circles_gallery.js',
+                'core/js/flow_gallery.js',
+                'core/js/fs_gallery.js',
+                'core/js/gt3_promo_block.js',
+                'core/js/jquery.event.swipe.js',
+                'core/js/kenburns.js',
+                'core/js/nivo.js',
+                'core/js/ribbon_gallery.js',
+                'core/js/shift_gallery.js',
+                'core/js/stripe_gallery.js',
+            ),
+            'output_filename': 'core/js/main.min.js',
+        }
+    }
+}
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
