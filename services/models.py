@@ -7,15 +7,16 @@ from filer.fields.image import FilerImageField
 
 
 class Service(models.Model):
-    name = models.TextField(
+    name = models.CharField(
         verbose_name=_('Название услуги'),
-        max_length=255,
+        max_length=555
     )
     slug = models.SlugField(
         verbose_name=_('Slug услуги'),
         unique=True,
         blank=True,
-        null=True
+        null=True,
+        max_length=555
     )
     header_image = FilerImageField(
         verbose_name=_('Изображение шапки'),

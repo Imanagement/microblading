@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ae_db',
         'HOST': 'localhost',
         'USER': 'vivi',
-        'PASSWORD': '1234'
+        'PASSWORD': '1234',
     }
 }
 
