@@ -110,3 +110,39 @@ class Service(models.Model):
         self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
+class GalleryImage(models.Model):
+    service = models.ForeignKey(
+        to="Service",
+        on_delete=models.CASCADE,
+        verbose_name=_('Услуга'),
+    )
+    image = FilerImageField(
+        on_delete=models.CASCADE,
+        verbose_name=_('Изображение')
+    )
+    
+    class Meta:
+        verbose_name = _('Изображение для галереи')
+        verbose_name_plural = _('Изображения для галереи')
+
+
+class GalleryVideo(models.Model):
+    service = models.ForeignKey(
+        to="Service",
+        on_delete=models.CASCADE,
+        verbose_name=_('Видео')
+    )
+    url = models.URLField(
+        verbose_name=_('URL'),
+    )
+    
+    class Meta:
+        verbose_name = _('Видео для галереи')
+        verbose_name_plural = _('Видео для галереи')
+
+
+    def save(self, *args, **kwargs):
+        url = self.url
+        word_to_change = url.replace('watch?v=', 'embed/')
+        self.url = word_to_change
+        super().save(*args, **kwargs)

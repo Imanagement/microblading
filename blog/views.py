@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
+from core.utils import get_full_context, get_page_seo
 from .models import Post, Category
 
 
@@ -7,6 +8,7 @@ class BaseListView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['categories'] = Category.objects.all()
+        context = get_full_context(context)
         return context
 
 
@@ -14,6 +16,12 @@ class PostListView(BaseListView):
     template_name = 'blog/pages/post-list.html'
     paginate_by = 10
     model = Post
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context = get_full_context(context)
+        context['page'] = get_page_seo(slug='blog')
+        return context
 
     def get_queryset(self):
         return super().get_queryset().select_related('author').select_related('category').prefetch_related('image')
@@ -29,6 +37,7 @@ class PostDetailView(DetailView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['categories'] = Category.objects.all()
+        context = get_full_context(context)
         return context
 
 
@@ -36,6 +45,11 @@ class PostCategoryListView(BaseListView):
     template_name = 'blog/pages/post-list.html'
     paginate_by = 10
     model = Post
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context = get_full_context(context)
+        return context
 
     def get_queryset(self):
         if self.kwargs['slug'] != 'uncategorized':
@@ -57,7 +71,7 @@ def search_view(request):
             'post_list': queryset,
             'categories': Category.objects.all()
         }
-
+        context = get_full_context(context)
         return render(request, 'blog/pages/post-list.html', context)
 
     else:

@@ -377,7 +377,8 @@ function gt3_fullWidthRow() {
 	jQuery(window).unbind("resize.vcRowBehaviour").off("resize.vcRowBehaviour");
 
 	if ($document_width > 960){
-		var gap = 0;
+		// var gap = 0;
+		var gap = 100;
 	}
 	if ( gap && jQuery('.aside_menu_block').length ){
 		var $elements = jQuery('[data-vc-full-width="true"]');
