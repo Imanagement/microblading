@@ -10,7 +10,7 @@
             background-repeat: no-repeat !important;
             background-size: cover !important;
         }
-        .vc_custom_1519393801789{
+       .vc_custom_1519393801789{
             padding-top: 0 !important;
         }
         .vc_custom_1522221334236{
@@ -81,54 +81,7 @@
                   </div>
                </div>
                {% include 'services/components/services-list.html' %}
-               <div data-vc-full-width="true" data-vc-full-width-init="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding" style="position: relative; left: -622.5px; box-sizing: border-box; width: 2445px;">
-                  <div class="wpb_column vc_column_container vc_col-sm-12">
-                     <div class="vc_column-inner">
-                        <div class="wpb_wrapper">
-                           <div class="gt3_spacing">
-                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:49px;"></div>
-                           </div>
-                           <div class="wpb_images_carousel wpb_content_element vc_clearfix vc_custom_1522663195400">
-                              <div class="wpb_wrapper">
-                                 <div id="vc_images-carousel-1-1627732164" data-ride="vc_carousel" data-wrap="true" style="width: 100%;" data-interval="0" data-auto-height="yes" data-mode="horizontal" data-partial="false" data-per-view="4" data-hide-on-end="true" class="vc_slide vc_images_carousel vc_per-view-more vc_per-view-4 vc_build">
-                                    <div class="vc_carousel-inner">
-                                       <div class="vc_carousel-slideline">
-                                          <div class="vc_carousel-slideline-inner">
-                                             <div class="vc_item" style="">
-                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_03.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
-                                             </div>
-                                             <div class="vc_item" style="">
-                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_04.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
-                                             </div>
-                                             <div class="vc_item" style="">
-                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_05.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
-                                             </div>
-                                             <div class="vc_item" style="">
-                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_06.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
-                                             </div>
-                                             <div class="vc_item" style="">
-                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_07.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
-                                             </div>
-                                             <div class="vc_item" style="">
-                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_08.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
-                                             </div>
-                                             <div class="vc_item" style="">
-                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_10.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
-                                             </div>
-                                             <div class="vc_item" style="">
-                                                <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_09.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <a class="vc_left vc_carousel-control" href="#vc_images-carousel-1-1627732164" data-slide="prev"><span class="icon-prev"></span></a><a class="vc_right vc_carousel-control" href="#vc_images-carousel-1-1627732164" data-slide="next"><span class="icon-next"></span></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+               {% include 'core/components/gallery.html' %}
                <div class="vc_row-full-width vc_clearfix"></div>
                <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1522315484246 vc_row-has-fill" style="position: relative; left: -622.5px; box-sizing: border-box; width: 2445px; padding-left: 622.5px; padding-right: 622.5px;">
                   <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -176,29 +129,6 @@
                </div>
                <div class="vc_row-full-width vc_clearfix"></div>
                {% include 'core/components/faq.html' %}
-               <div class="vc_row wpb_row vc_row-fluid">
-                  <div class="wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp wpb_column vc_column_container vc_col-sm-12">
-                     <div class="vc_column-inner">
-                        <div class="wpb_wrapper">
-                           {% for faq_item in faq %}
-                                <div id="faq-{{ forloop.counter }}" class="vc_toggle vc_toggle_gt3_alternative">
-                                  <div class="vc_toggle_title">
-                                     <h4>{{ faq_item.question }}</h4>
-                                     <i class="vc_toggle_icon"></i>
-                                  </div>
-                                  <div class="vc_toggle_content">
-                                     <p>{% autoescape off %}{{ faq_item.answer }}{% endautoescape %}</p>
-                                  </div>
-                               </div>
-                           {% endfor %}
-                           </div>
-                           <div class="gt3_spacing">
-                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:100px;"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
                {% include 'appointments/appointment.html' %}
                <div class="vc_row-full-width vc_clearfix"></div>
                <div class="clea_r"></div>

@@ -18,6 +18,24 @@ class Category(models.Model):
         null=True,
         blank=True
     )
+    # Seo
+    h1_title = models.CharField(
+        verbose_name=_('H1 Заголовок'),
+        max_length=255,
+        null=True,
+        blank=True
+    )
+    page_title = models.CharField(
+        verbose_name=_('Seo заголовок страницы'),
+        max_length=255,
+        null=True,
+        blank=True
+    )
+    meta_description = models.TextField(
+        verbose_name=_('Мета описание'),
+        null=True,
+        blank=True
+    )
 
     class Meta:
         verbose_name = _('Категория')
@@ -27,7 +45,9 @@ class Category(models.Model):
         return f"{self.name}"
 
     def get_absolute_url(self):
-        return ''
+        return reverse('blog:blog-category-list', kwargs={
+            'slug': self.slug
+        })
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
@@ -78,6 +98,25 @@ class Post(models.Model):
     updated = models.DateTimeField(
         verbose_name=_('Последнее обновление'),
         auto_now=True
+    )
+
+    # Seo
+    h1_title = models.CharField(
+        verbose_name=_('H1 Заголовок'),
+        max_length=255,
+        null=True,
+        blank=True
+    )
+    page_title = models.CharField(
+        verbose_name=_('Seo заголовок страницы'),
+        max_length=255,
+        null=True,
+        blank=True
+    )
+    meta_description = models.TextField(
+        verbose_name=_('Мета описание'),
+        null=True,
+        blank=True
     )
 
     class Meta:

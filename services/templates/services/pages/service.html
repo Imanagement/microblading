@@ -4,14 +4,50 @@
 {% block title %}{{ service.page_title }}{% endblock %}
 {% block meta %}{{ service.meta_description }}{% endblock %}
 {% block extra_css %}
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="{% static 'core/css/vc_carousel.min.css' %}">
+    <style>
+        .vc_custom_1522315484246 {
+            background-image: url("{% static 'core/img/bg_services_01-1.jpg' %}") !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+       .vc_custom_1519393801789{
+            padding-top: 0 !important;
+        }
+        .vc_custom_1522221334236{
+            margin-bottom: -7px !important;
+            padding-bottom: 0 !important;
+        }
+        .vc_custom_1522663195400{
+            margin-bottom: 28px !important;
+        }
+        .vc_custom_1522221799046{
+            margin-bottom: -7px !important;
+            padding-bottom: 0 !important;}
+        .vc_custom_1520246365222{
+            padding-right: 4.4% !important;
+            padding-left: 4.4% !important;
+        }
+        .vc_custom_1522221852293{
+            margin-bottom: -7px !important;
+            padding-bottom: 0 !important;
+        }
+        .vc_custom_1560936430810{
+            border-top-width: 0 !important;
+            border-right-width: 0 !important;
+            border-bottom-width: 0 !important;
+            border-left-width: 0 !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;}
+        </style>
 {% endblock %}
 
 {% block content %}
 <div class="title_block_wrapper block_has_bg_img" style="background-image: url({{ service.header_image.url }});">
     <div class="container">
         <div class="page_title_block">
-            <h1 class="title">{{ service.h1_title }}</h1>
+            <h2 class="title">{{ service.name }}</h2>
             <div class="breadcrumbs"><a href="{% url 'core:index' %}">Home</a><span>{{ service.name }}</span></div>
         </div>
     </div>
@@ -28,7 +64,7 @@
                                     <div class="gt3_spacing">
                                         <div class="gt3_spacing-height gt3_spacing-height_default" style="height:83px;"></div>
                                     </div>
-                                    <h2 style="color: #202020;line-height: 1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">{{ service.name }}</h2>
+                                    <h1 style="color: #202020;line-height: 1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated" >{{ service.h1_title }}</h1>
                                     <div class="gt3_spacing">
                                         <div class="gt3_spacing-height gt3_spacing-height_default" style="height:16px;"></div>
                                     </div>
@@ -37,32 +73,26 @@
                                             <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="72" height="6" src="{% static 'core/img/divider.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
                                         </figure>
                                     </div>
-                                    <div class="gt3_spacing">
-                                        <div class="gt3_spacing-height gt3_spacing-height_default" style="height:10px;"></div>
-                                    </div>
                                     <div class="vc_row wpb_row vc_inner vc_row-fluid">
-                                        <div class="wpb_column vc_column_container vc_col-sm-4">
+                                        <div class="wpb_column vc_column_container vc_col-sm-12">
                                             <div class="vc_column-inner">
                                                 <div class="wpb_wrapper">
                                                     <div class="wpb_text_column wpb_content_element ">
                                                         <div class="wpb_wrapper">
-                                                            <p><em style="font-size: 30px;line-height: 48px;color: #202020">{% autoescape off %}{{ service.teaser_description }}{% endautoescape %}</em></p>
+                                                             {% autoescape off %}{{ service.description }}{% endautoescape %}
                                                         </div>
-                                                    </div>
-                                                    <div class="gt3_spacing">
-                                                        <div class="gt3_spacing-height gt3_spacing-height_default" style="height:39px;"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="wpb_column vc_column_container vc_col-sm-8">
-                                            {% autoescape off %}{{ service.description }}{% endautoescape %}
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {% include "core/components/gallery.html" %}
+                    <div class="vc_row-full-width vc_clearfix"></div>
                     <div data-vc-full-width="true" data-vc-full-width-init="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding" style="position: relative; left: -190px; box-sizing: border-box; width: 1580px;">
                         <div class="wpb_column vc_column_container vc_col-sm-10 vc_col-sm-offset-1">
                             <div class="vc_column-inner">
@@ -212,7 +242,18 @@
                         </div>
                     </div>
                     <div class="vc_row-full-width vc_clearfix"></div>
+                    {% include 'core/components/gallery-video.html' %}
+                    <div class="vc_row-full-width vc_clearfix"></div>
+                    {% include 'appointments/appointment.html' %}
+                    <div class="vc_row-full-width vc_clearfix"></div>
+                    {% include 'core/components/about-us-block.html' %}
+                    <div class="vc_row-full-width vc_clearfix"></div>
+                    {% include 'core/components/faq.html' %}
+                    <div class="vc_row-full-width vc_clearfix"></div>
                     {% include 'testimonials/components/testimonial-list.html' %}
+                    <div class="vc_row-full-width vc_clearfix"></div>
+                    {% include 'core/components/map.html' %}
+                    <div class="vc_row-full-width vc_clearfix"></div>
                     <div class="clea_r"></div>
                     <div class="clea_r"></div>
                 </div>
@@ -221,4 +262,9 @@
         <div class="clear"></div>
     </div>
 </div>
+{% endblock %}
+{% block additional_scripts %}
+    <script src="{% static 'core/js/vc_carousel.js' %}"></script>
+    <script src="{% static 'core/js/images-loaded.js' %}"></script>
+    <script src="{% static 'core/js/vc_transition.js' %}"></script>
 {% endblock %}

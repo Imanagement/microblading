@@ -1,5 +1,5 @@
 {% load cache static %}
-{% cache 10000 testimonials-section %}
+{% cache 10000 testimonials %}
 <div class="vc_row wpb_row vc_row-fluid">
 	<div class="wpb_column vc_column_container vc_col-sm-9">
 		<div class="vc_column-inner">
@@ -56,19 +56,29 @@
 						<div class="module_content testimonials_list items3">
 							<div class="testimonials_rotator slick-slider" role="toolbar">
                                 {% for testimonial in testimonials %}
-                                    <div class="testimonials_item slick-slide" id="" aria-hidden="true">
-                                        <div class="testimonial_item_wrapper">
-                                            <div class="testimonials_content">
-                                                <div class="testimonials_photo"><img class="testimonials_round_img" src="{{ testimonial.image.url }}" alt="testimonials_photo" style="width:70px; height:70px;"></div>
-                                                <div class="testimonials_title">{{ testimonial.name }}
-                                                    <div class="testimonials_author_position">{{ testimonial.position }}</div>
-                                                </div>
-                                                <div class="testimonials-text" style=" font-size: 16px; line-height: 24px;">
-                                                    <p style="text-align: left">{{ testimonial.testimonial }}</p>
+                                    {% if testimonial.image_type %}
+                                        <div class="testimonials_item slick-slide" id="" aria-hidden="true">
+                                            <div class="testimonial_item_wrapper">
+                                                    <div class="testimonials_content">
+                                                        <img src="{{ testimonial.image.url }}" alt="">
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="testimonials_item slick-slide" id="" aria-hidden="true">
+                                            <div class="testimonial_item_wrapper">
+                                                <div class="testimonials_content">
+                                                    <div class="testimonials_photo"><img class="testimonials_round_img" src="{{ testimonial.image.url }}" alt="testimonials_photo" style="width:70px; height:70px;"></div>
+                                                    <div class="testimonials_title">{{ testimonial.name }}
+                                                        <div class="testimonials_author_position">{{ testimonial.position }}</div>
+                                                    </div>
+                                                    <div class="testimonials-text" style=" font-size: 16px; line-height: 24px;">
+                                                        <p style="text-align: left">{{ testimonial.testimonial }}</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    {% endif %} 
                                 {% endfor %}
 							</div>
 							<div class="clear"></div>

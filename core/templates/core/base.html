@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html class="with_aside_header" lang="en">
     <head>
         <title>{% block title %}{% endblock %}</title>
         <meta name="description" content="{% block meta %}{% endblock %}">
@@ -8,11 +8,13 @@
         {% block extra_css %}{% endblock %}
     </head>
 
-    <body class="home page-template-default page page-id-1137 theme-browcraft woocommerce-js wpb-js-composer js-comp-ver-6.6.0 vc_responsive">
-
-        {% block header %}
-            {% include 'core/components/header.html' %}
-        {% endblock %}
+    <body class="home page-template-default page page-id-1137 theme-browcraft woocommerce-js wpb-js-composer js-comp-ver-6.6.0 vc_responsive gt3_has_aside_menu">
+        {% include 'core/components/aside_block.html' %}
+        {% include 'core/components/aside_header.html' %}
+        {% include 'core/components/aside_mobile_header.html' %}
+{#        {% block header %}#}
+{#            {% include 'core/components/header.html' %}#}
+{#        {% endblock %}#}
 
         <div class="site_wrapper fadeOnLoad">
                 <div class="main_wrapper">

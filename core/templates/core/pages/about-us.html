@@ -1,0 +1,122 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="title_block_wrapper block_has_bg_img" data-image-src="{% static 'core/img/title_bg_09.jpg' %}" style="background-image: url(&quot;https://livewp.site/wp/md/browcraft/wp-content/uploads/sites/7/2018/03/title_bg_09.jpg&quot;);">
+         <div class="container">
+            <div class="page_title_block">
+               <h1 class="title">About Us</h1>
+               <div class="breadcrumbs"><a href="{% url 'core:index' %}">Home</a><span>About Us</span></div>
+            </div>
+         </div>
+    </div>
+    <div class="container">
+     <div class="content_block row no-sidebar">
+        <div class="fl-container ">
+           <div class="posts-block ">
+              <div class="contentarea">
+                 {% include 'core/components/about-us-block.html' %}
+
+{#                 <div data-vc-full-width="true" data-vc-full-width-init="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-o-equal-height vc_row-flex" style="position: relative; left: -231px; box-sizing: border-box; width: 1662px;">#}
+{#                    <div class="wpb_column vc_column_container vc_col-sm-5 vc_col-sm-offset-1 vc_col-has-fill">#}
+{#                       <div class="vc_column-inner vc_custom_1522225590117">#}
+{#                          <div class="wpb_wrapper">#}
+{#                             <div class="gt3_spacing">#}
+{#                                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:300px;"></div>#}
+{#                             </div>#}
+{#                          </div>#}
+{#                       </div>#}
+{#                    </div>#}
+{#                    <div class="wpb_column vc_column_container vc_col-sm-5 vc_col-has-fill">#}
+{#                       <div class="vc_column-inner vc_custom_1521190649668">#}
+{#                          <div class="wpb_wrapper">#}
+{#                             <div class="gt3_spacing">#}
+{#                                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:48px;"></div>#}
+{#                             </div>#}
+{#                             <h6 style="color: #fb90b1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">WHAT WE OFFER</h6>#}
+{#                             <h2 style="color: #202020;line-height: 36px;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">Benefits of Our Studio</h2>#}
+{#                             <div class="gt3_spacing">#}
+{#                                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:14px;"></div>#}
+{#                             </div>#}
+{#                             <div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1522225599366">#}
+{#                                <figure class="wpb_wrapper vc_figure">#}
+{#                                   <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="72" height="6" src="https://livewp.site/wp/md/browcraft/wp-content/uploads/sites/7/2018/03/divider.png" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>#}
+{#                                </figure>#}
+{#                             </div>#}
+{#                             <div style="font-size: 16px;color: #747a8c;line-height: 30px;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">We offer a wide array of eyebrow and skin care treatments using world renowned techniques and the best medical grade skin care products</div>#}
+{#                             <div class="gt3_spacing">#}
+{#                                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:19px;"></div>#}
+{#                             </div>#}
+{#                             <div class="vc_tta-container" data-vc-action="collapse">#}
+{#                                <div class="vc_general vc_tta vc_tta-tabs vc_tta-style-gt3_standard vc_tta-o-shape-group  reverse_tabs vc_tta-tabs-position-top vc_tta-controls-align-left">#}
+{#                                   <div class="vc_tta-tabs-container">#}
+{#                                      <ul class="vc_tta-tabs-list">#}
+{#                                         <li class="vc_tta-tab" data-vc-tab=""><a href="#1520340301054-2a8da7eb-68a6" data-vc-tabs="" data-vc-container=".vc_tta"><span class="vc_tta-title-text">quality</span></a></li>#}
+{#                                         <li class="vc_tta-tab" data-vc-tab=""><a href="#1520340301120-18a40851-d90a" data-vc-tabs="" data-vc-container=".vc_tta"><span class="vc_tta-title-text">comfort</span></a></li>#}
+{#                                         <li class="vc_tta-tab vc_active" data-vc-tab=""><a href="#1520340373392-9f9e798d-0a8f" data-vc-tabs="" data-vc-container=".vc_tta"><span class="vc_tta-title-text">security</span></a></li>#}
+{#                                      </ul>#}
+{#                                   </div>#}
+{#                                   <div class="vc_tta-panels-container">#}
+{#                                      <div class="vc_tta-panels">#}
+{#                                         <div class="vc_tta-panel" id="1520340301054-2a8da7eb-68a6" data-vc-content=".vc_tta-panel-body">#}
+{#                                            <div class="vc_tta-panel-heading">#}
+{#                                               <h4 class="vc_tta-panel-title"><a href="#1520340301054-2a8da7eb-68a6" data-vc-accordion="" data-vc-container=".vc_tta-container"><span class="vc_tta-title-text">quality</span></a></h4>#}
+{#                                            </div>#}
+{#                                            <div class="vc_tta-panel-body" style="">#}
+{#                                               <div class="wpb_text_column wpb_content_element ">#}
+{#                                                  <div class="wpb_wrapper">#}
+{#                                                     <p>From brow shaping to oxygen facials, whatever service you choose, Browcraft&nbsp; highly trained estheticians will ensure you receive the highest level of care and service with the beautiful results you deserve. Our team is dedicated to creating a sleek, welcoming sanctuary environment</p>#}
+{#                                                  </div>#}
+{#                                               </div>#}
+{#                                            </div>#}
+{#                                         </div>#}
+{#                                         <div class="vc_tta-panel" id="1520340301120-18a40851-d90a" data-vc-content=".vc_tta-panel-body">#}
+{#                                            <div class="vc_tta-panel-heading">#}
+{#                                               <h4 class="vc_tta-panel-title"><a href="#1520340301120-18a40851-d90a" data-vc-accordion="" data-vc-container=".vc_tta-container"><span class="vc_tta-title-text">comfort</span></a></h4>#}
+{#                                            </div>#}
+{#                                            <div class="vc_tta-panel-body" style="">#}
+{#                                               <div class="wpb_text_column wpb_content_element ">#}
+{#                                                  <div class="wpb_wrapper">#}
+{#                                                     <p>Our team is dedicated to creating a sleek, welcoming sanctuary environment. From brow shaping to oxygen facials, whatever service you choose, Browcraft&nbsp; highly trained estheticians will ensure you receive the highest level of care and service with the beautiful results you deserve.</p>#}
+{#                                                  </div>#}
+{#                                               </div>#}
+{#                                            </div>#}
+{#                                         </div>#}
+{#                                         <div class="vc_tta-panel vc_active" id="1520340373392-9f9e798d-0a8f" data-vc-content=".vc_tta-panel-body">#}
+{#                                            <div class="vc_tta-panel-heading">#}
+{#                                               <h4 class="vc_tta-panel-title"><a href="#1520340373392-9f9e798d-0a8f" data-vc-accordion="" data-vc-container=".vc_tta-container"><span class="vc_tta-title-text">security</span></a></h4>#}
+{#                                            </div>#}
+{#                                            <div class="vc_tta-panel-body" style="">#}
+{#                                               <div class="wpb_text_column wpb_content_element ">#}
+{#                                                  <div class="wpb_wrapper">#}
+{#                                                     <p>From brow shaping to oxygen facials, whatever service you choose, Browcraft&nbsp; highly trained estheticians will ensure you receive the highest level of care and service with the beautiful results you deserve. Our team is dedicated to creating a sleek, welcoming sanctuary environment</p>#}
+{#                                                  </div>#}
+{#                                               </div>#}
+{#                                            </div>#}
+{#                                         </div>#}
+{#                                      </div>#}
+{#                                   </div>#}
+{#                                </div>#}
+{#                             </div>#}
+{#                             <div class="gt3_module_button gt3_btn_noreverse button_alignment_left  "><a class="shortcode_button has_hover button_size_normal  vc_custom_1520341580384" href="javascript:void(0)"><span>learn more</span></a></div>#}
+{#                             <div class="gt3_spacing">#}
+{#                                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:70px;"></div>#}
+{#                             </div>#}
+{#                          </div>#}
+{#                       </div>#}
+{#                    </div>#}
+{#                 </div>#}
+                 <div class="vc_row-full-width vc_clearfix"></div>
+                 {% include 'testimonials/components/testimonial-list.html' %}
+                 {% include 'appointments/appointment.html' %}
+                 <div class="vc_row-full-width vc_clearfix"></div>
+                 <div class="clea_r"></div>
+                 <div class="clea_r"></div>
+              </div>
+           </div>
+        </div>
+        <div class="clear"></div>
+     </div>
+</div>
+{% endblock %}
+

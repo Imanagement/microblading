@@ -1,0 +1,153 @@
+<div data-vc-full-width="true" data-vc-full-width-init="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1489391752164 vc_row-o-full-height vc_row-o-columns-top vc_row-o-equal-height vc_row-o-content-top vc_row-flex" style="position: relative; left: -190px; box-sizing: border-box; width: 1580px;">
+    <div class="contacts_map wpb_column vc_column_container vc_col-sm-12">
+        <div class="vc_column-inner vc_custom_1490209932859">
+            <div class="wpb_wrapper">
+                <div class="wpb_raw_code wpb_content_element wpb_raw_html vc_custom_1541270585665">
+                    <div class="wpb_wrapper">
+{#											<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx1xhdC2KnFKbwbncI0fpgC7i8zpR5rtw"></script>#}
+{#											<script>#}
+{#											function initialize() {#}
+{#												var styleArray = [{#}
+{#													"featureType": "administrative",#}
+{#													"elementType": "labels.text.fill",#}
+{#													"stylers": [{#}
+{#														"color": "#6195a0"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "landscape",#}
+{#													"elementType": "all",#}
+{#													"stylers": [{#}
+{#														"color": "#f2f2f2"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "landscape",#}
+{#													"elementType": "geometry.fill",#}
+{#													"stylers": [{#}
+{#														"color": "#ffffff"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "poi",#}
+{#													"elementType": "all",#}
+{#													"stylers": [{#}
+{#														"visibility": "off"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "poi.park",#}
+{#													"elementType": "geometry.fill",#}
+{#													"stylers": [{#}
+{#														"color": "#e6f3d6"#}
+{#													}, {#}
+{#														"visibility": "on"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "road",#}
+{#													"elementType": "all",#}
+{#													"stylers": [{#}
+{#														"saturation": -100#}
+{#													}, {#}
+{#														"lightness": 45#}
+{#													}, {#}
+{#														"visibility": "simplified"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "road.highway",#}
+{#													"elementType": "all",#}
+{#													"stylers": [{#}
+{#														"visibility": "simplified"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "road.highway",#}
+{#													"elementType": "geometry.fill",#}
+{#													"stylers": [{#}
+{#														"color": "#a8b7b8"#}
+{#													}, {#}
+{#														"visibility": "simplified"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "road.highway",#}
+{#													"elementType": "geometry.stroke",#}
+{#													"stylers": [{#}
+{#														"color": "#325c76"#}
+{#													}, {#}
+{#														"visibility": "on"#}
+{#													}, {#}
+{#														"weight": "0.06"#}
+{#													}, {#}
+{#														"lightness": "87"#}
+{#													}, {#}
+{#														"saturation": "-58"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "road.highway",#}
+{#													"elementType": "labels.text",#}
+{#													"stylers": [{#}
+{#														"color": "#4e4e4e"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "road.arterial",#}
+{#													"elementType": "geometry.fill",#}
+{#													"stylers": [{#}
+{#														"color": "#f4f4f4"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "road.arterial",#}
+{#													"elementType": "labels.text.fill",#}
+{#													"stylers": [{#}
+{#														"color": "#787878"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "road.arterial",#}
+{#													"elementType": "labels.icon",#}
+{#													"stylers": [{#}
+{#														"visibility": "off"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "transit",#}
+{#													"elementType": "all",#}
+{#													"stylers": [{#}
+{#														"visibility": "off"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "water",#}
+{#													"elementType": "all",#}
+{#													"stylers": [{#}
+{#														"color": "#eaf6f8"#}
+{#													}, {#}
+{#														"visibility": "on"#}
+{#													}]#}
+{#												}, {#}
+{#													"featureType": "water",#}
+{#													"elementType": "geometry.fill",#}
+{#													"stylers": [{#}
+{#														"color": "#eaf6f8"#}
+{#													}]#}
+{#												}];#}
+{#												var myLatlng = new google.maps.LatLng(40.714353, -74.005973);#}
+{#												var mapOptions = {#}
+{#													zoom: 14,#}
+{#													scrollwheel: false,#}
+{#													center: myLatlng,#}
+{#													mapTypeId: google.maps.MapTypeId.ROADMAP,#}
+{#													styles: styleArray#}
+{#												};#}
+{#												var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);#}
+{#												var marker = new google.maps.Marker({#}
+{#													position: myLatlng,#}
+{#													map: map,#}
+{#													title: 'New York!',#}
+{#													icon: 'https://s3.amazonaws.com/gt3themes/gmap/brow.png'#}
+{#												});#}
+{#											}#}
+{#											google.maps.event.addDomListener(window, 'load', initialize);#}
+{#											</script>#}
+{#											<div id="map-canvas" style="height: 600px; position: relative; overflow: hidden;">#}
+{##}
+{#											</div>#}
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.7075169691425!2d-73.70708938459467!3d40.72445477933059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2625768c654ef%3A0x7b2a41ad72e6e94c!2s10%20Verbena%20Ave%2C%20Floral%20Park%2C%20NY%2011001%2C%20USA!5e0!3m2!1sen!2s!4v1637088143051!5m2!1sen!2s" width="100%" height="600" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
