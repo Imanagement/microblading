@@ -166,7 +166,7 @@ PIPELINE = {
         },
     },
     'JAVASCRIPT': {
-        'main': {
+        'mainn': {
             'source_filenames': (
                 'core/js/jquery-3.5.1.min.js',
                 'core/js/jquery.isotope.min.js',
