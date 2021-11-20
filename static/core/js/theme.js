@@ -26,13 +26,16 @@ var menuStep = 200,
 jQuery(document).ready(function($) {
 	/*Aside Header Mark */
 	var maxHeight = 0
-	$('.package_icon').each(function(i) {
-		var $this = $(this)
+	jQuery('.package_icon').each(function(i) {
+		var $this = jQuery(this)
+		console.log($this)
 		var imageHeight = $this.find('img').height()
+		console.log(imageHeight)
 		maxHeight < imageHeight ? maxHeight = imageHeight : null
 	})
-	$('.package_icon').each(function(i) {
-		var $this = $(this)
+	console.log(maxHeight)
+	jQuery('.package_icon').each(function(i) {
+		var $this = jQuery(this)
 		$this.height(maxHeight)
 	})
 
