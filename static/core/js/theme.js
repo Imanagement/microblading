@@ -29,6 +29,7 @@ jQuery(document).ready(function($) {
 	jQuery('.package_icon').each(function(i) {
 		var $this = jQuery(this)
 		console.log($this)
+		console.log('aaaa')
 		var imageHeight = $this.find('img').height()
 		console.log(imageHeight)
 		maxHeight < imageHeight ? maxHeight = imageHeight : null
