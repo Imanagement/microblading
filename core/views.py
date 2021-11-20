@@ -11,7 +11,7 @@ from .utils import get_full_context, get_page_seo
 
 
 def index(request):
-    services = Service.objects.all().order_by('-id')[:3]
+    services = Service.objects.all()[:3]
     page = get_page_seo(main_page=True)
     context = {
         'page': page,
