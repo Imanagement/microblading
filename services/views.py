@@ -7,7 +7,7 @@ from .models import Service
 
 
 def service_list(request):
-    services = Service.objects.all()[:6]
+    services = Service.objects.all()
     faq = FAQ.objects.filter(service__isnull=True)[:6]
     page = get_page_seo(slug='services')
     context = {
