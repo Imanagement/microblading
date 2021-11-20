@@ -60,10 +60,11 @@
                                         <div class="price_item_wrapper">
                                             <div class="item_cost_wrapper  with-image ">
                                                 <div class="package_head package_has_icon">
-                                                    <div class="package_icon service-icon">
+                                                    <div class="package_icon service-icon-wrapper">
                                                         {% if popular_service.icon %}
                                                             <img
                                                                 src="{{ popular_service.icon.url }}"
+                                                                class="service-icon most-popular"
                                                                 alt="package_icon">
                                                         {% endif %}
                                                     </div>
