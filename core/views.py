@@ -15,7 +15,8 @@ def index(request):
     page = get_page_seo(main_page=True)
     context = {
         'page': page,
-        'services': services
+        'services': services,
+        'popular_services': services
     }
     context = get_full_context(context)
     return render(request, 'core/pages/home.html', context)

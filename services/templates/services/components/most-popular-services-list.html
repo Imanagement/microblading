@@ -1,0 +1,113 @@
+{% load static %}
+<div data-vc-full-width="true" data-vc-full-width-init="true"
+     class="vc_row wpb_row vc_row-fluid vc_custom_1522242479217 vc_row-has-fill">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+        <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+                <div class="gt3_spacing">
+                    <div class="gt3_spacing-height gt3_spacing-height_default"
+                         style="height:68px;"></div>
+                </div>
+                <h6 style="color: #fb90b1;text-align: center"
+                    class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp">
+                    YOUR BEST SOLUTION</h6>
+                <h2 style="color: #202020;line-height: 36px;text-align: center"
+                    class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp">
+                    Most Popular Services</h2>
+                <div class="gt3_spacing">
+                    <div class="gt3_spacing-height gt3_spacing-height_default"
+                         style="height:14px;"></div>
+                </div>
+
+                <div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1522219776656">
+
+                    <figure class="wpb_wrapper vc_figure">
+                        <div class="vc_single_image-wrapper   vc_box_border_grey"><img
+                                width="72" height="6"
+                                src="{% static 'core/img/divider.png' %}"
+                                class="vc_single_image-img attachment-full" alt=""
+                                loading="lazy"></div>
+                    </figure>
+                </div>
+                <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                    <div class="wpb_column vc_column_container vc_col-sm-10 vc_col-sm-offset-1">
+                        <div class="vc_column-inner">
+                            <div class="wpb_wrapper">
+                                <div style="font-size: 16px;color: #747a8c;line-height: 30px;text-align: center"
+                                     class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp">
+                                    Microblading is a semi-permanent eyebrow procedure
+                                    that yields natural, crisp strokes that resemble
+                                    hair. It is done by hand, using a very fine blade to
+                                    deposit a small amount of ink into the skin. What
+                                    our clients say about this procedure
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gt3_spacing gt3_spacing-height_mobile-on">
+                    <div class="gt3_spacing-height gt3_spacing-height_default"
+                         style="height:76px;"></div>
+                    <div class="gt3_spacing-height gt3_spacing-height_mobile"
+                         style="height:40px;"></div>
+                </div>
+                <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                    {% for popular_service in popular_services %}
+                        <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-4 vc_col-xs-12">
+                            <div class="vc_column-inner">
+                                <div class="wpb_wrapper">
+                                    <div class="price_item standard ">
+                                        <div class="price_item_wrapper">
+                                            <div class="item_cost_wrapper  with-image ">
+                                                <div class="package_head package_has_icon">
+                                                    <div class="package_icon">
+                                                        {% if popular_service.icon %}
+                                                            <img
+                                                                src="{{ popular_service.icon.image.url }}"
+                                                                alt="package_icon">
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="item_cost_wrapper">
+                                                        <div class="price_item_title"><h6>
+                                                            {{ popular_service.duration }} minutes</h6></div>
+                                                        <div class="price_content"><span
+                                                                class="price_item_prefix">$</span><span
+                                                                class="price_value">{{ popular_service.cost }}</span>
+                                                        </div>
+                                                        <div class="price_item_description">
+                                                            {{ popular_service.name }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="price_item_body">
+                                                        <div class="items_text">
+                                                        </div>
+                                                        <div class="price_button"><a
+                                                                class="shortcode_button"
+                                                                href="{{ popular_service.get_absolute_url }}"><span>learn more</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gt3_spacing gt3_spacing-height_mobile-on">
+                                        <div class="gt3_spacing-height gt3_spacing-height_default"
+                                             style="height:30px;"></div>
+                                        <div class="gt3_spacing-height gt3_spacing-height_mobile"
+                                             style="height:55px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    
+                </div>
+                <div class="gt3_spacing">
+                    <div class="gt3_spacing-height gt3_spacing-height_default"
+                         style="height:50px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
