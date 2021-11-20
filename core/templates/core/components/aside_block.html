@@ -39,13 +39,6 @@
               </li>
               <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2242" style="width: 16.6667%;">
                  <a href="{% url 'portfolio:portfolio-index' %}">Gallery</a>
-                {% if menu_portfolio%}
-                    <ul class="sub-menu">
-                        {% for menu_portfolio_item in menu_portfolio %}
-                          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2310"><a href="{{ menu_portfolio_item.get_absolute_url }}">{{ menu_portfolio_item.name }}</a></li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
               </li>
               <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2240" style="width: 16.6667%;">
                  <a href="{% url 'blog:blog-index' %}">Blog</a>

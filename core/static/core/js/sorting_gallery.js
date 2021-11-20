@@ -6,57 +6,58 @@ if (jQuery('.grid_gallery').size() > 0) {
 }
 
 jQuery(function () {
+    if ($grid_container) {
+    	$grid_container.isotope({
+			itemSelector: '.element'
+		});
 
-    $grid_container.isotope({
-        itemSelector: '.element'
-    });
+		var $optionSets = jQuery('.optionset'),
+			$optionLinks = $optionSets.find('a'),
+			$showAll = jQuery('.show_all');
 
-    var $optionSets = jQuery('.optionset'),
-        $optionLinks = $optionSets.find('a'),
-        $showAll = jQuery('.show_all');
+		$optionLinks.on('click', function () {
+			var $this = jQuery(this);
+			// don't proceed if already selected
+			if ($this.parent('li').hasClass('selected')) {
+				return false;
+			}
+			var $optionSet = $this.parents('.optionset');
+			$optionSet.find('.selected').removeClass('selected');
+			$this.parent('li').addClass('selected');
+			if ($this.attr('data-option-value') == "*") {
+				$grid_container.removeClass('now_filtering');
+			} else {
+				$grid_container.addClass('now_filtering');
+			}
 
-    $optionLinks.on('click', function () {
-        var $this = jQuery(this);
-        // don't proceed if already selected
-        if ($this.parent('li').hasClass('selected')) {
-            return false;
-        }
-        var $optionSet = $this.parents('.optionset');
-        $optionSet.find('.selected').removeClass('selected');
-        $this.parent('li').addClass('selected');
-		if ($this.attr('data-option-value') == "*") {
-			$grid_container.removeClass('now_filtering');
+			// make option object dynamically, i.e. { filter: '.my-filter-class' }
+			var options = {},
+				key = $optionSet.attr('data-option-key'),
+				value = $this.attr('data-option-value');
+			// parse 'false' as false boolean
+			value = value === 'false' ? false : value;
+			options[key] = value;
+			if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
+				// changes in layout modes need extra logic
+				changeLayoutMode($this, options)
+			} else {
+				// otherwise, apply new options
+				$grid_container.isotope(options);
+			}
+			return false;
+		});
+
+		if (jQuery('.fs_blog_module').size() > 0) {
+			jQuery('.fs_blog_module').find('img').load(function () {
+				$grid_container.isotope('layout');
+			});
 		} else {
-			$grid_container.addClass('now_filtering');
+			$grid_container.find('img').load(function () {
+				$grid_container.isotope('layout');
+			});
 		}
-
-        // make option object dynamically, i.e. { filter: '.my-filter-class' }
-        var options = {},
-            key = $optionSet.attr('data-option-key'),
-            value = $this.attr('data-option-value');
-        // parse 'false' as false boolean
-        value = value === 'false' ? false : value;
-        options[key] = value;
-        if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
-            // changes in layout modes need extra logic
-            changeLayoutMode($this, options)
-        } else {
-            // otherwise, apply new options
-            $grid_container.isotope(options);
-        }
-        return false;
-    });
-
-    if (jQuery('.fs_blog_module').size() > 0) {
-        jQuery('.fs_blog_module').find('img').load(function () {
-            $grid_container.isotope('layout');
-        });
-    } else {
-        $grid_container.find('img').load(function () {
-            $grid_container.isotope('layout');
-        });
-    }
-	$grid_container.isotope('layout');
+		$grid_container.isotope('layout');
+	}
 });
 
 jQuery(document).ready(function(){
@@ -67,13 +68,17 @@ jQuery(document).ready(function(){
 });
 
 jQuery(window).load(function () {
-	$grid_container.isotope('layout');
+	if ($grid_container) {
+		$grid_container.isotope('layout');
+	}
 });
 jQuery(window).resize(function () {
-	$grid_container.isotope('layout');
+	if ($grid_container) {
+		$grid_container.isotope('layout');
+	}
 });
 
-function setup_grid() {	
+function setup_grid() {
 	jQuery('.grid_gallery').each(function() {
 		var setPad = Math.floor(parseInt(jQuery(this).attr('data-pad'))/2);
 		jQuery(this).css('margin', setPad+'px').css('margin-top', -1*setPad+'px');
@@ -88,7 +93,9 @@ function setup_grid() {
 				jQuery(this).removeClass('anim_el2');
 			}
 		});
-		$grid_container.isotope('layout');
+		if ($grid_container) {
+			$grid_container.isotope('layout');
+		}
 	});
 }
 
@@ -157,6 +164,8 @@ jQuery(document).on("click", ".grid_load_more", function () {
 		setup_grid();
 		setTimeout("animateListGrid()", 500);
 	}
-	$grid_container.isotope('layout');
+	if ($grid_container) {
+		$grid_container.isotope('layout');
+	}
 	setTimeout(function () {$grid_container.isotope('layout');}, 1000);
 });			

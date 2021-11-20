@@ -23,7 +23,6 @@ def get_menu_context(context=None) -> dict:
     if not in_cash:
         menu_context = {
             "menu_services": Service.objects.all()[:10],
-            "menu_portfolio": PortfolioItem.objects.all()[:10],
             "menu_blog": Post.objects.all()[:10],
         }
         context.update(menu_context)
