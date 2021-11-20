@@ -239,7 +239,7 @@ jQuery(document).ready(function($) {
 
 	function gt3_popup_video () {
 		if (jQuery(".swipebox-video").length) {
-			jQuery( '.swipebox-video' ).parent().swipebox( {
+			jQuery( '.swipebox-video' ).swipebox( {
 				selector: '.swipebox-video',
 				useCSS : true, // false will force the use of jQuery for animations
 				useSVG : true, // false to force the use of png for buttons
