@@ -36,6 +36,7 @@ jQuery(document).ready(function($) {
 			}
 		})
 	}
+	console.log('Ну и че')
 	gt3_portfolio_is_masonry();
 	gt3_fullWidthRow();
 

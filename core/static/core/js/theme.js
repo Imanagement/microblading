@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
 			}
 		})
 	}
-
+	gt3_portfolio_is_masonry();
 	gt3_fullWidthRow();
 
 	// Image Bg
@@ -654,7 +654,6 @@ jQuery(window).load(function() {
 	}
 
 	// Portfolio Masonry
-	gt3_portfolio_is_masonry();
 	var module_portfolio_html = jQuery('.gt3_module_portfolio');
 	if (module_portfolio_html.length) {
 		module_portfolio_html.each(function() {
