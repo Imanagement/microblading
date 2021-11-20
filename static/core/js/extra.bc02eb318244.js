@@ -11829,6 +11829,7 @@ jQuery(document).ready(function (e) {
                 }),
             "function" != typeof window.vc_carouselBehaviour &&
                 (window.vc_carouselBehaviour = function ($parent) {
+                    console.log('aaaa?')
                     ($parent ? $parent.find(".wpb_carousel") : jQuery(".wpb_carousel")).each(function () {
                         var fluid_ul = jQuery(this);
                         !0 !== fluid_ul.data("carousel_enabled") &&

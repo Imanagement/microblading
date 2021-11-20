@@ -36,6 +36,7 @@ jQuery(document).ready(function($) {
 			}
 		})
 	}
+	console.log('Ну и че')
 	gt3_portfolio_is_masonry();
 	gt3_fullWidthRow();
 
@@ -920,6 +921,7 @@ function gt3_testimonials_list () {
 
 // Portfolio Masonry
 function gt3_portfolio_is_masonry() {
+	console.log('Идем да?')
 	var module_portfolio_html = jQuery('.gt3_module_portfolio');
 	if (module_portfolio_html.length) {
 		module_portfolio_html.each(function() {

@@ -254,6 +254,7 @@
                 slideIndex && (options.interval = !1), $target.carousel(options), slideIndex && $target.data("vc.carousel").to(slideIndex), e.preventDefault();
             }),
         $(document).ready(function () {
+            console.log('??????')
             $('[data-ride="vc_carousel"]').each(function () {
                 var $carousel = $(this);
                 $carousel.carousel($carousel.data());

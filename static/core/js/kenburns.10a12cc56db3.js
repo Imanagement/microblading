@@ -27,7 +27,15 @@ function kenburns_resize() {
 
 	});
 }
-
+jQuery(document).ready(function(){
+	jQuery('.kenburns_wrapper').each(function(){
+/*		jQuery(this).find('.kenburns').attr('width', jQuery(this).width());
+		jQuery(this).find('.kenburns').attr('height', jQuery(this).height());
+		jQuery(this).find('.kenburns').css('top', '0px');
+		jQuery(this).find('.kenburns').remove();		*/
+	});
+	setTimeout('kenburns_resize()',150);
+});
 
 jQuery(window).resize(function(){ 
 	jQuery('.kenburns').remove();

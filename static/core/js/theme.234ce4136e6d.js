@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
 			}
 		})
 	}
-	gt3_portfolio_is_masonry();
+
 	gt3_fullWidthRow();
 
 	// Image Bg
@@ -654,6 +654,7 @@ jQuery(window).load(function() {
 	}
 
 	// Portfolio Masonry
+	gt3_portfolio_is_masonry();
 	var module_portfolio_html = jQuery('.gt3_module_portfolio');
 	if (module_portfolio_html.length) {
 		module_portfolio_html.each(function() {
@@ -918,29 +919,6 @@ function gt3_testimonials_list () {
 	}
 }
 
-// Portfolio Masonry
-function gt3_portfolio_is_masonry() {
-	var module_portfolio_html = jQuery('.gt3_module_portfolio');
-	if (module_portfolio_html.length) {
-		module_portfolio_html.each(function() {
-			if (jQuery(this).find('.filter_block').length && jQuery(this).find('.ajax_sorting_block').length) {
-				jQuery(this).find(".optionset li a").on("click", function(){
-					jQuery(this).parents('.gt3_module_portfolio').find(".optionset li a").removeClass("selected");
-					jQuery(this).parents('.gt3_module_portfolio').find(".optionset li").removeClass("selected");
-					jQuery(this).addClass("selected");
-					jQuery(this).parent().addClass("selected");
-					var filterSelector = jQuery(this).attr("data-option-value");
-					jQuery(this).parents('.gt3_module_portfolio').find(".sorting_block").isotope({
-						filter: filterSelector
-					});
-					return false;
-				});
-			} else {
-				jQuery(this).find('.sorting_block').isotope();
-			}
-		});
-	}
-}
 
 // Flexslider Update
 function gt3_flex_update() {

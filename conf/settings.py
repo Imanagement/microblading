@@ -171,8 +171,11 @@ PIPELINE = {
     'JAVASCRIPT': {
         'mainn': {
             'source_filenames': (
-                'core/js/jquery.isotope.min.js',
+                'core/js/vc_carousel.js',
+                'core/js/images-loaded.js',
+                'core/js/vc_transition.js',
                 'core/js/extra.js',
+                'core/js/jquery.isotope.min.js',
                 'core/js/jquery.swipebox.min.js',
                 'core/js/jquery.mousewheel.js',
                 'core/js/theme.js',
