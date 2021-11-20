@@ -9528,17 +9528,17 @@ body .vc_tta.vc_general.vc_tta-tabs .vc_tta-tab > a * {
 /* extra css */
 .service-icon {
 	width: 50px;
-	height: 50px;
+	height: auto;
 	object-fit: cover;
     object-position: left top;
 }
 
 .most-popular {
 	width: 150px;
-	height: 150px;
 }
 
 .service-icon-wrapper {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }

@@ -169,7 +169,7 @@ PIPELINE = {
         },
     },
     'JAVASCRIPT': {
-        'mainn': {
+        'main': {
             'source_filenames': (
                 'core/js/vc_carousel.js',
                 'core/js/images-loaded.js',
