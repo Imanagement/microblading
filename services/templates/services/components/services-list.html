@@ -8,7 +8,13 @@
                    </div>
                     <a href="{{ service.get_absolute_url }}">
                         <div class="gt3_icon_box gt3_icon_box_icon-position_ gt3_icon_box_icon-position_left gt3_icon_box__icon_icon_size_custom  gt3-box-image">
-                          <div class="block_center_icon" style="width:80px"><i class="gt3_icon_box__icon" style="width:50px; font-size:50px"><img width="50" height="50" src="{{ service.icon.url }}" class="attachment-full size-full service-icon" alt="" loading="lazy"></i></div>
+                          <div class="block_center_icon" style="width:80px">
+                                {% if service.icon %}
+                                    <i class="gt3_icon_box__icon" style="width:50px; font-size:50px">
+                                        <img width="50" height="50" src="{{ service.icon.url }}" class="attachment-full size-full service-icon" alt="" loading="lazy">
+                                    </i>
+                                {% endif %}
+                          </div>
                           <div class="gt3_icon_box-content-wrapper" style="margin-left:80px">
                              <div class="gt3_icon_box__title">
                                 <h4 style="color:#202020;font-size: 24px; line-height: 27px; ">{{ service.name }}</h4>
