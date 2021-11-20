@@ -25,20 +25,6 @@ var menuStep = 200,
 
 jQuery(document).ready(function($) {
 	/*Aside Header Mark */
-	var maxHeight = 0
-	jQuery('.package_icon').each(function(i) {
-		var $this = jQuery(this)
-		console.log($this)
-		console.log('aaaa')
-		var imageHeight = $this.find('img').height()
-		console.log(imageHeight)
-		maxHeight < imageHeight ? maxHeight = imageHeight : null
-	})
-	console.log(maxHeight)
-	jQuery('.package_icon').each(function(i) {
-		var $this = jQuery(this)
-		$this.height(maxHeight)
-	})
 
 	if (jQuery('.aside_header').size() > 0) {
 		jQuery('html').addClass('with_aside_header');
@@ -383,6 +369,16 @@ jQuery(document).ready(function($) {
 
 
 jQuery(window).load(function() {
+	var maxHeight = 0
+	jQuery('.package_icon').each(function(i) {
+		var $this = jQuery(this)
+		var imageHeight = $this.find('img').height()
+		maxHeight < imageHeight ? maxHeight = imageHeight : null
+	})
+	jQuery('.package_icon').each(function(i) {
+		var $this = jQuery(this)
+		$this.height(maxHeight)
+	})
 	gt3_isotope_team ();
 	gt3_fullWidthRow();
 });
