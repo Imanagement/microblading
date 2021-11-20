@@ -13,12 +13,6 @@ class PortfolioItem(models.Model):
         on_delete=models.SET_NULL,
         null=True,
     )
-    alt_text = models.CharField(
-        verbose_name=_('Альт изображения'),
-        max_length=255,
-        null=True,
-        blank=True
-    )
 
     class Meta:
         verbose_name = _('Проект из Портфолио')

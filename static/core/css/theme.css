@@ -9537,8 +9537,21 @@ body .vc_tta.vc_general.vc_tta-tabs .vc_tta-tab > a * {
 	width: 150px;
 }
 
-.service-icon-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+@media only screen and (min-width: 992px) {
+	.service-icon-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.most-popular-services .vc_row {
+		display: flex;
+		align-items: stretch;
+	}
+
+	.most-popular-services .vc_row .wpb_column .vc_column-inner,
+	.most-popular-services .vc_row .wpb_column .vc_column-inner .wpb_wrapper,
+	.most-popular-services .vc_row .wpb_column .vc_column-inner .wpb_wrapper .price_item {
+		height: 100%
+	}
 }
