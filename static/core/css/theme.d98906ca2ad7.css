@@ -888,7 +888,7 @@ a:hover span {
 	border-radius: 0;
 	margin-top: -23px;
 	border-radius: 0;
-    background: url(../img/arrow-pointing-to-right.png) no-repeat center;
+    background: url("../img/arrow-pointing-to-right.99c28ad94421.png") no-repeat center;
     background-size: 21px 14px;
     transition: all 400ms;
     z-index: 101;
@@ -903,7 +903,7 @@ a:hover span {
 	right:0px;
 }
 .nivo-directionNav a.nivo-prevNav{
-    background: url('../img/arrow-pointing-to-left.png') no-repeat center;
+    background: url("../img/arrow-pointing-to-left.218c78a98063.png") no-repeat center;
     position:absolute;
 	top:50%;
 	font-size:0;
@@ -1051,7 +1051,7 @@ html.swipebox-html.swipebox-touch {
   left: 0;
 }
 #swipebox-slider .slide-loading {
-    background: url("../img/loader.gif") no-repeat center !important;
+    background: url("../img/loader.074175b89d47.gif") no-repeat center !important;
     -webkit-animation: none !important;
     -o-animation: none !important;
     animation: none !important;
@@ -2272,7 +2272,7 @@ nav.simple_main_nav ul.sub-menu > li > a:before {
 	display:none;
 	visibility: hidden;
 	border-radius:100%;
-    background: url("../img/arrow-pointing-to-right.png") no-repeat center;
+    background: url("../img/arrow-pointing-to-right.99c28ad94421.png") no-repeat center;
     background-size: 21px 15px;
     transition: all 400ms;
 	z-index:101;
@@ -7560,7 +7560,7 @@ ol.commentlist .thiscommentbody ul > li:after {
 }
 .vc_images_carousel .vc_carousel-control .icon-prev{
     border-radius: 0;
-    background: url("../img/arrow-pointing-to-left.png") no-repeat center;
+    background: url("../img/arrow-pointing-to-left.218c78a98063.png") no-repeat center;
     background-size: 29px 20px;
     transition: all 400ms;
     z-index: 101;
@@ -7572,7 +7572,7 @@ ol.commentlist .thiscommentbody ul > li:after {
 }
 .vc_images_carousel .vc_carousel-control.vc_right span.icon-next{
     border-radius: 0;
-    background: url("../img/arrow-pointing-to-right.png") no-repeat center;
+    background: url("../img/arrow-pointing-to-right.99c28ad94421.png") no-repeat center;
     background-size: 29px 20px;
     transition: all 400ms;
     z-index: 101;
@@ -8774,17 +8774,17 @@ nav.main_nav ul.sub-menu > li.current-menu-parent > a {
 /* Typography */
 @font-face {
 font-family: "Lato";
-src: url("../fonts/Lato-Regular.ttf");
+src: url("../fonts/Lato-Regular.2d36b1a92543.ttf");
 }
 
 @font-face {
 font-family: "Playfair Display Black";
-src: url("../fonts/PlayfairDisplay-Black.ttf");
+src: url("../fonts/PlayfairDisplay-Black.bdc1fd7c2a35.ttf");
 }
 
 @font-face {
 	font-family: "Playfair Display Bold";
-	src: url("../fonts/PlayfairDisplay-Bold.ttf");
+	src: url("../fonts/PlayfairDisplay-Bold.d27b6b12d96d.ttf");
 
 }
 
@@ -9536,9 +9536,4 @@ body .vc_tta.vc_general.vc_tta-tabs .vc_tta-tab > a * {
 .most-popular {
 	width: 150px;
 	height: 150px;
-}
-
-.service-icon-wrapper {
-	display: flex;
-	justify-content: center;
 }
