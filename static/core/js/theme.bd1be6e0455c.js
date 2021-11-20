@@ -28,12 +28,13 @@ jQuery(document).ready(function($) {
 	var maxHeight = 0
 	$('.package_icon').each(function(i) {
 		var $this = $(this)
-		var imageHeight = $this.find('img').height()
+		var imageHeight = $this.find('img').height
 		maxHeight < imageHeight ? maxHeight = imageHeight : null
 	})
 	$('.package_icon').each(function(i) {
 		var $this = $(this)
-		$this.height(maxHeight)
+		console.log($this[0])
+		$this.height = maxHeight
 	})
 
 	if (jQuery('.aside_header').size() > 0) {

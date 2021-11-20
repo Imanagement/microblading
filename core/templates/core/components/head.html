@@ -1,4 +1,4 @@
-{% load static %}
+{% load static pipeline%}
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -7,7 +7,7 @@
 <link rel="apple-touch-icon" sizes="72x72" href{% static 'core/img/favicon-2.jpg' %}>
 <link rel="apple-touch-icon" sizes="114x114" href="{% static 'core/img/favicon-3.jpg' %}">
 <link rel="stylesheet" href="{% static 'core/css/vc_carousel.min.css' %}">
-<link rel="stylesheet" href="{% static 'core/css/main.min.css' %}">
+{% stylesheet 'main' %}
 {#    <link rel="stylesheet" href="{% static 'core/css/font-awesome.min.css' %}">#}
 {#    <link rel="stylesheet" href="{% static 'core/css/photo_modules.css' %}">#}
 {#    <link rel="stylesheet" href="{% static 'core/css/theme.css' %}">#}
