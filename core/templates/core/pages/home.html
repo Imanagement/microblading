@@ -161,7 +161,7 @@
                                                         QUALITY OVER QUANTITY</h6>
                                                     <h2 style="color: #202020;line-height: 1;text-align: center"
                                                         class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp">
-                                                        Welcome to Browcraft Studio</h2>
+                                                        Microblading and Powder Technique</h2>
                                                     <div class="gt3_spacing">
                                                         <div class="gt3_spacing-height gt3_spacing-height_default"
                                                              style="height:16px;"></div>
@@ -183,13 +183,12 @@
                                     </div>
                                     <div style="font-size: 20px;line-height: 38px;text-align: center"
                                          class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp">
-                                        Browcraft Studio is a full-service skin care studio specializing in
-                                        eyebrow design (including microblading) and premium skincare. We’ve
-                                        brought together the industry’s top talent to help you achieve the
-                                        perfect brow shape and optimum skin health using the most effective,
-                                        specialized products available today. Our team is dedicated to
-                                        creating a sleek, welcoming sanctuary environment where you will
-                                        receive nothing less than VIP service on each and every visit
+                                        Microblading  and Powder Technique is a semi-permanent eyebrow tattoo that makes
+                                        over plucked, over waxed, and thinning eyebrows appear fuller. It is a great way
+                                        to cover scars and gaps, define shape, and create an arch to fill in the
+                                        eyebrows. Microblading  and Powder Technique allows to construct a natural
+                                        looking eyebrow for people with very little to no hair. This procedure is
+                                        perfect for both men and women.
                                     </div>
                                     <div class="gt3_spacing">
                                         <div class="gt3_spacing-height gt3_spacing-height_default"
@@ -197,7 +196,7 @@
                                     </div>
                                     <div class="gt3_module_button gt3_btn_noreverse button_alignment_center  wpb_animate_when_almost_visible wpb_slideInUp slideInUp ">
                                         <a class="shortcode_button has_hover button_size_normal "
-                                           href="javascript:void(0)"><span
+                                           href="https://api.whatsapp.com/send/?phone=17188394494&text&app_absent=0"><span
                                                 class="hide_btn_arrow">Learn more</span></a></div>
                                     <div class="gt3_spacing">
                                         <div class="gt3_spacing-height gt3_spacing-height_default"
@@ -234,10 +233,10 @@
                                                     </div>
                                                     <div class="video-popup-wrapper">
                                                         <a class="video-popup__link swipebox-video"
-                                                           href="https://www.youtube.com/watch?v=pn7yPjHHQUs"
+                                                           href="https://www.youtube.com/watch?v=9n5Y9X2ugkA"
                                                            rel="vimeo"
                                                            style="border-color:#ffffff; background-color:#ffffff"
-                                                           data-suffix="Video Showcase 5:22">
+                                                           data-suffix="Video Testimonial 2:17">
                                                             <svg width="17" height="23">
                                                                 <polygon points="1,2 1,21 15,11"
                                                                          fill="#fb90b1" stroke="#fb90b1"
@@ -260,103 +259,45 @@
                                              style="height:65px;"></div>
                                     </div>
                                     <div class="vc_row wpb_row vc_inner vc_row-fluid gt3_home_block02 vc_custom_1521715337160 vc_row-o-equal-height vc_row-o-content-middle vc_row-flex">
-                                        <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-4">
-                                            <div class="vc_column-inner">
-                                                <div class="wpb_wrapper">
-                                                    <div class="gt3_icon_box gt3_icon_box_icon-position_ gt3_icon_box_icon-position_left gt3_icon_box__icon_icon_size_custom  gt3-box-image">
-                                                        <div class="block_center_icon" style="width:80px"><i
-                                                                class="gt3_icon_box__icon"
-                                                                style="width:50px; font-size:50px"><img
-                                                                width="50" height="50"
-                                                                src="{% static 'core/img/icon_01.png' %}"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"></i></div>
-                                                        <div class="gt3_icon_box-content-wrapper"
-                                                             style="margin-left:80px">
-                                                            <div class="gt3_icon_box__title"><h4
-                                                                    style="color:#202020;font-size: 24px; line-height: 27px; ">
-                                                                Eyebrow Shape</h4></div>
-                                                            <div class="gt3_icon_box__text"
-                                                                 style="color:#747a8c; ">Getting perfect
-                                                                brows really depends on the dimensions of
-                                                                your face—and knowing how to shape eyebrows
-                                                                based
+                                        {% if services_sd_package %}
+                                            {% for service in services_sd_package %}
+                                                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-4">
+                                                    <div class="vc_column-inner">
+                                                        <div class="wpb_wrapper">
+                                                            <div class="gt3_icon_box gt3_icon_box_icon-position_
+                                                            gt3_icon_box_icon-position_left
+                                                            gt3_icon_box__icon_icon_size_custom  gt3-box-image">
+                                                                <div class="block_center_icon"><i
+                                                                        class="gt3_icon_box__icon"
+                                                                        style="width:50px; font-size:50px"><img
+                                                                        width="50" height="50"
+                                                                        src="{{ service.icon.url }}"
+                                                                        class="attachment-full size-full" alt=""
+                                                                        loading="lazy"></i></div>
+                                                                <div class="gt3_icon_box-content-wrapper"
+                                                                     style="margin-left:80px">
+                                                                    <div class="gt3_icon_box__title"><h4
+                                                                            style="color:#202020;font-size: 24px; line-height: 27px; ">
+                                                                        {{ service.name }}</h4></div>
+                                                                    <div class="gt3_icon_box__text"
+                                                                         style="color:#747a8c; ">
+                                                                        {% autoescape off %}
+                                                                            {{ service.teaser_description }}
+                                                                        {% endautoescape %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="gt3_spacing gt3_spacing-height_mobile-on">
+                                                                <div class="gt3_spacing-height gt3_spacing-height_default"
+                                                                     style="height:51px;"></div>
+                                                                <div class="gt3_spacing-height gt3_spacing-height_mobile"
+                                                                     style="height:45px;"></div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="gt3_spacing gt3_spacing-height_mobile-on">
-                                                        <div class="gt3_spacing-height gt3_spacing-height_default"
-                                                             style="height:51px;"></div>
-                                                        <div class="gt3_spacing-height gt3_spacing-height_mobile"
-                                                             style="height:45px;"></div>
-                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-4">
-                                            <div class="vc_column-inner">
-                                                <div class="wpb_wrapper">
-                                                    <div class="gt3_icon_box gt3_icon_box_icon-position_ gt3_icon_box_icon-position_left gt3_icon_box__icon_icon_size_custom  gt3-box-image">
-                                                        <div class="block_center_icon" style="width:80px"><i
-                                                                class="gt3_icon_box__icon"
-                                                                style="width:50px; font-size:50px"><img
-                                                                width="50" height="50"
-                                                                src="{% static 'core/img/icon_02.png' %}"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"></i></div>
-                                                        <div class="gt3_icon_box-content-wrapper"
-                                                             style="margin-left:80px">
-                                                            <div class="gt3_icon_box__title"><h4
-                                                                    style="color:#202020;font-size: 24px; line-height: 27px; ">
-                                                                Eyebrow Coloring</h4></div>
-                                                            <div class="gt3_icon_box__text"
-                                                                 style="color:#747a8c; ">Eyebrow tinting or
-                                                                coloring helps get a natural and flawless
-                                                                look to your eyebrows. Result that will last
-                                                                for weeks
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gt3_spacing gt3_spacing-height_mobile-on">
-                                                        <div class="gt3_spacing-height gt3_spacing-height_default"
-                                                             style="height:51px;"></div>
-                                                        <div class="gt3_spacing-height gt3_spacing-height_mobile"
-                                                             style="height:45px;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-4">
-                                            <div class="vc_column-inner">
-                                                <div class="wpb_wrapper">
-                                                    <div class="gt3_icon_box gt3_icon_box_icon-position_ gt3_icon_box_icon-position_left gt3_icon_box__icon_icon_size_custom  gt3-box-image">
-                                                        <div class="block_center_icon" style="width:80px"><i
-                                                                class="gt3_icon_box__icon"
-                                                                style="width:50px; font-size:50px"><img
-                                                                width="50" height="50"
-                                                                src="{% static 'core/img/icon_03.png' %}"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"></i></div>
-                                                        <div class="gt3_icon_box-content-wrapper"
-                                                             style="margin-left:80px">
-                                                            <div class="gt3_icon_box__title"><h4
-                                                                    style="color:#202020;font-size: 24px; line-height: 27px; ">
-                                                                Microblading</h4></div>
-                                                            <div class="gt3_icon_box__text"
-                                                                 style="color:#747a8c; ">Eyebrow
-                                                                microblading is the art of creating fuller
-                                                                thicker eyebrows through the use if a manual
-                                                                tattooing technique
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gt3_spacing">
-                                                        <div class="gt3_spacing-height gt3_spacing-height_default"
-                                                             style="height:51px;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            {% endfor %}
+                                        {% endif %}
                                     </div>
                                     <div class="gt3_module_button gt3_btn_noreverse button_alignment_center  wpb_animate_when_almost_visible wpb_slideInUp slideInUp ">
                                         <a class="shortcode_button has_hover button_size_normal "
@@ -393,9 +334,9 @@
                                                                  alt="icon_img" style="width:55px;"></div>
                                                         <div class="stat_count_wrapper">
                                                             <div class="stat_count" data-suffix=""
-                                                                 data-prefix="" data-value="455"
+                                                                 data-prefix="" data-value="2455"
                                                                  style="color: #202020;font-size: 60px; line-height: 60px; ">
-                                                                455
+                                                                2455
                                                             </div>
                                                             <div class="cont_info"
                                                                  style="color: #747a8c; font-size: 22px; line-height: 33px; ">
