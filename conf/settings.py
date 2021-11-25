@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'material',
+    'material.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -50,8 +51,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'easy_thumbnails',
-    'filer',
     'mptt',
+    'filer',
     'pipeline',
     'silk'
 ]
@@ -93,11 +94,11 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ae_db',
-        'HOST': 'localhost',
-        'USER': 'vivi',
-        'PASSWORD': '1234',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'HOST': 'localhost',
+        # 'USER': 'vivi',
+        # 'PASSWORD': '1234',
     }
 }
 

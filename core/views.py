@@ -11,14 +11,17 @@ from .utils import get_full_context, get_page_seo
 
 
 def index(request):
-    services = Service.objects.all()[:3]
+    services = Service.objects.all()
+    services_package = services[:3]
+    services_sd_package = services[:3:-1]
     portfolio_items = PortfolioItem.objects.all()[:8]
     page = get_page_seo(main_page=True)
 
     context = {
         'page': page,
-        'services': services,
-        'popular_services': services,
+        'services': services_package,
+        'services_sd_package': services_sd_package,
+        'popular_services': services_package,
         'portfolio_items': portfolio_items
     }
     context = get_full_context(context)
