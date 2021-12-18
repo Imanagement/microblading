@@ -1,0 +1,5 @@
+{% load cms_tags %}{% spaceless %}
+
+{% endspaceless %}<div class="gt3_module_button gt3_btn_noreverse button_alignment_inline"><a style="color:white" class="shortcode_button has_hover button_size_normal" href="{{ link }}" {% if instance.target %} target="{{ instance.target }}"{% endif %}{% if instance.attributes %} {{ instance.attributes_str }}{% endif %}>{% for plugin in instance.child_plugin_instances %}{% render_plugin plugin %}{% empty %}<span>{{ instance.name }}</span>{% endfor %}</a>{% spaceless %}</div>
+
+{% endspaceless %}

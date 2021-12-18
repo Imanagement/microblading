@@ -1,0 +1,47 @@
+{% load static cms_tags %}
+<div class="vc_row wpb_row vc_inner vc_row-fluid">
+    <div class="wpb_column vc_column_container {% if instance.image %}vc_col-sm-9{% else %}vc_col-sm-12{% endif %} vc_col-has-fill">
+        <div class="vc_column-inner {% if isntance.with_bg_image %}vc_custom_1522242545757{% endif %}">
+            <div class="wpb_wrapper">
+                <h6 style="color: #fb90b1;{% if instance.text_align == "C" %}text-align: center{% else %}text-align: left;{% endif %}" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">
+                    {{ instance.subtitle }}
+                </h6>
+                <h2 style="color: #202020;line-height: 1;{% if instance.text_align == "C" %}text-align: center{% else %}text-align: left;{% endif %}" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">
+                    {{ instance.title }}
+                </h2>
+                <div class="gt3_spacing">
+                    <div class="gt3_spacing-height gt3_spacing-height_default" style="height:16px;"></div>
+                </div>
+
+                <div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1522218375518">
+                    <figure class="wpb_wrapper vc_figure">
+                        <div class="vc_single_image-wrapper   vc_box_border_grey">
+                            <img width="72" height="6" src="{% static '/core/img/divider.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+                    </figure>
+                </div>
+                {% for child_plugin_instance in instance.child_plugin_instances %}
+                    {% render_plugin child_plugin_instance %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    {% if instance.image %}
+        <div class="wpb_column vc_column_container vc_col-sm-3">
+            <div class="vc_column-inner">
+                <div class="wpb_wrapper">
+                    <div class="gt3_spacing gt3_spacing-height_mobile-on">
+                        <div class="gt3_spacing-height gt3_spacing-height_default" style="height:33px;"></div>
+                        <div class="gt3_spacing-height gt3_spacing-height_mobile" style="height:0px;"></div>
+                    </div>
+                    <div class="wpb_single_image wpb_content_element vc_align_right">
+                        <figure class="wpb_wrapper vc_figure">
+                            <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="246" height="164" src="{{ instance.image.url }}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<div class="vc_row-full-width vc_clearfix"></div>

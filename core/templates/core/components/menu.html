@@ -1,111 +1,15 @@
-<header class="main_header aside_header">
-    <nav class="aside_main_nav overflowed_menu">
-            <ul id="menu-main-menu-1" class="menu reached_top">
-                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-2685">
-                    <a href="{% url 'core:index' %}">Home</a>
-{#                    <ul class="sub-menu">#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1137 current_page_item menu-item-2247">#}
-{#                            <a href="/>Home Default</a></li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2326"><a#}
-{#                                href="/>Home Video</a></li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2325"><a#}
-{#                                href="/>Home Service</a></li>#}
-{#                    </ul>#}
-                </li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2245"
-                   ><a href="{% url 'services:service-list' %}">Services</a>
-{#                    <ul class="sub-menu">#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2310"><a#}
-{#                                href="/>Service</a></li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2311"><a#}
-{#                                href="/>Single Service</a></li>#}
-{#                    </ul>#}
-                </li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2242"
-                   ><a href="{% url 'portfolio:portfolio-index' %}">Gallery</a>
-{#                    <ul class="sub-menu">#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2312"><a#}
-{#                                href="/>Grid Gallery</a></li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2313"><a#}
-{#                                href="/>Masonry Gallery</a></li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2324"><a#}
-{#                                href="/>Packery Gallery</a></li>#}
-{#                    </ul>#}
-                </li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2240"
-                  ><a href="{% url 'blog:blog-index' %}">Blog</a>
-{#                    <ul class="sub-menu">#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2303"><a#}
-{#                                href="/>Fullwidth Listing</a>#}
-{#                        </li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2302"><a#}
-{#                                href="/>With Right#}
-{#                            Sidebar</a></li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2301"><a#}
-{#                                href="/>With Left#}
-{#                            Sidebar</a></li>#}
-{#                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2241">#}
-{#                            <a href="javascript:void(0)">Posts</a>#}
-{#                            <ul class="sub-menu">#}
-{#                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2314">#}
-{#                                    <a href="/>Standart#}
-{#                                        Post</a></li>#}
-{#                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2316">#}
-{#                                    <a href="/>Image#}
-{#                                        Post</a></li>#}
-{#                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2319">#}
-{#                                    <a href="/>Video#}
-{#                                        Post</a></li>#}
-{#                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2317">#}
-{#                                    <a href="/>Audio#}
-{#                                        Post</a></li>#}
-{#                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2318">#}
-{#                                    <a href="/>Link#}
-{#                                        Post</a></li>#}
-{#                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2315">#}
-{#                                    <a href="/>Quote#}
-{#                                        Post</a></li>#}
-{#                            </ul>#}
-{#                        </li>#}
-{#                    </ul>#}
-                </li>
-{#                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2239"#}
-{#                  ><a href="javascript:void(0)">Pages</a>#}
-{#                    <ul class="sub-menu">#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2320"><a#}
-{#                                href="/>About Us</a></li>#}
-{#                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2729">#}
-{#                            <a href="javascript:void(0)">Shop</a>#}
-{#                            <ul class="sub-menu">#}
-{#                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2728">#}
-{#                                    <a href="/>All Products</a></li>#}
-{#                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2730">#}
-{#                                    <a href="/>Single#}
-{#                                        Product</a></li>#}
-{#                            </ul>#}
-{#                        </li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2322"><a#}
-{#                                href="/>Appointment</a></li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2321"><a#}
-{#                                href="/>FAQ</a></li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2300"><a#}
-{#                                href="/>Typography</a></li>#}
-{#                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2244"><a#}
-{#                                href="/>404 Page</a></li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2304"><a#}
-{#                                href="/>Coming Soon</a></li>#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2299"><a#}
-{#                                href="/>Shortcodes</a></li>#}
-{#                    </ul>#}
-{#                </li>#}
-                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2246"
-                    ><a href="{% url 'core:contact-us' %}">Contacts</a>
-{#                    <ul class="sub-menu">#}
-{#                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2323"><a#}
-{#                                href="/>Contacts</a></li>#}
-{#                    </ul>#}
-                </li>
-            </ul>
-        </nav>
-
-</header>
+{% load menu_tags %}
+{% for child in children %}
+    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2685 {% if child.selected %}current-menu-ancestor current-menu-parent current-menu-item {% endif %}{% if child.children %}{% endif %}">
+        <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+        {% if child.children %}
+        <ul class="sub-menu">
+            {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+        </ul>
+        {% endif %}
+    </li>
+{% endfor %}
+{% for i in nodes %}
+    {{ i }}
+{% endfor %}
+{{ node }}

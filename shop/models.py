@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.shortcuts import reverse
-from ckeditor_uploader.fields import RichTextUploadingField
+from djangocms_text_ckeditor.fields import HTMLField
 from filer.fields.image import FilerImageField
 
 
@@ -10,13 +10,13 @@ class Product(models.Model):
 
     name = models.CharField(
         max_length=155,
-        verbose_name=_("Название")
+        verbose_name=_("Name")
     )
     price = models.IntegerField(
-        verbose_name=_("Цена"),
+        verbose_name=_("Cost"),
     )
     discount_price = models.IntegerField(
-        verbose_name=_("Скидочная цена"),
+        verbose_name=_("Discount"),
         null=True,
         blank=True,
         )
@@ -26,16 +26,16 @@ class Product(models.Model):
         null=True,
         blank=True,
     )
-    description = RichTextUploadingField(
-        verbose_name=_('Описание')
+    description = HTMLField(
+        verbose_name=_('Description')
     )
     main_image = FilerImageField(
-        verbose_name=_('Изображение'),
+        verbose_name=_('Image'),
         on_delete=models.SET_NULL,
         null=True
     )
     published = models.DateTimeField(
-        auto_now_add=True, verbose_name="Дата публикации")
+        auto_now_add=True, verbose_name="Published Date")
 
     # SEO
     page_title = models.CharField(
@@ -56,8 +56,8 @@ class Product(models.Model):
         return reverse('')
 
     class Meta:
-        verbose_name = _("Продукт")
-        verbose_name_plural = _("Продукты")
+        verbose_name = _("Product")
+        verbose_name_plural = _("Products")
 
     def __str__(self):
         return self.name
@@ -70,30 +70,30 @@ class BasketProduct(models.Model):
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        verbose_name=_('Зарегистрированный покупатель')
+        verbose_name=_('User')
     )
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
-        verbose_name=_('Продукт')
+        verbose_name=_('Product')
     )
     quantity = models.IntegerField(
         default=1,
-        verbose_name=_('Количество продукта')
+        verbose_name=_('Product Count')
     )
     is_ordered = models.BooleanField(
         default=False,
-        verbose_name=_('Заказан')
+        verbose_name=_('Ordered')
     )
     which_basket = models.ManyToManyField(
         'Basket',
         blank=True,
-        verbose_name=_('Корзина')
+        verbose_name=_('Basket')
     )
 
     class Meta:
-        verbose_name = _("Продукт в корзине")
-        verbose_name_plural = _("Продукты в корзинах")
+        verbose_name = _("Basket Product")
+        verbose_name_plural = _("Basket Products")
 
     def __str__(self):
         return f"{self.quantity} of {self.product.name}"
@@ -112,38 +112,38 @@ class Basket(models.Model):
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        verbose_name=_('Зарегистрированный покупатель')
+        verbose_name=_('User')
     )
     products = models.ManyToManyField(
         BasketProduct,
-        verbose_name=_('Продукты')
+        verbose_name=_('Products')
     )
     start_date = models.DateTimeField(
         auto_now_add=True,
-        verbose_name=_('Дата открытия корзины')
+        verbose_name=_('Basket Open Date')
     )
     ordered_date = models.DateTimeField(
-        verbose_name=_('Дата заказа корзины')
+        verbose_name=_('Basket Order Date')
     )
     basket_changed_date = models.DateField(
-        verbose_name=_('Дата изменения корзины'),
+        verbose_name=_('Basket Changes Date'),
         null=True,
         blank=True
     )
     ordered = models.BooleanField(
         default=False,
-        verbose_name=_('Заказан')
+        verbose_name=_('Ordered')
     )
 
     class Meta:
-        verbose_name = _("Корзина")
-        verbose_name_plural = _("Корзины")
+        verbose_name = _("Basket")
+        verbose_name_plural = _("Baskets")
 
     def __str__(self):
         if self.user:
-            return f"Заказ  #{self.pk} от {self.user}"
+            return _(f"Order #{self.pk} from {self.user}")
         else:
-            return f"Заказ(Анонимный) #{self.pk}"
+            return _(f"Order(Anonymous) #{self.pk}")
 
     def get_absolute_url(self):
         return reverse("Order_detail", kwargs={"pk": self.pk})

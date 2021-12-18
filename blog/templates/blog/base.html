@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="page_title_block">
 				<h1 class="title">Blog</h1>
-				<div class="breadcrumbs"><a href="{% url 'core:index' %}">Home</a><span>Blog</span></div>
+				<div class="breadcrumbs"><a href="{% page_url request.current_page.get_root %}">Home</a><span>Blog</span></div>
 			</div>
 		</div>
 	</div>

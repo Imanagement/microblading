@@ -1,69 +1,37 @@
-{% load static cache %}
+{% load static cache cms_tags menu_tags %}
+{% comment %} Aside Block {% endcomment %}
 <div class="aside_menu_block">
     <div class="aside_menu_block_inner container">
         <div class="aside_menu_block_top">
             <div class="aside_menu_block_top_inner">
                 <div class="logo">
-                    <a href="{% url 'core:index' %}" class="menu_logo">
+                    <a href="{% page_url request.current_page.get_root %}" class="menu_logo">
                         <img src="{% static 'core/img/logo.png' %}"
                              alt="" width="129" height="65" class="logo_img">
                     </a>
                 </div><!-- .logo -->
-                <div class="aside_search_wrapper">
-                    <div class="aside_search_inner">
-                        <form name="search_form" method="get" action="{% url 'core:search' %}"
-                              class="aside_search_form">
-                            <input type="text" name="s" placeholder="Type here to start searching...">
-                            <i class="fa fa-search"></i>
-                        </form>
+                <div class="aside-language-chooser-wrapper">
+                    <div class="aside-language-chooser">
+                        {% language_chooser 'core/components/language-chooser.html'%}
+{#                        {% if flags %}#}
+{#                            {% for flag in flags %}#}
+{#                                <a href="{{ flag.image }}"><img src="" alt=""></a>#}
+{#                            {% endfor %}#}
+{#                        {% endif %}#}
                     </div>
                 </div><!-- .aside_search_wrapper -->
-                <div class="clear"></div>
             </div><!-- .aside_menu_block_top_inner -->
         </div><!-- .aside_menu_block_top -->
-        {% cache 600 aside_header %}
         <nav class="aside_main_nav contained_menu" style="height: 1067px;">
            <ul id="menu-main-menu-1" class="menu reached_top">
-              <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-2685" style="width: 16.6667%;">
-                 <a href="{% url 'core:index' %}">Home</a>
-              </li>
-              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2245" style="width: 16.6667%;">
-                 <a href="{% url 'services:service-list' %}">Services</a>
-                  {% if menu_services %}
-                       <ul class="sub-menu">
-                          {% for menu_service in menu_services %}
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2310"><a href="{{ menu_service.get_absolute_url }}">{{ menu_service.name }}</a></li>
-                          {% endfor %}
-                       </ul>
-                  {% endif %}
-              </li>
-              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2242" style="width: 16.6667%;">
-                 <a href="{% url 'portfolio:portfolio-index' %}">Gallery</a>
-              </li>
-              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2240" style="width: 16.6667%;">
-                 <a href="{% url 'blog:blog-index' %}">Blog</a>
-                  {% if menu_blog %}
-                      <ul class="sub-menu">
-                        {% for menu_blog_item in menu_blog %}
-                          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2310"><a href="{{ menu_blog_item.get_absolute_url }}">{{ menu_blog_item.name }}</a></li>
-                        {% endfor %}
-                      </ul>
-                  {% endif %}
-              </li>
-              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2239" style="width: 16.6667%;">
-                 <a href="{% url 'core:about-us' %}">About us</a>
-              </li>
-              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2246" style="width: 16.6667%;">
-                 <a href="{% url 'core:contact-us' %}">Contact us</a>
-              </li>
+               {% show_menu 0 100 100 100 "core/components/menu.html" %}
            </ul>
         </nav>
-        {% endcache %}
 
         <div class="aside_menu_footer">
             <div class="aside_menu_footer_inner">
                 <div class="aside_menu_footer_lp">
-                    Copyright <span>© {% now 'Y' %} Allesthetics.</span> All Rights Reserved
+                    Copyright <span>© {% now 'Y' %} AllEsthetics.</span> All Rights Reserved
                 </div>
                 <div class="aside_menu_footer_rp">
                     <div class="copyright"></div>
@@ -73,3 +41,51 @@
         </div>
     </div><!-- .aside_menu_block_inner -->
 </div>
+
+{% comment %} Aside Header {% endcomment %}
+<header class="main_header aside_header" style="">
+   <a href="javascript:void(0)" class="btn_menu">
+      <div class="btn_menu_ico">
+         <div class="btn_menu_ico_inner">
+            <span class="btn_menu_line1"></span>
+            <span class="btn_menu_line2"></span>
+            <span class="btn_menu_line3"></span>
+         </div>
+      </div>
+      <span class="btn_menu_caption">MENU</span>
+      <span class="btn_close_menu_caption">CLOSE</span>
+   </a>
+   <div class="header_title fadeOnLoad"><span> Your Perfect Eyebrows</span></div>
+   <ul class="header_socials">
+        {% for child_plugin_instance in instance.child_plugin_instances %}
+            <li>
+                {% render_plugin child_plugin_instance %}
+            </li>
+        {% endfor %}
+{#      <li><a class="instagram" target="_blank" href="https://instagram.com" title="Instagram"><i class="fa gt3_fa_before fa-instagram"></i></a></li>#}
+   </ul>
+</header>
+
+{% comment %} Aside Mobile Header {% endcomment %}
+{% load static cms_tags %}
+<header class="main_header top_header simple aside_iphone_mobile_menu">
+    <div class="main_header_inner">
+        <div class="logo">
+            <a href="{% page_url request.current_page.get_root %}" class="menu_logo">
+                <img src="{% static 'core/img/logo.png' %}" alt=""
+                     width="129" height="65" class="logo_img">
+            </a>
+        </div><!-- .logo -->
+        <div class="btn_mobile_menu_wrapper">
+            <a href="javascript:void(0)" class="btn_mobile_menu btn_ipad_menu">
+                <div class="btn_menu_ico">
+                    <div class="btn_menu_ico_inner">
+                        <span class="btn_menu_line1"></span>
+                        <span class="btn_menu_line2"></span>
+                        <span class="btn_menu_line3"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</header>

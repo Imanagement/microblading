@@ -1,8 +1,8 @@
-{% load static %}
+{% load static cms_tags %}
 <header class="main_header top_header simple aside_iphone_mobile_menu">
     <div class="main_header_inner">
         <div class="logo">
-            <a href="{% url 'core:index' %}" class="menu_logo">
+            <a href="{% page_url request.current_page.get_root %}" class="menu_logo">
                 <img src="{% static 'core/img/logo.png' %}" alt=""
                      width="129" height="65" class="logo_img">
             </a>
@@ -19,53 +19,53 @@
             </a>
         </div>
     </div>
-    <div class="mobile_menu_wrapper" style="display: none;">
-        <ul class="mobile_menu container">
-            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-2685">
-                <a href="{% url 'core:index' %}">Home</a>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2245"><a
-                    href="{% url 'services:service-list' %}">Services</a>
-                <ul class="sub-menu">
-                    {% if services %}
-                        {% for service in services %}
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2310">
-                                <a href="{{ service.get_absoulte_url }}">{{ service.name }}</a>
-                            </li>
-                        {% endfor %}
-                    {% endif %}
-                </ul>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2242"><a
-                    href="{% url 'portfolio:portfolio-index' %}">Gallery</a>
-                <ul class="sub-menu">
-                   {% if gallery_images %}
-                        {% for gallery_image in gallery_images %}
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2310">
-                                <a href="{{ gallery_image.get_absoulte_url }}">{{ gallery_image.name }}</a>
-                            </li>
-                        {% endfor %}
-                    {% endif %}
-                </ul>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2240"><a
-                    href="{% url 'blog:blog-index' %}">Blog</a>
-                <ul class="sub-menu">
-                    {% if blog_posts %}
-                        {% for blog_post in blog_posts %}
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2303">
-                                <a href="{{ blog_post.get_absolute_url }}">{{ blog_post.name }}</a>
-                            </li>
-                        {% endfor %}
-                    {% endif %}
-                </ul>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2239"><a
-                    href="{% url 'core:about-us' %}">About us</a>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2246"><a
-                    href="{% url 'core:contact-us' %}">Contacts</a>
-            </li>
-        </ul>
-    </div>
+{#    <div class="mobile_menu_wrapper" style="display: none;">#}
+{#        <ul class="mobile_menu container">#}
+{#            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-2685">#}
+{#                <a href="{% page_url request.current_page.get_root %}">Home</a>#}
+{#            </li>#}
+{#            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2245"><a#}
+{#                    href="{% page_url 'services' %}">Services</a>#}
+{#                <ul class="sub-menu">#}
+{#                    {% if services %}#}
+{#                        {% for service in services %}#}
+{#                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2310">#}
+{#                                <a href="{{ service.get_absolute_url }}">{{ service.name }}</a>#}
+{#                            </li>#}
+{#                        {% endfor %}#}
+{#                    {% endif %}#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2242"><a#}
+{#                    href="{% page_url 'portfolio' %}">Gallery</a>#}
+{#                <ul class="sub-menu">#}
+{#                   {% if gallery_images %}#}
+{#                        {% for gallery_image in gallery_images %}#}
+{#                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2310">#}
+{#                                <a href="{{ gallery_image.get_absoulte_url }}">{{ gallery_image.name }}</a>#}
+{#                            </li>#}
+{#                        {% endfor %}#}
+{#                    {% endif %}#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2240"><a#}
+{#                    href="{% page_url 'blog' %}">Blog</a>#}
+{#                <ul class="sub-menu">#}
+{#                    {% if blog_posts %}#}
+{#                        {% for blog_post in blog_posts %}#}
+{#                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2303">#}
+{#                                <a href="{{ blog_post.get_absolute_url }}">{{ blog_post.name }}</a>#}
+{#                            </li>#}
+{#                        {% endfor %}#}
+{#                    {% endif %}#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2239"><a#}
+{#                    href="{% page_url 'about-us' %}">About us</a>#}
+{#            </li>#}
+{#            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2246"><a#}
+{#                    href="{% page_url 'contact-us' %}">Contacts</a>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </div>#}
 </header>

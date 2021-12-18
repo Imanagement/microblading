@@ -1,103 +1,118 @@
-from ckeditor.fields import RichTextField
+from djangocms_text_ckeditor.fields import HTMLField
+from cms.models.fields import PlaceholderField
+from cms.models.pluginmodel import CMSPlugin
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.urls import reverse
+from django.utils import translation
 from django.utils.translation import gettext_lazy as _
 from filer.fields.image import FilerImageField
 
 
 class Service(models.Model):
     name = models.CharField(
-        verbose_name=_('Название услуги'),
+        verbose_name=_('Name'),
         max_length=555
     )
+    custom_slug = models.BooleanField(
+        verbose_name=_('Custom Slug'),
+        default=False
+    )
     slug = models.SlugField(
-        verbose_name=_('Slug услуги'),
+        verbose_name=_('Slug'),
         unique=True,
         blank=True,
         null=True,
         max_length=555
     )
-    header_image = FilerImageField(
-        verbose_name=_('Изображение шапки'),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='header_image'
+    header = PlaceholderField(
+        'header',
+        related_name='header'
     )
+    content = PlaceholderField(
+        'content',
+        related_name='content'
+    )
+    extra_content = PlaceholderField(
+        'extra',
+        related_name='extra'
+    )
+
+    # header_image = FilerImageField(
+    #     verbose_name=_('Header Image'),
+    #     null=True,
+    #     blank=True,
+    #     on_delete=models.SET_NULL,
+    #     related_name='header_image'
+    # )
     cost = models.PositiveIntegerField(
-        verbose_name=_('Цена'),
+        verbose_name=_('Cost'),
     )
     cost_name = models.CharField(
-        verbose_name=_('Название к цене'),
+        verbose_name=_('Cost Name'),
         max_length=155,
         null=True,
         blank=True
     )
     duration = models.PositiveIntegerField(
-        verbose_name=_('Длительность процедуры'),
+        verbose_name=_('Duration'),
         default=60
     )
-    teaser_description = RichTextField(
-        verbose_name=_('Интро текст'),
-        help_text=_('Текст который будет описывать услугу на других страницах'),
+    teaser_description = models.CharField(
+        max_length=575,
+        verbose_name=_('Intro Text'),
+        help_text=_('Text which is seen from other pages (Teaser)'),
         null=True,
         blank=True
     )
-    description = RichTextField(
-        verbose_name=_('Описание'),
+    description = HTMLField(
+        verbose_name=_('Description'),
+        null=True,
+        blank=True
+    )
+    description_image = FilerImageField(
+        verbose_name=_('Description Image'),
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='description_image'
+    )
+    video_url = models.CharField(
+        max_length=575,
+        verbose_name=_('Video Url'),
         null=True,
         blank=True
     )
     icon = FilerImageField(
-        verbose_name=_('Иконка услуги'),
+        verbose_name=_('Icon'),
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name='icon'
     )
 
-    what_we_offer_description = RichTextField(
-        verbose_name=_('Описание блока "плюсы услуг"'),
-        null=True,
-        blank=True
-    )
-    what_we_offer_image = FilerImageField(
-        verbose_name=_('Изображение блока "плюсы услуг"'),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='what_we_offer_image'
-    )
-    what_we_offer_video_url = models.URLField(
-        max_length=155,
-        verbose_name=_('URL видео блока возле цены'),
-        null=True,
-        blank=True
-    )
-
     # Seo
     h1_title = models.CharField(
-        verbose_name=_('H1 Заголовок'),
+        verbose_name=_('H1 Title'),
         max_length=255,
         null=True,
         blank=True
     )
     page_title = models.CharField(
-        verbose_name=_('Seo заголовок страницы'),
+        verbose_name=_('Seo Page Title'),
         max_length=255,
         null=True,
         blank=True
     )
     meta_description = models.TextField(
-        verbose_name=_('Мета описание'),
+        verbose_name=_('Meta Description'),
         null=True,
         blank=True
     )
 
     class Meta:
-        verbose_name = _('Услуга')
-        verbose_name_plural = _('Услуги')
+        verbose_name = _('Service')
+        verbose_name_plural = _('Services')
 
     def get_absolute_url(self):
         return reverse('services:service-detail', kwargs={
@@ -108,42 +123,97 @@ class Service(models.Model):
         return f"{self.name}"
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
+        try:
+            # if self.video_url:
+            #     url = self.video_url
+            #     word_to_change = url.replace('watch?v=', 'embed/')
+            #     self.video_url = word_to_change
+            current_language = translation.get_language()
+            if not self.custom_slug:
+                translation.activate('en')
+                if self.name:
+                    self.slug = slugify(self.name)
+                translation.activate('es')
+                if self.name:
+                    self.slug = slugify(self.name)
+                translation.activate(current_language)
+            super().save(*args, **kwargs)
+        except Exception:
+            print(Exception)
+
+
+class ExtraPrice(models.Model):
+    service = models.ForeignKey(
+        to=Service,
+        on_delete=models.CASCADE
+    )
+    name = models.CharField(
+        verbose_name=_('Name'),
+        max_length=155
+    )
+    cost = models.PositiveSmallIntegerField(
+        verbose_name=_('Cost'),
+    )
+
 
 class GalleryImage(models.Model):
     service = models.ForeignKey(
         to="Service",
         on_delete=models.CASCADE,
-        verbose_name=_('Услуга'),
+        verbose_name=_('Service'),
     )
     image = FilerImageField(
         on_delete=models.CASCADE,
-        verbose_name=_('Изображение')
+        verbose_name=_('Image')
     )
     
     class Meta:
-        verbose_name = _('Изображение для галереи')
-        verbose_name_plural = _('Изображения для галереи')
+        verbose_name = _('Service Gallery Image')
+        verbose_name_plural = _('Service Gallery Images')
 
 
 class GalleryVideo(models.Model):
     service = models.ForeignKey(
         to="Service",
         on_delete=models.CASCADE,
-        verbose_name=_('Видео')
+        verbose_name=_('Video')
     )
     url = models.URLField(
         verbose_name=_('URL'),
     )
     
     class Meta:
-        verbose_name = _('Видео для галереи')
-        verbose_name_plural = _('Видео для галереи')
-
+        verbose_name = _('Service Gallery Video')
+        verbose_name_plural = _('Service Gallery Videos')
 
     def save(self, *args, **kwargs):
         url = self.url
         word_to_change = url.replace('watch?v=', 'embed/')
         self.url = word_to_change
         super().save(*args, **kwargs)
+
+
+class ServiceRowPluginModel(CMSPlugin):
+    display_type = models.CharField(
+        max_length=1,
+        verbose_name=_('Display type'),
+        choices=(('S', 'Simple'),('B', 'Blocks'))
+    )
+    fetch_from_db = models.BooleanField(
+        verbose_name=_('Fetch from db?'),
+        default=True
+    )
+    max_count = models.PositiveSmallIntegerField(
+        verbose_name=_('Max'),
+        help_text=_('How much services to display'),
+        null=True,
+        blank=True,
+        default=6
+    )
+
+
+class ServicePluginModel(CMSPlugin):
+    service = models.ForeignKey(
+        to=Service,
+        on_delete=models.CASCADE
+    )

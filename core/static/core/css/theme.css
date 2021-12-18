@@ -1861,6 +1861,25 @@ header.aside_header {
     line-height: 1.9em;
 	font-weight: 400;
 }
+.aside_menu_block_top_inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.aside-language-chooser-wrapper .aside-language-chooser,
+.aside-language-chooser-wrapper .aside-language-chooser a {
+	display: flex;
+}
+
+.aside-language-chooser-wrapper .aside-language-chooser {
+	justify-content: flex-end;
+}
+
+.aside-language-chooser-wrapper .aside-language-chooser a:not(:last-child) {
+	margin-right: 10px;
+}
+
 /* Simple Header */
 .header_holder {
 	display:none;
@@ -8729,6 +8748,7 @@ nav.main_nav ul.sub-menu > li.current-menu-parent > a {
 	color:#fb90b1;
 	font-family:Lato;
 }
+
 .aside_main_nav.overflowed_menu > ul.menu:before,
 .aside_main_nav.overflowed_menu > ul.menu:after {
 	background:#5c656d;
@@ -8761,6 +8781,7 @@ nav.main_nav ul.sub-menu > li.current-menu-parent > a {
 	background: linear-gradient(90deg, #fb90b1 0%, #74f3ef) no-repeat center;
 	background-size:150% 150%;
 }
+
 /* Footer */
 .footer_widgets {
 	background:#ffffff;
@@ -9537,6 +9558,20 @@ body .vc_tta.vc_general.vc_tta-tabs .vc_tta-tab > a * {
 	width: 150px;
 }
 
+.gt3_related_posts {
+	display: flex;
+	align-items: stretch;
+}
+.gt3_related_posts .gt3_related_post_item .gt3_related_post_item_inner,
+.gt3_related_posts .gt3_related_post_item .gt3_related_post_item_inner .gt3_related_post_link,
+.gt3_related_posts .gt3_related_post_item .gt3_related_post_item_inner .gt3_related_post_link .gt3_related_image {
+	height: 100%;
+}
+
+.gt3_related_posts .gt3_related_post .gt3_related_post_item_inner .gt3_related_post_link .gt3_related_image {
+	object-fit: cover;
+}
+
 /*@media only screen and (min-width: 992px) {*/
 /*	.service-icon-wrapper {*/
 /*		display: flex;*/
@@ -9555,3 +9590,44 @@ body .vc_tta.vc_general.vc_tta-tabs .vc_tta-tab > a * {
 /*		height: 100%*/
 /*	}*/
 /*}*/
+
+.home-page-title .home-page-title-description {
+	display:flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.home-page-title .home-page-title-description  p:not(:last-child) {
+	margin: 0 45px 0 0
+}
+
+.home-page-title .home-page-title-description p strong {
+	color: #202020
+}
+
+@media only screen and (max-width:1070px) {
+	.home-page-title .home-page-title-description {
+		flex-direction: column;
+	}
+
+	.home-page-title .home-page-title-description  p:first-child {
+		margin: 0
+	}
+}
+
+.about-us-block em {
+	font-family: "Lato";
+	font-weight: 300;
+}
+
+.about-us h1, .about-us h2, .about-us h3, .about-us h4, .about-us h5, .about-us h6 {
+	font-family: "Lato";
+}
+
+.about-us h5 {
+	font-weight: 400;
+}
+
+.addresses p {
+	margin: 0 0 8px 0;
+}

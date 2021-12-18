@@ -1,7 +1,7 @@
 "use strict";
 
 /* SORTING */
-if (jQuery('.grid_gallery').size() > 0) {
+if (jQuery('.grid_gallery').length > 0) {
 	var $grid_container = jQuery('.grid_gallery');
 }
 
@@ -49,14 +49,14 @@ jQuery(function () {
 
 		if (jQuery('.fs_blog_module').size() > 0) {
 			jQuery('.fs_blog_module').find('img').load(function () {
-				$grid_container.isotope('layout');
+				// $grid_container.isotope('layout');
 			});
 		} else {
 			$grid_container.find('img').load(function () {
-				$grid_container.isotope('layout');
+				// $grid_container.isotope('layout');
 			});
 		}
-		$grid_container.isotope('layout');
+		// $grid_container.isotope('layout');
 	}
 });
 
@@ -67,14 +67,14 @@ jQuery(document).ready(function(){
 	}
 });
 
-jQuery(window).load(function () {
+jQuery(window).on('load', function () {
 	if ($grid_container) {
-		$grid_container.isotope('layout');
+		// $grid_container.isotope('layout');
 	}
 });
 jQuery(window).resize(function () {
 	if ($grid_container) {
-		$grid_container.isotope('layout');
+		// $grid_container.isotope('layout');
 	}
 });
 
@@ -115,13 +115,13 @@ function animateListGrid() {
 }
 
 jQuery(document).on("click", ".grid_load_more", function () {
-	var what_to_append = '',		
+	var what_to_append = '',
 		grid_post_per_page = jQuery(this).parents('.grid_gallery_wrapper').attr('data-perload'),
 		uniqid = jQuery(this).parents('.grid_gallery_wrapper').attr('data-uniqid'),
 		allposts = grid_gal_array['grid_' + uniqid].items.length,
 		overlay = jQuery(this).parents('.grid_gallery_wrapper').find('.grid_gallery').attr('data-overlay');
 	var ins_container = jQuery('.grid_'+uniqid).find('.grid_gallery');
-	
+
 	if (grid_gal_array['grid_' + uniqid].showed >= allposts) {
 		jQuery(this).parent('.gt3_grid_module_button').slideUp(300).addClass('hided_load_more');
 	} else {
@@ -135,7 +135,7 @@ jQuery(document).on("click", ".grid_load_more", function () {
 		for (var i = grid_gal_array['grid_' + uniqid].showed; i <= limit; i++) {
 			if (grid_gal_array['grid_' + uniqid].items[i].slide_type == 'video') {
 				var thishref = grid_gal_array['grid_' + uniqid].items[i].src,
-					thisvideoclass = 'video_zoom';							
+					thisvideoclass = 'video_zoom';
 			} else {
 				var thishref = grid_gal_array['grid_' + uniqid].items[i].img,
 					thisvideoclass = '';
@@ -152,9 +152,9 @@ jQuery(document).on("click", ".grid_load_more", function () {
 			</div><!-- .fw_grid_item -->';
 			grid_gal_array['grid_' + uniqid].showed++;
 		}
-							
+
 		var $newItems = jQuery(what_to_append);
-		
+
 		ins_container.isotope('insert', $newItems, function() {
 			ins_container.find('.grid_gallery').ready(function() {
 				ins_container.isotope('layout');
@@ -168,4 +168,4 @@ jQuery(document).on("click", ".grid_load_more", function () {
 		$grid_container.isotope('layout');
 	}
 	setTimeout(function () {$grid_container.isotope('layout');}, 1000);
-});			
+});

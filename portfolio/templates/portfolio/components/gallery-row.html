@@ -1,0 +1,144 @@
+{% if not instance.stretch %}
+    <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1519984558711">
+        <div class="wpb_column vc_column_container vc_col-sm-12">
+            <div class="vc_column-inner vc_custom_1519984551901">
+                <div class="wpb_wrapper">
+                    <div class="grid_gallery_wrapper  personal_preloader grid_8204  vc_custom_1522223023066 " data-uniqid="8204" data-perload="3">
+                        <div class="grid_gallery personal_preloader masonry_is_off grid_columns3" data-pad="30px" data-perload="3" data-overlay="">
+                                {% if not instance or instance.fetch_from_db %}
+                                        {% for portfolio_item in portfolio_items %}
+                                             <div class="grid-item element">
+                                                <div class="grid_item_inner">
+                                                    <a class="swipebox" href="{{ portfolio_item.image.url }}" title=""></a>
+                                                    <img src="{{ portfolio_item.image.url }}" alt="{{ portfolio_item.image.alt_text }}" class="grid_gallery_thmb">
+                                                    <div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>
+                                                    <div class="img-preloader"></div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% else %}
+                                        {% for portfolio_item in instance.child_plugin_instances %}
+                                            <div class="grid-item element">
+                                                <div class="grid_item_inner">
+                                                    <a class="swipebox" href="{{ portfolio_item.image.url }}" title=""></a>
+                                                    <img src="{{ portfolio_item.image.url }}" alt="{{ portfolio_item.image.alt_text }}" class="grid_gallery_thmb">
+                                                    <div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>
+                                                    <div class="img-preloader"></div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                        <div class="gt3_grid_module_button"><a class="shortcode_button grid_load_more" href="javascript:void(0)" style="display: none;"><span>Load More</span></a></div>
+                    </div>
+                    <!-- .grid_gallery_wrapper -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+    <div data-vc-full-width="true" data-vc-full-width-init="true"
+         {% if instance.stretch %}data-vc-stretch-content="true"{% endif %}
+         class="vc_row wpb_row vc_row-fluid {% if instance.stretch %}vc_row-no-padding{% endif %} ">
+        <div class="wpb_column vc_column_container vc_col-sm-12">
+            <div class="vc_column-inner">
+                <div class="wpb_wrapper">
+                    <div class="vc_row">
+                        <div class="vc_col-sm-12 gt3_module_portfolio">
+    {#                        <div class="filter_block">#}
+    {#                            <ul id="options" class="splitter">#}
+    {#                                <li>#}
+    {#                                    <ul class="optionset" data-option-key="filter">#}
+    {#                                        <li class="selected"><a#}
+    {#                                                href="{% page_url request.current_page.get_root %}"#}
+    {#                                                data-option-value="*"#}
+    {#                                                class="selected">All</a>#}
+    {#                                        </li>#}
+    {#                                        <li><a data-option-value=".brow-coloring"#}
+    {#                                               href="{% page_url request.current_page.get_root %}"#}
+    {#                                               title="View all post filed under brow coloring ">brow#}
+    {#                                            coloring</a>#}
+    {#                                        </li>#}
+    {#                                        <li><a data-option-value=".brow-shape"#}
+    {#                                               href="{% page_url request.current_page.get_root %}"#}
+    {#                                               title="View all post filed under brow shape ">brow#}
+    {#                                            shape</a>#}
+    {#                                        </li>#}
+    {#                                        <li><a data-option-value=".microbladind"#}
+    {#                                               href="{% page_url request.current_page.get_root %}"#}
+    {#                                               title="View all post filed under microbladind ">microbladind</a>#}
+    {#                                        </li>#}
+    {#                                        <li><a data-option-value=".permanent-brows"#}
+    {#                                               href="{% page_url request.current_page.get_root %}"#}
+    {#                                               title="View all post filed under permanent brows ">permanent#}
+    {#                                            brows</a>#}
+    {#                                        </li>#}
+    {#                                    </ul>#}
+    {#                                </li>#}
+    {#                            </ul>#}
+    {#                        </div>#}
+                            <div class="spacing_beetween_items_0 hover_type_center text_align-center">
+                                <div class="portfolio_button text_align-right"><a
+                                        href="javascript:void(0)"
+                                        class="load_more_works shortcode_button"><span>See More</span></a>
+                                </div>
+                                <div class="sorting_block ajax_sorting_block image-grid"
+                                     id="list" data-posts_per_page="8" data-view_type="grid"
+                                     data-posts_per_line="4"
+                                     data-post_type_terms="brow-coloring brow-shape microbladind permanent-brows"
+                                     data-order="DESC" data-orderby="date"
+                                     data-image_proportions="square"
+                                     data-items_per_click="4" data-already_showed="8"
+                                     style="position: relative; height: 789px;">
+                                    {% if not instance or instance.fetch_from_db %}
+                                        {% for portfolio_item in portfolio_items %}
+                                            <div class="portfolio_columns_4 element">
+                                                <div class="portfolio_item">
+                                                    <div class="portf_item_inner">
+                                                        <div class="portfolio_overlay"></div>
+                                                        <div class="portf_img">
+                                                            <img
+                                                                src="{{ portfolio_item.image.url }}"
+                                                                alt="{{ portfolio_item.image.alt_text }}">
+                                                        </div>
+                                                        <div class="portf_descr">
+                                                            <h3>
+                                                                <a class="swipebox" href="{{ portfolio_item.image.url }}">{{ portfolio_item.name }}</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% else %}
+                                        {% for portfolio_item in instance.child_plugin_instances %}
+                                            <div class="portfolio_columns_4 element">
+                                                <div class="portfolio_item">
+                                                    <div class="portf_item_inner">
+                                                        <div class="portfolio_overlay"></div>
+                                                        <div class="portf_img">
+                                                            <img
+                                                                src="{{ portfolio_item.image.url }}"
+                                                                alt="{{ portfolio_item.image.alt_text }}">
+                                                        </div>
+                                                        <div class="portf_descr">
+                                                            <h3>
+                                                                <a class="swipebox" href="{{ portfolio_item.image.url }}">{{ portfolio_item.name }}</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<div class="vc_row-full-width vc_clearfix"></div>

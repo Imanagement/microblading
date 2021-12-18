@@ -1,0 +1,17 @@
+{% load cms_tags %}
+<div class="vc_column_container
+    {% if instance.xs %}vc_col-xs-{{ instance.xs }}{% endif %} {% if instance.sm %}vc_col-sm-{{ instance.sm }}{% endif %}
+    {% if instance.md %}vc_col-md-{{ instance.md }}{% endif %} {% if instance.lg %}vc_col-lg-{{ instance.lg }}{% endif %}{% if instance.offset_xs %}vc_col-xs-offset-{{ instance.offset_xs }}{% endif %}{% if instance.offset_sm %}vc_col-xs-offset-{{ instance.offset_sm }}{% endif %}
+    {% if instance.offset_md %}vc_col-xs-offset-{{ instance.offset_md }}{% endif %}
+    {% if instance.offset_lg %}vc_col-xs-offset-{{ instance.offset_lg }}{% endif %}
+    {% if instance.hide_xs %}vc_hiden-xs{% endif %}
+    {% if instance.hide_xs %}vc_hiden-sm{% endif %}
+    {% if instance.hide_xs %}vc_hiden-md{% endif %}
+    {% if instance.hide_xs %}vc_hiden-lg{% endif %}
+">
+    <div class="vc_column-inner">
+        {% for child_plugin_instance in instance.child_plugin_instances %}
+            {% render_plugin child_plugin_instance %}
+        {% endfor %}
+    </div>
+</div>

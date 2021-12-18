@@ -1,0 +1,10 @@
+<div class="menu-useful-links-container widget_nav_menu">
+    <ul id="menu-useful-links" class="menu">
+        {% for service in services %}
+            <li id="menu-item-{{ service.id }}" class="menu-item menu-item-type-post_type menu-item-object-post {{ service.id }}">
+                <a href="{{ service.get_absolute_url }}">{{ service.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+

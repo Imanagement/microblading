@@ -1,0 +1,74 @@
+{% load cms_tags static sekizai_tags %}
+<!DOCTYPE html>
+<html class="with_aside_header" lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="{% block meta %}{% endblock %}">
+        {% include 'core/components/head.html' %}
+        {% block extra_css %}{% endblock %}
+        {% render_block 'css' %}
+
+    </head>
+
+    <body class="home page-template-default page page-id-1137 theme-browcraft woocommerce-js wpb-js-composer js-comp-ver-6.6.0 vc_responsive gt3_has_aside_menu">
+        {% cms_toolbar %}
+        <div class="header-custom-my">
+            {% block navigation %}
+                {% static_placeholder 'navigation' %}
+            {% endblock %}
+        </div>
+{#        {% block header %}#}
+{#            {% include 'core/components/header.html' %}#}
+{#        {% endblock %}#}
+        <div class="site_wrapper fadeOnLoad">
+                <div class="main_wrapper">
+                    {% block page_title %}
+                        {% placeholder 'header' %}
+                    {% endblock %}
+                    <div class="container">
+                        <div class="content_block row no_sidebar">
+                            <div class="fl-container">
+                                <div class="posts-block">
+                                    <div class="contentarea">
+                                        {% block content %}
+                                            {% placeholder 'content' %}
+                                        {% endblock %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+{#        {% block footer %}#}
+{#            {% include 'core/components/footer.html' %}#}
+{#        {% endblock %}#}
+        <footer>
+            <div class="footer_widgets fadeOnLoad">
+                <div class="container">
+                    <div class="footer_widgets_wrapper">
+                        {% static_placeholder 'footer' %}
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% include 'core/components/scripts.html' %}
+
+        {% block additional_scripts %}{% endblock %}
+        {% render_block 'js' %}
+{#        {% if request.toolbar and request.toolbar.edit_mode_active %}#}
+{#            <script>#}
+{#                CMS.$(window).on('cms-content-refresh', function () {#}
+{#                    location.reload()#}
+{#                });#}
+{#            </script>#}
+{#        {% endif %}#}
+        {#    <script src="{% static 'core/js/albums_gallery.js' %}"></script>#}
+        {#    <script src="{% static 'core/js/jquery.countdown.min.js' %}"></script>#}
+        {#    <script src="{% static 'core/js/sorting.js' %}"></script>#}
+        {#    <script src="{% static 'core/js/sorting_gallery.js' %}"></script>#}
+        {#    <script src="{% static 'core/js/sorting_packery.js' %}"></script>#}
+
+    </body>
+</html>

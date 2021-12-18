@@ -1,26 +1,27 @@
-from django.shortcuts import render, get_object_or_404
+from django.http import Http404
+from django.shortcuts import render, get_object_or_404, redirect
 
-from core.utils import get_full_context, get_page_seo
 from testimonials.models import Testimonial
-from core.models import FAQ, Page
+from core.models import FAQ
 from .models import Service
 
 
 def service_list(request):
     services = Service.objects.all()
     faq = FAQ.objects.filter(service__isnull=True)[:6]
-    page = get_page_seo(slug='services')
     context = {
-        'page': page,
         "services": services,
         "faq": faq
     }
-    context = get_full_context(context)
     return render(request, 'services/pages/services.html', context)
 
 
 def service_detail(request, slug):
-    service = get_object_or_404(Service, slug=slug)
+    try:
+        service = get_object_or_404(Service, slug=slug)
+    except Http404:
+        return redirect('/')
+    extra_prices = service.extraprice_set.all()
     testimonials = Testimonial.objects.all()[:9]
     gallery_images = service.galleryimage_set.all().select_related('image')
     gallery_videos = service.galleryvideo_set.all()
@@ -30,7 +31,7 @@ def service_detail(request, slug):
         'testimonials': testimonials,
         'gallery_images': gallery_images,
         'gallery_videos': gallery_videos,
-        'faq': faq
+        'faq': faq,
+        'extra_prices': extra_prices,
     }
-    context = get_full_context(context)
     return render(request, 'services/pages/service.html', context)

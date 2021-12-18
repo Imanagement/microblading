@@ -1,49 +1,3 @@
-{% load cache static %}
-{% cache 10000 testimonials %}
-<div class="vc_row wpb_row vc_row-fluid">
-	<div class="wpb_column vc_column_container vc_col-sm-9">
-		<div class="vc_column-inner">
-			<div class="wpb_wrapper">
-				<div class="gt3_spacing">
-					<div class="gt3_spacing-height gt3_spacing-height_default" style="height:93px;"></div>
-				</div>
-				<h6 style="color: #fb90b1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">TESTIMONIALS</h6>
-				<h2 style="color: #202020;line-height: 1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">What Our Clients Have to Say</h2>
-				<div class="gt3_spacing">
-					<div class="gt3_spacing-height gt3_spacing-height_default" style="height:16px;"></div>
-				</div>
-				<div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1522222428277">
-					<figure class="wpb_wrapper vc_figure">
-						<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="72" height="6" src="{% static 'core/img/divider.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
-					</figure>
-				</div>
-				<div class="gt3_spacing">
-					<div class="gt3_spacing-height gt3_spacing-height_default" style="height:19px;"></div>
-				</div>
-				<div class="wpb_text_column wpb_content_element ">
-					<div class="wpb_wrapper">
-						<p style="line-height: 30px">Microblading is a semi-permanent eyebrow procedure that yields natural, crisp strokes that resemble hair. It is done by hand, using a very fine blade to deposit a small amount of ink into the skin. What our clients say about this procedure</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="wpb_column vc_column_container vc_col-sm-3">
-		<div class="vc_column-inner">
-			<div class="wpb_wrapper">
-				<div class="gt3_spacing gt3_spacing-height_mobile-on">
-					<div class="gt3_spacing-height gt3_spacing-height_default" style="height:33px;"></div>
-					<div class="gt3_spacing-height gt3_spacing-height_mobile" style="height:0px;"></div>
-				</div>
-				<div class="wpb_single_image wpb_content_element vc_align_right">
-					<figure class="wpb_wrapper vc_figure">
-						<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="246" height="164" src="{% static 'core/img/img_services_03.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
-					</figure>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 <div class="vc_row wpb_row vc_row-fluid">
 	<div class="wpb_animate_when_almost_visible wpb_slideInLeft slideInLeft wpb_column vc_column_container vc_col-sm-12 wpb_start_animation animated">
 		<div class="vc_column-inner vc_custom_1519637556075">
@@ -55,31 +9,33 @@
 					<div class="vc_col-sm-12 module_testimonial  active-carousel type1 " data-slides-per-line="3" data-slider-fade="" data-autoplay-time="4000">
 						<div class="module_content testimonials_list items3">
 							<div class="testimonials_rotator slick-slider" role="toolbar">
-                                {% for testimonial in testimonials %}
-                                    {% if testimonial.image_type %}
-                                        <div class="testimonials_item slick-slide" id="" aria-hidden="true">
-                                            <div class="testimonial_item_wrapper">
-                                                    <div class="testimonials_content">
-                                                        <img src="{{ testimonial.image.url }}" alt="">
-                                                    </div>
+                                {% if testimonials %}
+                                    {% for testimonial in testimonials %}
+                                        {% if testimonial.image_type %}
+                                            <div class="testimonials_item slick-slide" id="" aria-hidden="true">
+                                                <div class="testimonial_item_wrapper">
+                                                        <div class="testimonials_content">
+                                                            <img src="{{ testimonial.image.url }}" alt="">
+                                                        </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    {% else %}
-                                        <div class="testimonials_item slick-slide" id="" aria-hidden="true">
-                                            <div class="testimonial_item_wrapper">
-                                                <div class="testimonials_content">
-                                                    <div class="testimonials_photo"><img class="testimonials_round_img" src="{{ testimonial.image.url }}" alt="testimonials_photo" style="width:70px; height:70px;"></div>
-                                                    <div class="testimonials_title">{{ testimonial.name }}
-                                                        <div class="testimonials_author_position">{{ testimonial.position }}</div>
-                                                    </div>
-                                                    <div class="testimonials-text" style=" font-size: 16px; line-height: 24px;">
-                                                        <p style="text-align: left">{{ testimonial.testimonial }}</p>
+                                        {% else %}
+                                            <div class="testimonials_item slick-slide" id="" aria-hidden="true">
+                                                <div class="testimonial_item_wrapper">
+                                                    <div class="testimonials_content">
+                                                        <div class="testimonials_photo"><img class="testimonials_round_img" src="{{ testimonial.image.url }}" alt="testimonials_photo" style="width:70px; height:70px;"></div>
+                                                        <div class="testimonials_title">{{ testimonial.name }}
+                                                            <div class="testimonials_author_position">{{ testimonial.position }}</div>
+                                                        </div>
+                                                        <div class="testimonials-text" style=" font-size: 16px; line-height: 24px;">
+                                                            <p style="text-align: left">{{ testimonial.testimonial }}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    {% endif %} 
-                                {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -89,4 +45,3 @@
 		</div>
 	</div>
 </div>
-{% endcache %}
