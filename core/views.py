@@ -6,26 +6,7 @@ from blog.models import Post
 from portfolio.models import PortfolioItem
 from services.models import Service
 from .forms import ContactUsForm
-from .models import ContactUsModel, Page
-from .utils import get_full_context, get_page_seo
-
-
-def index(request):
-    services = Service.objects.all()
-    services_package = services[:3]
-    services_sd_package = services[:3:-1]
-    portfolio_items = PortfolioItem.objects.all()[:8]
-    page = get_page_seo(main_page=True)
-
-    context = {
-        'page': page,
-        'services': services_package,
-        'services_sd_package': services_sd_package,
-        'popular_services': services_package,
-        'portfolio_items': portfolio_items
-    }
-    context = get_full_context(context)
-    return render(request, 'core/pages/home.html', context)
+from .models import ContactUsModel
 
 
 def contact_us_view(request):
@@ -50,22 +31,6 @@ def contact_us_view(request):
             return JsonResponse({"message": "Our specialists will contact you as soon as possible"})
         except Exception:
             return JsonResponse({"message": "Something went wrong, please contact our specialists"})
-    else:
-        form = ContactUsForm()
-    context = {
-        "page": get_page_seo(slug='contact-us'),
-        "form": form
-    }
-    context = get_full_context(context)
-    return render(request, 'core/pages/contact-us.html', context)
-
-
-def about_us_view(request):
-    context = {
-        'page': get_page_seo(slug='about-us')
-    }
-    context = get_full_context(context)
-    return render(request, 'core/pages/about-us.html', context)
 
 
 def search_view(request):

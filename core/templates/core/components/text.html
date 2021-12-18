@@ -1,0 +1,6 @@
+{% load cms_tags %}
+<div class="{% if instance.animated %}vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp{% endif %}">
+    {% for child_plugin_instance in instance.child_plugin_instances %}
+        {% render_plugin child_plugin_instance %}
+    {% endfor %}
+</div>

@@ -390,7 +390,7 @@ function gt3_fullWidthRow() {
 		var gap = 100;
 	}
 	if ( gap && jQuery('.aside_menu_block').length ){
-		var $elements = jQuery('[data-vc-full-width="true"]');
+		var $elements = jQuery('[{% page_url request.current_page.get_root %}="true"]');
 		jQuery.each($elements, function(key, item) {
 			var $el = jQuery(this);
 			$el.addClass("vc_hidden");

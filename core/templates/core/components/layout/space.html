@@ -1,0 +1,23 @@
+<div class="gt3_spacing">
+    {% if instance.xs %}
+        <div class="gt3_spacing-height gt3_spacing-height_default vc_hidden-sm vc_hidden-md vc_hidden-lg" style="height:{{ instance.xs }}px;"></div>
+    {% endif %}
+    {% if instance.sm %}
+        <div class="gt3_spacing-height gt3_spacing-height_default vc_hidden-xs vc_hidden-md vc_hidden-lg" style="height:{{ instance.sm }}px;"></div>
+    {% endif %}
+    {% if instance.md %}
+        <div class="gt3_spacing-height gt3_spacing-height_default vc_hidden-xs vc_hidden-sm vc_hidden-lg" style="height:{{ instance.md }}px;"></div>
+    {% endif %}
+    {% if instance.lg %}
+        <div class="gt3_spacing-height gt3_spacing-height_default vc_hidden-xs vc_hidden-sm vc_hidden-md " style="height:{{ instance.lg }}px;"></div>
+    {% endif %}
+        <div class="gt3_spacing-height
+            gt3_spacing-height_default
+            {% if instance.xs %}vc_hidden-xs{% endif %}
+            {% if instance.sm %}vc_hidden-sm{% endif %}
+            {% if instance.md %}vc_hidden-md{% endif %}
+            {% if instance.lg %}vc_hidden-lg{% endif %}"
+             style="height:{{ instance.lg }}px;"
+        ></div>
+
+</div>

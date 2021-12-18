@@ -59,9 +59,12 @@
             );
         }),
         (Carousel.prototype.next = function () {
+            console.log(this)
+            if (this.current_index > (this.items_count - this.options['perView'] - 1)) return this.to(0)
             if (!this.sliding) return this.slide("next");
         }),
         (Carousel.prototype.prev = function () {
+            if (this.current_index == 0) return this.to(this.items_count - this.options['perView'])
             if (!this.sliding) return this.slide("prev");
         }),
         (Carousel.prototype.slide = function (type, fallback) {

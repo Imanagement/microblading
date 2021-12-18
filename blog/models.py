@@ -1,4 +1,5 @@
-from ckeditor.fields import RichTextField
+from djangocms_text_ckeditor.fields import HTMLField
+from cms.models.pluginmodel import CMSPlugin
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
@@ -10,7 +11,7 @@ from re import compile, sub
 
 class Category(models.Model):
     name = models.CharField(
-        verbose_name=_('Название'),
+        verbose_name=_('Name'),
         max_length=55
     )
     slug = models.SlugField(
@@ -20,26 +21,26 @@ class Category(models.Model):
     )
     # Seo
     h1_title = models.CharField(
-        verbose_name=_('H1 Заголовок'),
+        verbose_name=_('H1 Title'),
         max_length=255,
         null=True,
         blank=True
     )
     page_title = models.CharField(
-        verbose_name=_('Seo заголовок страницы'),
+        verbose_name=_('Seo Page Title'),
         max_length=255,
         null=True,
         blank=True
     )
     meta_description = models.TextField(
-        verbose_name=_('Мета описание'),
+        verbose_name=_('Meta Description'),
         null=True,
         blank=True
     )
 
     class Meta:
-        verbose_name = _('Категория')
-        verbose_name_plural = _('Категории')
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
 
     def __str__(self):
         return f"{self.name}"
@@ -57,14 +58,14 @@ class Category(models.Model):
 class Post(models.Model):
     category = models.ForeignKey(
         to="Category",
-        verbose_name=_('Категория'),
+        verbose_name=_('Category'),
         on_delete=models.SET_NULL,
         null=True,
         blank=True
     )
     author = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
-        verbose_name=_('Автор'),
+        verbose_name=_('Author'),
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
@@ -72,7 +73,7 @@ class Post(models.Model):
 
     )
     name = models.CharField(
-        verbose_name=_('Название'),
+        verbose_name=_('Name'),
         max_length=155
     )
     slug = models.SlugField(
@@ -81,47 +82,47 @@ class Post(models.Model):
         blank=True
     )
     image = FilerImageField(
-        verbose_name=_('Изображение'),
+        verbose_name=_('Image'),
         on_delete=models.SET_NULL,
         null=True,
         blank=True
     )
-    body = RichTextField(
-        verbose_name=_('Содержимое'),
+    body = HTMLField(
+        verbose_name=_('Content'),
         null=True,
         blank=True
     )
     created = models.DateTimeField(
-        verbose_name=_('Дата создания'),
+        verbose_name=_('Created Date'),
         auto_now_add=True
     )
     updated = models.DateTimeField(
-        verbose_name=_('Последнее обновление'),
+        verbose_name=_('Last Update'),
         auto_now=True
     )
 
     # Seo
     h1_title = models.CharField(
-        verbose_name=_('H1 Заголовок'),
+        verbose_name=_('H1 Title'),
         max_length=255,
         null=True,
         blank=True
     )
     page_title = models.CharField(
-        verbose_name=_('Seo заголовок страницы'),
+        verbose_name=_('Seo Page Title'),
         max_length=255,
         null=True,
         blank=True
     )
     meta_description = models.TextField(
-        verbose_name=_('Мета описание'),
+        verbose_name=_('Meta Description'),
         null=True,
         blank=True
     )
 
     class Meta:
-        verbose_name = _('Пост')
-        verbose_name_plural = _('Посты')
+        verbose_name = _('Post')
+        verbose_name_plural = _('Posts')
         ordering = ['-created']
 
     def get_absolute_url(self):
@@ -148,3 +149,11 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super().save(*args, **kwargs)
+
+
+class BlogRecentItemPluginModel(CMSPlugin):
+    post = models.ForeignKey(
+        to="Post",
+        on_delete=models.SET_NULL,
+        null=True,
+    )

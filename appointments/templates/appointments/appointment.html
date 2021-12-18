@@ -1,5 +1,5 @@
-{% load static %}
-<div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid appointment-section vc_row-has-fill" style="position: relative; left: -240px; box-sizing: border-box; width: 1680px; padding-left: 240px; padding-right: 240px; background-image:url({% static 'appointments/call_to_action.jpg' %})">
+{% load static cms_tags%}
+<div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid appointment-section vc_row-has-fill" style="background-image:url({% static 'appointments/call_to_action.jpg' %})">
   <div class="wpb_column vc_column_container vc_col-sm-12">
      <div class="vc_column-inner">
         <div class="wpb_wrapper">
@@ -12,7 +12,7 @@
                        </header>
                     </div>
                     <div class="vc_cta3-actions">
-                       <div class="vc_btn3-container vc_btn3-right"><a style="background-color:#ffffff; color:#fb90b1;" class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-round vc_btn3-style-custom" href="{% url 'core:contact-us' %}" title="make an appoinment">make an appoinment</a></div>
+                       <div class="vc_btn3-container vc_btn3-right"><a style="background-color:#ffffff; color:#fb90b1;" class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-round vc_btn3-style-custom" href="{% page_url request.current_page.get_root %}" title="make an appoinment">make an appoinment</a></div>
                     </div>
                  </div>
               </div>
@@ -21,3 +21,4 @@
      </div>
   </div>
 </div>
+<div class="vc_row-full-width vc_clearfix"></div>

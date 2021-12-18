@@ -1,0 +1,149 @@
+{% load cms_tags static %}
+<div data-vc-full-width="true" data-vc-full-width-init="true"
+     data-vc-stretch-content="true"
+     class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_row-no-padding"
+     style="background-image: url({{ instance.background_image.url }}) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;"
+>
+    <div class="wpb_column vc_column_container vc_col-sm-12 home-page-title">
+        <div class="vc_column-inner vc_custom_1521112073500">
+            <div class="wpb_wrapper">
+                <div class="gt3_spacing">
+                    <div class="gt3_spacing-height gt3_spacing-height_default"></div>
+                </div>
+                <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1522330474442 vc_row-o-equal-height vc_row-o-content-middle vc_row-flex">
+                    <div class="wpb_column vc_column_container vc_col-sm-3 vc_col-md-2 vc_col-xs-12 vc_hidden-xs">
+                        <div class="vc_column-inner vc_custom_1521710628281">
+                            <div class="wpb_wrapper">
+                                <div class="wpb_text_column wpb_content_element  vc_custom_1522324083020">
+                                    <div class="wpb_wrapper">
+                                        <p>
+                                            <a href="{% page_url request.current_page.get_root %}"><img
+                                                    loading="lazy"
+                                                    class="alignnone size-full wp-image-2333"
+                                                    src="{{ instance.logo.url }}"
+                                                    alt="" width="129" height="65"></a>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-10 vc_col-sm-offset-0 vc_col-xs-12">
+                        <div class="vc_column-inner vc_custom_1523885003728">
+                            <div class="wpb_wrapper">
+                                <div class="wpb_text_column wpb_content_element  vc_custom_1523884995586">
+                                    <div class="wpb_wrapper home-page-title-description">
+                                        {% if addresses %}
+                                            {% for address in addresses %}
+                                                {% autoescape off %}
+                                                    {{ address.text }}
+                                                {% endautoescape %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gt3_spacing gt3_spacing-height_mobile-on">
+                    <div class="gt3_spacing-height gt3_spacing-height_default"
+                         style="height:128px;"></div>
+                    <div class="gt3_spacing-height gt3_spacing-height_mobile"
+                         style="height:0px;"></div>
+                </div>
+                {% for child_plugin_instance in instance.child_plugin_instances %}
+                    {% render_plugin child_plugin_instance %}
+                {% endfor %}
+
+{#                <div class="vc_row wpb_row vc_inner vc_row-fluid">#}
+{#                    <div class="wpb_column vc_column_container vc_col-sm-6">#}
+{#                        <div class="vc_column-inner">#}
+{#                            <div class="wpb_wrapper"></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-sm-offset-0 vc_col-xs-offset-7 vc_col-xs-5 vc_hidden-xs">#}
+{#                        <div class="vc_column-inner vc_custom_1523884719271">#}
+{#                            <div class="wpb_wrapper">#}
+{#                                <div class="wpb_single_image wpb_content_element vc_align_right">#}
+{##}
+{#                                    <figure class="wpb_wrapper vc_figure">#}
+{#                                        <div class="vc_single_image-wrapper   vc_box_border_grey">#}
+{#                                            <img width="699" height="341"#}
+{#                                                 src="{% static 'core/img/rev_slider_02.png' %}"#}
+{#                                                 class="vc_single_image-img attachment-full"#}
+{#                                                 alt="" loading="lazy"#}
+{#                                                 sizes="(max-width: 699px) 100vw, 699px">#}
+{#                                        </div>#}
+{#                                    </figure>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1521710129432">#}
+{#                    <div class="wpb_column vc_column_container vc_col-sm-7">#}
+{#                        <div class="vc_column-inner">#}
+{#                            <div class="wpb_wrapper"></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="wpb_column vc_column_container vc_col-sm-5 vc_col-sm-offset-0 vc_col-xs-offset-7 vc_col-xs-5">#}
+{#                        <div class="vc_column-inner">#}
+{#                            <div class="wpb_wrapper">#}
+{#                                <div class="wpb_text_column wpb_content_element  vc_custom_1523886036227">#}
+{#                                    <div class="wpb_wrapper">#}
+{#                                        <p style="font-size: 18px;line-height: 36px;color: #52525e;text-align: right">#}
+{#                                            Eyebrow microblading is the art of creating#}
+{#                                            fuller thicker eyebrows through the use if a#}
+{#                                            manual tattooing technique</p>#}
+{##}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="gt3_spacing gt3_spacing-height_mobile-on">#}
+{#                    <div class="gt3_spacing-height gt3_spacing-height_default"#}
+{#                         style="height:24px;"></div>#}
+{#                    <div class="gt3_spacing-height gt3_spacing-height_mobile"#}
+{#                         style="height:0px;"></div>#}
+{#                </div>#}
+{#                <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1521710185481">#}
+{#                    <div class="wpb_column vc_column_container vc_col-sm-4 vc_col-md-6">#}
+{#                        <div class="vc_column-inner">#}
+{#                            <div class="wpb_wrapper"></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="text_align-right wpb_column vc_column_container vc_col-sm-8 vc_col-md-6 vc_col-xs-12">#}
+{#                        <div class="vc_column-inner">#}
+{#                            <div class="wpb_wrapper">#}
+{#                                <div class="gt3_module_button gt3_btn_noreverse button_alignment_inline  ">#}
+{#                                    <a class="shortcode_button has_hover button_size_normal "#}
+{#                                       href="{% page_url "contact-us" %}"><span#}
+{#                                            class="hide_btn_arrow">Get Quote</span></a>#}
+{#                                </div>#}
+{#                                <div class="gt3_module_button gt3_btn_noreverse button_alignment_inline  ">#}
+{#                                    <a class="shortcode_button has_hover button_size_normal  vc_custom_1523347075392"#}
+{#                                       href="{% page_url "contact-us" %}"><span#}
+{#                                            class="hide_btn_arrow">book now</span></a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="gt3_spacing gt3_spacing-height_mobile-on">#}
+{#                    <div class="gt3_spacing-height gt3_spacing-height_default"#}
+{#                         style="height:140px;"></div>#}
+{#                    <div class="gt3_spacing-height gt3_spacing-height_mobile"#}
+{#                         style="height:40px;"></div>#}
+{#                </div>#}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="vc_row-full-width vc_clearfix"></div>

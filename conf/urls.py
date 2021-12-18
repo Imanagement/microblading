@@ -13,19 +13,28 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, re_path
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
+from django.views.i18n import JavaScriptCatalog
 
-urlpatterns = [
+admin.autodiscover()
+
+urlpatterns = i18n_patterns(
+    re_path(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
+)
+
+urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),
-    path('services/', include('services.urls')),
-    path('gallery/', include('portfolio.urls')),
-    path('blog/', include('blog.urls'))
-]
+    path('', include('cms.urls')),
+    path('core', include('core.urls')),
+    # path('services/', include('services.urls')),
+    # path('gallery/', include('portfolio.urls')),
+    # path('blog/', include('blog.urls'))
+)
 
 if settings.DEBUG:
     urlpatterns += [url(r'^silk/', include('silk.urls', namespace='silk'))]

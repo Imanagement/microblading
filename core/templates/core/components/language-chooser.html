@@ -1,0 +1,6 @@
+{% load i18n menu_tags %}
+{% if flags|length > 1 %}
+    {% for flag in flags %}
+        <a href="{% page_language_url flag.language %}"><img width=50 height=50 src="{{ flag.image.url }}" alt=""></a>
+    {% endfor %}
+{% endif %}

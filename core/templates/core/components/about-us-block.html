@@ -1,13 +1,15 @@
 {% load static %}
-<div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1522315319830 vc_row-has-fill" style="position: relative; left: -231px; box-sizing: border-box; width: 1662px; padding-left: 231px; padding-right: 231px;">
+<div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1522315319830 vc_row-has-fill about-us-block" style="position: relative; left: -231px; box-sizing: border-box; width: 1662px; padding-left: 231px; padding-right: 231px;">
     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-6 vc_col-xs-12">
        <div class="vc_column-inner">
           <div class="wpb_wrapper">
              <div class="gt3_spacing">
                 <div class="gt3_spacing-height gt3_spacing-height_default" style="height:73px;"></div>
              </div>
-             <h6 style="color: #fb90b1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">ABOUT US</h6>
-             <h2 style="color: #202020;line-height: 1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">We are Eyebrows Artists</h2>
+             <h6 style="color: #fb90b1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">
+                 {{ instance.subtitle }}</h6>
+             <h2 style="color: #202020;line-height: 1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">
+                 {{ instance.title }}</h2>
              <div class="gt3_spacing">
                 <div class="gt3_spacing-height gt3_spacing-height_default" style="height:16px;"></div>
              </div>
@@ -16,45 +18,10 @@
                    <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="72" height="6" src="{% static 'core/img/divider.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
                 </figure>
              </div>
-             <div class="wpb_text_column wpb_content_element  vc_custom_1520333768616">
-                <div class="wpb_wrapper">
-                   <h3 style="color: #202020;font-family: 'Lato';font-weight: 300"><em>Your word isn’t perfect. But your eyebrows can be!</em></h3>
-                </div>
-             </div>
-             <div class="gt3_spacing">
-                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:13px;"></div>
-             </div>
-             <div style="font-size: 16px;line-height: 30px;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp vc_custom_1520333168665 wpb_start_animation animated">Hi, my name is Ella, I intend to become a TOP Master in New York, then in the USA
-If you are seeking a eyebrow/eyelash enhancement or skin care salon that will provide you with the royal treatment and professional service, look no further! Visit us at Allesthetics where we provide you with top notch service at affordable prices. We understand the needs of each individual and we strive our best to make your experience pleasurable and comfortable. Our team is dedicated to creating a sleek, welcoming sanctuary environment where you will receive nothing less than VIP service on each and every visit.</div>
-             <div class="gt3_spacing">
-                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:32px;"></div>
-             </div>
-             <div class="vc_row wpb_row vc_inner vc_row-fluid">
-                <div class="wpb_column vc_column_container vc_col-sm-6">
-                   <div class="vc_column-inner">
-                      <div class="wpb_wrapper">
-                         <div class="wpb_text_column wpb_content_element  vc_custom_1520333565127">
-                            <div class="wpb_wrapper">
-                               <h5 style="color: #202020;font-size: 20px;font-weight: 400;font-family: 'Lato';margin-bottom: 3px">Ella,</h5>
-                               <h5 style="color: #202020;font-family: 'Lato';font-weight: 300">Founder Allesthetics Studio</h5>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-                <div class="wpb_column vc_column_container vc_col-sm-6">
-                   <div class="vc_column-inner">
-                      <div class="wpb_wrapper">
-                         <div class="gt3_spacing">
-                            <div class="gt3_spacing-height gt3_spacing-height_default" style="height:9px;"></div>
-                         </div>
-                         <div class="wpb_text_column wpb_content_element ">
-                            <div class="wpb_wrapper">
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
+             <div class="wpb_text_column wpb_content_element">
+                {% autoescape off %}
+                    {{ instance.content }}
+                {% endautoescape %}
              </div>
           </div>
        </div>
@@ -67,7 +34,7 @@ If you are seeking a eyebrow/eyelash enhancement or skin care salon that will pr
              </div>
              <div class="wpb_single_image wpb_content_element vc_align_right">
                 <figure class="wpb_wrapper vc_figure">
-                   <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="571" height="577" src="{% static 'core/img/img_about_us_01.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+                   <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="571" height="577" src="{{ instance.image.url }}" class="vc_single_image-img attachment-full" alt="{{ instance.image.alt_text }}" loading="lazy"></div>
                 </figure>
              </div>
              <div class="gt3_spacing">

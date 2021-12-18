@@ -12,6 +12,5 @@ class PortfolioListView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context['page'] = get_page_seo(slug='gallery')
         context = get_full_context(context)
         return context
