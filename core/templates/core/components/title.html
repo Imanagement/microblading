@@ -1,7 +1,7 @@
 {% load static cms_tags %}
 <div class="vc_row wpb_row vc_inner vc_row-fluid">
     <div class="wpb_column vc_column_container {% if instance.image %}vc_col-sm-9{% else %}vc_col-sm-12{% endif %} vc_col-has-fill">
-        <div class="vc_column-inner {% if isntance.with_bg_image %}vc_custom_1522242545757{% endif %}">
+        <div class="vc_column-inner {% if instance.with_bg_image %}vc_custom_1522242545757{% endif %}">
             <div class="wpb_wrapper">
                 <h6 style="color: #fb90b1;{% if instance.text_align == "C" %}text-align: center{% else %}text-align: left;{% endif %}" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">
                     {{ instance.subtitle }}
