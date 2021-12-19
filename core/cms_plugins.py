@@ -7,7 +7,7 @@ from .forms import ContactUsForm
 
 from .models import HeaderSectionPluginModel, TitlePluginModel, CounterItemPluginModel, AboutUsBlockPluginModel, \
     ColumnPluginModel, SpacePluginModel, ImagePluginModel, GoogleMapPluginModel, HomeHeaderPluginModel, \
-    HomeHeaderAddressModel, RowPluginModel, AnimatedPluginModel, AsideNavigationFlag
+    HomeHeaderAddressModel, RowPluginModel, AnimatedPluginModel, AsideNavigationFlag, SectionPluginModel
 
 
 @plugin_pool.register_plugin
@@ -101,6 +101,15 @@ class AboutUsBlockPluginPublisher(CMSPluginBase):
     module = _('Core')
     name = _('About Us Block')
     render_template = 'core/components/about-us-block.html'
+
+
+@plugin_pool.register_plugin
+class SectionPluginPublisher(CMSPluginBase):
+    module = _('Layout')
+    model = SectionPluginModel
+    name = _('Section')
+    render_template = 'core/components/layout/section.html'
+    allow_children = True
 
 
 @plugin_pool.register_plugin
