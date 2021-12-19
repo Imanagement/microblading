@@ -174,6 +174,11 @@ class AboutUsBlockPluginModel(CMSPlugin):
 
 
 class SectionPluginModel(CMSPlugin):
+    full_width = models.BooleanField(
+        verbose_name=_("Full Width"),
+        help_text=_("Stretch section to full width of browser?"),
+        default=False
+    )
     background_image = FilerImageField(
         verbose_name=_('Background Image'),
         on_delete=models.SET_NULL,
