@@ -173,6 +173,19 @@ class AboutUsBlockPluginModel(CMSPlugin):
     )
 
 
+class SectionPluginModel(CMSPlugin):
+    background_image = FilerImageField(
+        verbose_name=_('Background Image'),
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
+    background_gray = models.BooleanField(
+        verbose_name=_('Background Gray'),
+        help_text=_('This works only when background image is not set'),
+        default=False
+    )
+
 class RowPluginModel(CMSPlugin):
     text_align = models.CharField(
         verbose_name=_('Text align'),
