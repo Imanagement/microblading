@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext
 from filer.fields.image import FilerImageField
 
 from services.models import Service
@@ -38,4 +39,4 @@ class Testimonial(models.Model):
         verbose_name_plural =_('Testimonials')
 
     def __str__(self):
-        return _(f"Testimonial from {self.name if self.name else str(self.id) + ' client id'}")
+        return gettext(f"Testimonial from {self.name if self.name else str(self.id) + ' client id'}")
