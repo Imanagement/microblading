@@ -197,8 +197,6 @@ class ServiceListPluginModel(CMSPlugin):
     max_count = models.PositiveSmallIntegerField(
         verbose_name=_('Max'),
         help_text=_('How much services to display'),
-        null=True,
-        blank=True,
         default=6
     )
 
