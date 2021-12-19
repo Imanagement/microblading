@@ -15,7 +15,7 @@ class ServiceListPluginPublisher(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
         context.update({
-            'services': Service.objects.all()
+            'services': Service.objects.all()[:instance.max_count]
         })
         return context
 

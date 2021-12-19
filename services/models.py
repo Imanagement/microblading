@@ -193,6 +193,16 @@ class GalleryVideo(models.Model):
         super().save(*args, **kwargs)
 
 
+class ServiceListPluginModel(CMSPlugin):
+    max_count = models.PositiveSmallIntegerField(
+        verbose_name=_('Max'),
+        help_text=_('How much services to display'),
+        null=True,
+        blank=True,
+        default=6
+    )
+
+
 class ServiceRowPluginModel(CMSPlugin):
     display_type = models.CharField(
         max_length=1,
