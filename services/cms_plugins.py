@@ -3,12 +3,13 @@ from cms.plugin_pool import plugin_pool
 from django.conf import settings
 from django.utils.translation import gettext as _
 
-from .models import Service, ServiceRowPluginModel, ServicePluginModel
+from .models import Service, ServiceRowPluginModel, ServicePluginModel, ServiceListPluginModel
 
 
 @plugin_pool.register_plugin
 class ServiceListPluginPublisher(CMSPluginBase):
     module = _('Services')
+    model = ServiceListPluginModel
     name = _('Service List (Only links)')
     render_template = 'services/components/service-list.html'
 
