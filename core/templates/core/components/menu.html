@@ -1,5 +1,5 @@
 {% load menu_tags %}
-{% for child in children %}
+{% for child in children|slice:":6" %}
     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2685 {% if child.selected %}current-menu-ancestor current-menu-parent current-menu-item {% endif %}{% if child.children %}{% endif %}">
         <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
         {% if child.children %}
@@ -9,7 +9,3 @@
         {% endif %}
     </li>
 {% endfor %}
-{% for i in nodes %}
-    {{ i }}
-{% endfor %}
-{{ node }}
