@@ -5,7 +5,7 @@ if (jQuery('.gt3_albums_grid_inner').length > 0) {
 }
 
 jQuery(function () {
-    if($albums_container.length > 0) {
+    if($albums_container) {
 		$albums_container.isotope({
 			itemSelector: '.element'
 		});
@@ -42,13 +42,13 @@ jQuery(function () {
             changeLayoutMode($this, options)
         } else {
             // otherwise, apply new options
-			if($albums_container.length > 0) {
+			if($albums_container) {
 				$albums_container.isotope(options);
 			}
         }
         return false;
     });
-    if($albums_container.length > 0) {
+    if($albums_container) {
 		$albums_container.find('img').on('load', function () {
 			$albums_container.isotope('layout');
 		});
@@ -87,7 +87,7 @@ function setup_albums_grid() {
 			}
 		});
 		if (jQuery('.gt3_albums_grid_inner').length > 0) {
-			    if($albums_container.length > 0) {
+			    if($albums_container) {
 					$albums_container.isotope('layout');
 				}
 		}
@@ -118,14 +118,14 @@ jQuery(document).ready(function(){
 
 jQuery(window).on('load', function() {
 	setup_albums_grid();
-	if ($albums_container.length > 0) {
+	if ($albums_container) {
 		$albums_container.isotope('layout');
 	}
 });
 
 jQuery(window).resize(function(){
 	setup_albums_grid();
-	if ($albums_container.length > 0) {
+	if ($albums_container) {
 		$albums_container.isotope('layout');
 	}
 });
