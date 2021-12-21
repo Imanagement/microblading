@@ -2,6 +2,7 @@ from django.core.cache import cache, caches
 from django.core.cache.utils import make_template_fragment_key
 from django.http import JsonResponse
 from django.shortcuts import render
+from django.utils import translation
 from blog.models import Post
 from portfolio.models import PortfolioItem
 from services.models import Service
