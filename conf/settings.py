@@ -230,12 +230,13 @@ PIPELINE = {
         'main': {
             'source_filenames': (
                 'core/js/vc_carousel.js',
-                'core/js/sorting_gallery.js',
                 'core/js/images-loaded.js',
                 'core/js/vc_transition.js',
                 'core/js/jquery.isotope.min.js',
                 'core/js/jquery.swipebox.min.js',
                 'core/js/jquery.mousewheel.js',
+                'core/js/albums_gallery.js',
+                'core/js/sorting_gallery.js',
                 'core/js/theme.js',
                 'core/js/extra.js',
                 'core/js/jquery.cookie.js',
