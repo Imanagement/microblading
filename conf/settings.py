@@ -238,7 +238,6 @@ PIPELINE = {
                 'core/js/jquery.isotope.min.js',
                 'core/js/jquery.swipebox.min.js',
                 'core/js/jquery.mousewheel.js',
-                'core/js/albums_gallery.js',
                 'core/js/sorting_gallery.js',
                 'core/js/theme.js',
                 'core/js/extra.js',

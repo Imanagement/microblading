@@ -100,7 +100,7 @@ function setup_grid() {
 }
 
 function animateListGrid() {
-	if (jQuery('.grid_block2preload:first').size() > 0) {
+	if (jQuery('.grid_block2preload:first').length > 0) {
 		(function (img, src) {
 			img.src = src;
 			img.onload = function () {
