@@ -2,6 +2,7 @@ from djangocms_text_ckeditor.fields import HTMLField
 from cms.models.pluginmodel import CMSPlugin
 from django.conf import settings
 from django.db import models
+from django.utils.translation import gettext
 from django.utils.translation import gettext_lazy as _
 from filer.fields.image import FilerImageField
 
@@ -73,7 +74,7 @@ class ContactUsModel(models.Model):
         verbose_name_plural = _('Contact Us Offers')
 
     def __str__(self):
-        return _(f"Contact Us Offer From {self.name}")
+        return gettext(f"Contact Us Offer From {self.name}")
 
 
 class HeaderSectionPluginModel(CMSPlugin):
