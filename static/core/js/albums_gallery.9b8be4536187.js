@@ -1,6 +1,6 @@
 "use strict"; 
 
-if (jQuery('.gt3_albums_grid_inner').size() > 0) {
+if (jQuery('.gt3_albums_grid_inner').length > 0) {
 	var $albums_container = jQuery('.gt3_albums_grid_inner');
 }
 
@@ -52,7 +52,7 @@ jQuery(function () {
 });
 
 function animateListGridAlbums() {
-	if (jQuery('.albums_grid_block2preload:first').size() > 0) {
+	if (jQuery('.albums_grid_block2preload:first').length > 0) {
 		(function (img, src) {
 			img.src = src;
 			img.onload = function () {
@@ -81,7 +81,7 @@ function setup_albums_grid() {
 				jQuery(this).removeClass('anim_el2');
 			}
 		});
-		if (jQuery('.gt3_albums_grid_inner').size() > 0) {
+		if (jQuery('.gt3_albums_grid_inner').length > 0) {
 			$albums_container.isotope('layout');
 		}
 	});
