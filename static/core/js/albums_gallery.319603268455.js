@@ -45,7 +45,7 @@ jQuery(function () {
         return false;
     });
 
-	$albums_container.find('img').load(function () {
+	$albums_container.find('img').on('load', function () {
 		$albums_container.isotope('layout');
 	});
 	$albums_container.isotope('layout');
@@ -109,7 +109,7 @@ jQuery(document).ready(function(){
 
 });
 
-jQuery(window).load(function(){
+jQuery(window).on('load', function(){
 	setup_albums_grid();
 	$albums_container.isotope('layout');
 });
