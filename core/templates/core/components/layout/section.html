@@ -3,7 +3,7 @@
     data-vc-full-width="true"
     data-vc-full-width-init="true"
     {% if instance.full_width %}data-vc-stretch-content="true"{% endif %}
-    class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_row-no-padding"
+    class="vc_row wpb_row vc_row-fluid vc_row-has-fill {% if instance.full_width %}vc_row-no-padding {% endif %}"
     style="{% if instance.background_image %}background-image: url({{ instance.background_image.url }}); background-size: cover;{% endif %}{% if instance.background_gray %}background-color: #f4f6fa !important{% endif %}"
 >
     {% for child_plugin_instance in instance.child_plugin_instances %}
