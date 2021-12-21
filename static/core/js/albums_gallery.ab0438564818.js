@@ -5,9 +5,11 @@ if (jQuery('.gt3_albums_grid_inner').length > 0) {
 }
 
 jQuery(function () {
-    $albums_container.isotope({
-        itemSelector: '.element'
-    });
+    if($albums_container.length > 0) {
+		$albums_container.isotope({
+			itemSelector: '.element'
+		});
+	}
 
     var $albums_optionSets = jQuery('.optionset'),
         $albums_optionLinks = $albums_optionSets.find('a'),
@@ -40,15 +42,18 @@ jQuery(function () {
             changeLayoutMode($this, options)
         } else {
             // otherwise, apply new options
-            $albums_container.isotope(options);
+			if($albums_container.length > 0) {
+				$albums_container.isotope(options);
+			}
         }
         return false;
     });
-
-	$albums_container.find('img').on('load', function () {
+    if($albums_container.length > 0) {
+		$albums_container.find('img').on('load', function () {
+			$albums_container.isotope('layout');
+		});
 		$albums_container.isotope('layout');
-	});
-	$albums_container.isotope('layout');
+	}
 });
 
 function animateListGridAlbums() {
@@ -82,7 +87,9 @@ function setup_albums_grid() {
 			}
 		});
 		if (jQuery('.gt3_albums_grid_inner').length > 0) {
-			$albums_container.isotope('layout');
+			    if($albums_container.length > 0) {
+					$albums_container.isotope('layout');
+				}
 		}
 	});
 }
@@ -109,14 +116,18 @@ jQuery(document).ready(function(){
 
 });
 
-jQuery(window).on('load', function(){
+jQuery(window).on('load', function() {
 	setup_albums_grid();
-	$albums_container.isotope('layout');
+	if ($albums_container.length > 0) {
+		$albums_container.isotope('layout');
+	}
 });
 
 jQuery(window).resize(function(){
 	setup_albums_grid();
-	$albums_container.isotope('layout');
+	if ($albums_container.length > 0) {
+		$albums_container.isotope('layout');
+	}
 });
 
 function gt3_get_albums(action, this_container, append_container, post_type, post_taxonomy, posts_per_load, posts_already_showed, categs, hoverType, imgWidth, imgHeight) {
