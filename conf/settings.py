@@ -220,7 +220,8 @@ PIPELINE = {
                 'core/css/theme.css',
                 'core/css/swipebox.min.css',
                 'core/css/responsive.css',
-                'core/css/extra.css'
+                'core/css/extra.css',
+                'core/css/splide.min.css'
             ),
             'output_filename': 'core/css/main.min.css',
             'variant': 'datauri'
@@ -229,13 +230,9 @@ PIPELINE = {
     'JAVASCRIPT': {
         'main': {
             'source_filenames': (
-                'core/js/vc_carousel.js',
-                'core/js/images-loaded.js',
-                'core/js/vc_transition.js',
                 'core/js/jquery.isotope.min.js',
                 'core/js/jquery.swipebox.min.js',
                 'core/js/jquery.mousewheel.js',
-                'core/js/sorting_gallery.js',
                 'core/js/theme.js',
                 'core/js/extra.js',
                 'core/js/jquery.cookie.js',
@@ -251,6 +248,12 @@ PIPELINE = {
                 'core/js/ribbon_gallery.js',
                 'core/js/shift_gallery.js',
                 'core/js/stripe_gallery.js',
+                'core/js/sorting_gallery.js',
+                'core/js/vc_transition.js',
+                'core/js/images-loaded.js',
+                'core/js/vc_carousel.js',
+                'core/js/splide.min.js'
+
             ),
             'output_filename': 'core/js/main.min.js',
         }

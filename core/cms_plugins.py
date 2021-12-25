@@ -126,8 +126,6 @@ class RowPluginPublisher(CMSPluginBase):
 class ColumnPluginPublisher(CMSPluginBase):
     model = ColumnPluginModel
     name = _('Column')
-    require_parent = True
-    parent_classes = ['RowPluginPublisher']
     render_template = 'core/components/layout/column.html'
     allow_children = True
 

@@ -10,22 +10,35 @@
                </div>
                <div class="wpb_images_carousel wpb_content_element vc_clearfix vc_custom_1522663195400">
                   <div class="wpb_wrapper">
-                     <div id="vc_video-carousel" data-ride="vc_carousel" data-wrap="true" style="width: 100%;" data-interval="0" data-auto-height="yes" data-mode="horizontal" data-partial="false" data-per-view="4" data-hide-on-end="true" class="vc_slide vc_images_carousel vc_per-view-more vc_per-view-4 vc_build">
-                        <div class="vc_carousel-inner">
-                           <div class="vc_carousel-slideline">
-                              <div class="vc_carousel-slideline-inner">
+                    <div class="splide">
+                      <div class="splide__track">
+                            <ul class="splide__list">
+                                {% if gallery_videos %}
                                   {% for gallery_video in gallery_videos %}
-                                     <div class="vc_item" style="">
-    {#                                        <div class="vc_inner"><img width="432" height="570" src="{{ gallery_image.image.url }}" class="attachment-full" alt="" loading="lazy"></div>#}
-                                        <div class="vc_inner">
-                                            <iframe class="attachment-full" allowfullscreen src="{{ gallery_video.url }}" frameborder="0"></iframe></div>
-                                     </div>
+                                    <li style="z-index: 0" class="splide__slide"><iframe wmode="Opaque" height="570" style="height: 570px; z-index: 0" allowfullscreen src="{{ gallery_video.url }}?&wmode=transparent" frameborder="0"></iframe></li>
                                   {% endfor %}
-                              </div>
-                           </div>
-                        </div>
-                        <a class="vc_left vc_carousel-control" href="#vvc_video-carousel" data-slide="prev"><span class="icon-prev"></span></a><a class="vc_right vc_carousel-control" href="#vc_video-carousel" data-slide="next"><span class="icon-next"></span></a>
-                     </div>
+                                {% else %}
+                              {% endif %}
+                            </ul>
+                      </div>
+                    </div>
+{#                     <div id="vc_video-carousel" data-ride="vc_carousel" data-wrap="true" style="" data-interval="0" data-auto-height="yes" data-mode="horizontal" data-partial="false" data-per-view="4" data-hide-on-end="true" class="vc_slide vc_images_carousel vc_per-view-more vc_per-view-4 vc_build">#}
+{#                        <div class="vc_carousel-inner">#}
+{#                           <div class="vc_carousel-slideline">#}
+{#                              <div class="vc_carousel-slideline-inner">#}
+{#                                  {% for gallery_video in gallery_videos %}#}
+{#                                     <div class="vc_item">#}
+    {#                                        <div class="vc_inner"><img width="432" height="570" src="{{ gallery_image.image.url }}" class="attachment-full" alt="" loading="lazy"></div>#}
+{#                                        <div class="vc_inner">#}
+{##}
+{#                                        </div>#}
+{#                                     </div>#}
+{#                                  {% endfor %}#}
+{#                              </div>#}
+{#                           </div>#}
+{#                        </div>#}
+{#                        <a class="vc_left vc_carousel-control" href="#vvc_video-carousel" data-slide="prev"><span class="icon-prev"></span></a><a class="vc_right vc_carousel-control" href="#vc_video-carousel" data-slide="next"><span class="icon-next"></span></a>#}
+{#                     </div>#}
                   </div>
                </div>
             </div>

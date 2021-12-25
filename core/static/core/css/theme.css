@@ -9631,3 +9631,15 @@ body .vc_tta.vc_general.vc_tta-tabs .vc_tta-tab > a * {
 .addresses p {
 	margin: 0 0 8px 0;
 }
+
+.splide__pagination li:before{
+	display: none !important;
+}
+
+.splide__pagination li button {
+	background: #fb90b1;
+}
+
+.splide__pagination li:last-child {
+	padding: 0 0 12px 6px !important;
+}
