@@ -1,6 +1,6 @@
 from cms.admin.placeholderadmin import FrontendEditableAdminMixin
 from django.contrib import admin
-from modeltranslation.admin import TranslationAdmin
+from modeltranslation.admin import TranslationTabularInline
 
 from core.models import FAQ
 from services.models import Service, GalleryImage, GalleryVideo, ExtraPrice
@@ -19,7 +19,7 @@ class GalleryVideoAdminInline(admin.TabularInline):
     extra = 1
 
 
-class FAQAdminInline(admin.TabularInline):
+class FAQAdminInline(TranslationTabularInline):
     model = FAQ
     fields = ('question', 'answer',)
     extra = 2
