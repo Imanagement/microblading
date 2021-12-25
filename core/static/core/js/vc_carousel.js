@@ -140,7 +140,10 @@
                 this.options.autoHeight
                     ? (this.$items.height("auto"),
                       this.$items.each(function () {
+                          console.log($(this))
                           var item_height = $(this).height();
+                          console.log(max_height)
+                          console.log(item_height)
                           max_height < item_height && (max_height = item_height);
                       }),
                       this.$items.height(max_height))
