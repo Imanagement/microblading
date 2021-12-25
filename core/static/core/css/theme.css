@@ -9643,3 +9643,7 @@ body .vc_tta.vc_general.vc_tta-tabs .vc_tta-tab > a * {
 .splide__pagination li:last-child {
 	padding: 0 0 12px 6px !important;
 }
+
+.splide__list li:before {
+	display: none !important;
+}
