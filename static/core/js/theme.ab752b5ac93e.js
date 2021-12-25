@@ -370,6 +370,24 @@ jQuery(document).ready(function($) {
 	// GT3 Popup Video
 	gt3_popup_video ();
 
+	// Initializing splide.js slider
+	if ( jQuery('.splide') && jQuery('.splide'.length > 0) ) {
+		const sliders = document.getElementsByClassName('splide');
+		for ( let i = 0; i < sliders.length; i++ ) {
+			new Splide( sliders[i], {
+				type   : 'loop',
+				perPage: 4,
+				breakpoints: {
+					768: {
+						perPage: 2,
+					},
+					480: {
+						perPage: 1,
+					}
+				}
+			} ).mount();
+		}
+	}
 });
 
 
