@@ -1,9 +1,14 @@
+import logging
+
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 
 from testimonials.models import Testimonial
 from core.models import FAQ
 from .models import Service
+
+
+logger = logging.getLogger(__name__)
 
 
 def service_list(request):
@@ -19,6 +24,7 @@ def service_list(request):
 def service_detail(request, slug):
     try:
         service = get_object_or_404(Service, slug=slug)
+        print(logger.warning(service))
     except Http404:
         return redirect('/')
     extra_prices = service.extraprice_set.all()
