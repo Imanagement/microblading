@@ -368,40 +368,41 @@ class HomeHeaderPluginModel(CMSPlugin):
         related_name='background_image'
     )
 
-    def copy_relations(self, oldinstance):
-        # Before copying related objects from the old instance, the ones
-        # on the current one need to be deleted. Otherwise, duplicates may
-        # appear on the public version of the page
-        self.address.all().delete()
-
-        for address in oldinstance.address.all():
-            # instance.pk = None; instance.pk.save() is the slightly odd but
-            # standard Django way of copying a saved model instance
-            address.pk = None
-            address.plugin = self
-            address.save()
+    # def copy_relations(self, oldinstance):
+    #     # Before copying related objects from the old instance, the ones
+    #     # on the current one need to be deleted. Otherwise, duplicates may
+    #     # appear on the public version of the page
+    #     self.address.all().delete()
+    #
+    #     for address in oldinstance.address.all():
+    #         # instance.pk = None; instance.pk.save() is the slightly odd but
+    #         # standard Django way of copying a saved model instance
+    #         address.pk = None
+    #         address.plugin = self
+    #         address.save()
 
 
 class HomeHeaderAddressModel(models.Model):
-    header = models.ForeignKey(
-        to=HomeHeaderPluginModel,
-        on_delete=models.SET_NULL,
-        related_name='address',
-        null=True,
-        blank=True
-    )
-    simple_header = models.ForeignKey(
-        to=HeaderSectionPluginModel,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True
-    )
+    # header = models.ForeignKey(
+    #     to=HomeHeaderPluginModel,
+    #     on_delete=models.SET_NULL,
+    #     related_name='address',
+    #     null=True,
+    #     blank=True
+    # )
+    # simple_header = models.ForeignKey(
+    #     to=HeaderSectionPluginModel,
+    #     on_delete=models.SET_NULL,
+    #     null=True,
+    #     blank=True
+    # )
     text = HTMLField(
         verbose_name=_('Text'),
     )
 
     def __str__(self):
         return f"Address - {self.text}"
+
 
 class AnimatedPluginModel(CMSPlugin):
     animated = models.BooleanField(

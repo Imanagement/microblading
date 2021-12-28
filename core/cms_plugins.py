@@ -26,18 +26,12 @@ class AsideNavigationPluginPublisher(CMSPluginBase):
         return context
 
 
-class AddressInlineAdmin(admin.StackedInline):
-    model = HomeHeaderAddressModel
-    extra = 1
-
-
 @plugin_pool.register_plugin  # register the plugin
 class HeaderSectionPluginPublisher(CMSPluginBase):
     module = _("Core")
     model = HeaderSectionPluginModel
     name = _("Header")  # name of the plugin in the interface
     render_template = "core/components/page-title.html"
-    inlines = (AddressInlineAdmin,)
 
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
@@ -54,7 +48,6 @@ class HomeHeaderSectionPluginPublisher(CMSPluginBase):
     module = _('Core')
     name = _('Home header')
     render_template = 'core/components/home-page-title.html'
-    inlines = (AddressInlineAdmin,)
     allow_children = True
     child_classes = ['RowPluginPublisher']
 
