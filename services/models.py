@@ -123,23 +123,20 @@ class Service(models.Model):
         return f"{self.name}"
 
     def save(self, *args, **kwargs):
-        try:
-            # if self.video_url:
-            #     url = self.video_url
-            #     word_to_change = url.replace('watch?v=', 'embed/')
-            #     self.video_url = word_to_change
-            current_language = translation.get_language()
-            if not self.custom_slug:
-                translation.activate('en')
-                if self.name:
-                    self.slug = slugify(self.name)
-                translation.activate('es')
-                if self.name:
-                    self.slug = slugify(self.name)
-                translation.activate(current_language)
-            super().save(*args, **kwargs)
-        except Exception:
-            print(Exception)
+        # if self.video_url:
+        #     url = self.video_url
+        #     word_to_change = url.replace('watch?v=', 'embed/')
+        #     self.video_url = word_to_change
+        current_language = translation.get_language()
+        if not self.custom_slug:
+            translation.activate('en')
+            if self.name:
+                self.slug = slugify(self.name)
+            translation.activate('es')
+            if self.name:
+                self.slug = slugify(self.name)
+            translation.activate(current_language)
+        super().save(*args, **kwargs)
 
 
 class ExtraPrice(models.Model):
