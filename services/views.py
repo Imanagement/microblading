@@ -24,7 +24,8 @@ def service_list(request):
 def service_detail(request, slug):
     try:
         service = get_object_or_404(Service, slug=slug)
-        print(logger.warning(service))
+        print('I\'m here')
+        print(service)
     except Http404:
         return redirect('/')
     extra_prices = service.extraprice_set.all()
