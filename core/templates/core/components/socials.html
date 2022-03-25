@@ -1,0 +1,6 @@
+{% load cms_tags %}
+<div class="footer_socials_links">
+    {% for child_plugin_instance in instance.child_plugin_instances %}
+        {% render_plugin child_plugin_instance %}
+    {% endfor %}
+</div>

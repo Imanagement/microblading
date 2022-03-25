@@ -1,0 +1,508 @@
+#: appointments/cms_plugins.py:8
+msgid "Appointments"
+msgstr ""
+
+#: appointments/cms_plugins.py:9
+msgid "Appointment Section"
+msgstr ""
+
+#: blog/cms_plugins.py:10 blog/cms_plugins.py:19
+msgid "Blog"
+msgstr ""
+
+#: blog/cms_plugins.py:11
+msgid "Recent Blog Posts"
+msgstr ""
+
+#: blog/cms_plugins.py:21
+msgid "Recent Post"
+msgstr ""
+
+#: blog/models.py:14 blog/models.py:76 core/forms.py:18 core/models.py:35
+#: portfolio/models.py:9 services/models.py:13 shop/models.py:13
+#: testimonials/models.py:14
+msgid "Name"
+msgstr ""
+
+#: blog/models.py:18 blog/models.py:80 services/models.py:17 shop/models.py:24
+msgid "Slug"
+msgstr ""
+
+#: blog/models.py:24 blog/models.py:106 services/models.py:64
+msgid "H1 Title"
+msgstr ""
+
+#: blog/models.py:30 blog/models.py:112 services/models.py:70
+msgid "Seo Page Title"
+msgstr ""
+
+#: blog/models.py:36 blog/models.py:118 services/models.py:76 shop/models.py:48
+msgid "Meta Description"
+msgstr ""
+
+#: blog/models.py:42 blog/models.py:61
+msgid "Category"
+msgstr ""
+
+#: blog/models.py:43
+msgid "Categories"
+msgstr ""
+
+#: blog/models.py:68
+msgid "Author"
+msgstr ""
+
+#: blog/models.py:85 core/cms_plugins.py:113 core/models.py:146
+#: core/models.py:275 portfolio/models.py:13 services/models.py:113
+#: shop/models.py:33 testimonials/models.py:26
+msgid "Image"
+msgstr ""
+
+#: blog/models.py:91 core/models.py:152
+msgid "Content"
+msgstr ""
+
+#: blog/models.py:96
+msgid "Created Date"
+msgstr ""
+
+#: blog/models.py:100
+msgid "Last Update"
+msgstr ""
+
+#: blog/models.py:124
+msgid "Post"
+msgstr ""
+
+#: blog/models.py:125
+msgid "Posts"
+msgstr ""
+
+#: conf/settings.py:155 conf/settings.py:176
+msgid "en"
+msgstr ""
+
+#: conf/settings.py:162 conf/settings.py:177
+msgid "es"
+msgstr ""
+
+#: conf/settings.py:178
+msgid "ru"
+msgstr ""
+
+#: core/cms_plugins.py:15 core/cms_plugins.py:29 core/cms_plugins.py:47
+#: core/cms_plugins.py:57 core/cms_plugins.py:76 core/cms_plugins.py:112
+#: core/cms_plugins.py:119 core/cms_plugins.py:128 core/cms_plugins.py:137
+#: core/cms_plugins.py:145
+msgid "Core"
+msgstr ""
+
+#: core/cms_plugins.py:17
+msgid "Header"
+msgstr ""
+
+#: core/cms_plugins.py:30
+msgid "Home header"
+msgstr ""
+
+#: core/cms_plugins.py:49 core/models.py:64 core/models.py:78
+#: core/models.py:134
+msgid "Title"
+msgstr ""
+
+#: core/cms_plugins.py:58
+msgid "Counter"
+msgstr ""
+
+#: core/cms_plugins.py:69
+msgid "Counter Item"
+msgstr ""
+
+#: core/cms_plugins.py:77
+msgid "About Us Block"
+msgstr ""
+
+#: core/cms_plugins.py:84 core/cms_plugins.py:105
+msgid "Layout"
+msgstr ""
+
+#: core/cms_plugins.py:85
+msgid "Row"
+msgstr ""
+
+#: core/cms_plugins.py:94
+msgid "Column"
+msgstr ""
+
+#: core/cms_plugins.py:104
+msgid "Space"
+msgstr ""
+
+#: core/cms_plugins.py:120
+msgid "Socials"
+msgstr ""
+
+#: core/cms_plugins.py:129
+msgid "Slider"
+msgstr ""
+
+#: core/cms_plugins.py:139
+msgid "Google map"
+msgstr ""
+
+#: core/cms_plugins.py:146
+msgid "Contact form"
+msgstr ""
+
+#: core/forms.py:26 core/models.py:39
+msgid "Email"
+msgstr ""
+
+#: core/forms.py:34 core/models.py:44
+msgid "Phone"
+msgstr ""
+
+#: core/forms.py:43 core/models.py:48
+msgid "Message"
+msgstr ""
+
+#: core/models.py:18
+msgid "Question"
+msgstr ""
+
+#: core/models.py:22
+msgid "Answer"
+msgstr ""
+
+#: core/models.py:26
+msgid "FAQ"
+msgstr ""
+
+#: core/models.py:27
+msgid "FAQ's"
+msgstr ""
+
+#: core/models.py:54
+msgid "Contact Us Offer"
+msgstr ""
+
+#: core/models.py:55
+msgid "Contact Us Offers"
+msgstr ""
+
+#: core/models.py:58
+#, python-brace-format
+msgid "Contact Us Offer From {self.name}"
+msgstr ""
+
+#: core/models.py:70 core/models.py:323
+msgid "Background image"
+msgstr ""
+
+#: core/models.py:82 core/models.py:140
+msgid "Subtitle"
+msgstr ""
+
+#: core/models.py:88
+msgid "With bg image?"
+msgstr ""
+
+#: core/models.py:92
+msgid "Image in row"
+msgstr ""
+
+#: core/models.py:98 core/models.py:160
+msgid "Text align"
+msgstr ""
+
+#: core/models.py:107 services/models.py:55
+msgid "Icon"
+msgstr ""
+
+#: core/models.py:113
+msgid "Prefix"
+msgstr ""
+
+#: core/models.py:119
+msgid "Suffix"
+msgstr ""
+
+#: core/models.py:125
+msgid "Value"
+msgstr ""
+
+#: core/models.py:168
+msgid "Horizontal padding"
+msgstr ""
+
+#: core/models.py:174
+msgid "Vertical padding"
+msgstr ""
+
+#: core/models.py:206
+msgid "Offset x-small"
+msgstr ""
+
+#: core/models.py:211
+msgid "Offset small"
+msgstr ""
+
+#: core/models.py:216
+msgid "Offset medium"
+msgstr ""
+
+#: core/models.py:221
+msgid "Offset large"
+msgstr ""
+
+#: core/models.py:226
+msgid "Hide on x-small devices"
+msgstr ""
+
+#: core/models.py:230
+msgid "Hide on small devices"
+msgstr ""
+
+#: core/models.py:234
+msgid "Hide on medium devices"
+msgstr ""
+
+#: core/models.py:238
+msgid "Hide on large devices"
+msgstr ""
+
+#: core/models.py:245
+msgid "Space height"
+msgstr ""
+
+#: core/models.py:280 core/models.py:303
+msgid "Width"
+msgstr ""
+
+#: core/models.py:285 core/models.py:308
+msgid "Height"
+msgstr ""
+
+#: core/models.py:290
+msgid "Cover image"
+msgstr ""
+
+#: core/models.py:291
+msgid "Useful when image stretched and you want to fix by cutting the edge"
+msgstr ""
+
+#: core/models.py:298
+msgid "Src"
+msgstr ""
+
+#: core/models.py:299
+msgid "Just copy src from iframe and paste here"
+msgstr ""
+
+#: core/models.py:316
+msgid "Logo"
+msgstr ""
+
+#: core/models.py:351
+msgid "Text"
+msgstr ""
+
+#: portfolio/cms_plugins.py:10
+msgid "Projects"
+msgstr ""
+
+#: portfolio/cms_plugins.py:12
+msgid "Portfolio Row"
+msgstr ""
+
+#: portfolio/models.py:19
+msgid "Portfolio Project"
+msgstr ""
+
+#: portfolio/models.py:20
+msgid "Portfolio Projects"
+msgstr ""
+
+#: portfolio/models.py:28 services/models.py:149
+msgid "Fetch from db?"
+msgstr ""
+
+#: portfolio/models.py:32
+msgid "Stretch"
+msgstr ""
+
+#: portfolio/models.py:33
+msgid "Full width of screen content"
+msgstr ""
+
+#: services/cms_plugins.py:10 services/cms_plugins.py:25
+#: services/cms_plugins.py:48 services/models.py:83
+msgid "Services"
+msgstr ""
+
+#: services/cms_plugins.py:11
+msgid "Service List (Only links)"
+msgstr ""
+
+#: services/cms_plugins.py:26
+msgid "Service List (blocks)"
+msgstr ""
+
+#: services/cms_plugins.py:49 services/models.py:82 services/models.py:109
+msgid "Service"
+msgstr ""
+
+#: services/models.py:24
+msgid "Header Image"
+msgstr ""
+
+#: services/models.py:31 shop/models.py:16
+msgid "Cost"
+msgstr ""
+
+#: services/models.py:34
+msgid "Cost Title"
+msgstr ""
+
+#: services/models.py:40
+msgid "Duration"
+msgstr ""
+
+#: services/models.py:44
+msgid "Intro Text"
+msgstr ""
+
+#: services/models.py:45
+msgid "Text which is seen from other pages (Teaser)"
+msgstr ""
+
+#: services/models.py:50 shop/models.py:30
+msgid "Description"
+msgstr ""
+
+#: services/models.py:117
+msgid "Service Gallery Image"
+msgstr ""
+
+#: services/models.py:118
+msgid "Service Gallery Images"
+msgstr ""
+
+#: services/models.py:125
+msgid "Video"
+msgstr ""
+
+#: services/models.py:128
+msgid "URL"
+msgstr ""
+
+#: services/models.py:132
+msgid "Service Gallery Video"
+msgstr ""
+
+#: services/models.py:133
+msgid "Service Gallery Videos"
+msgstr ""
+
+#: services/models.py:145
+msgid "Display type"
+msgstr ""
+
+#: services/models.py:153
+msgid "Max"
+msgstr ""
+
+#: services/models.py:154
+msgid "How much services to display"
+msgstr ""
+
+#: shop/models.py:19
+msgid "Discount"
+msgstr ""
+
+#: shop/models.py:42
+msgid "Page title"
+msgstr ""
+
+#: shop/models.py:59 shop/models.py:78
+msgid "Product"
+msgstr ""
+
+#: shop/models.py:60 shop/models.py:119
+msgid "Products"
+msgstr ""
+
+#: shop/models.py:73 shop/models.py:115
+msgid "User"
+msgstr ""
+
+#: shop/models.py:82
+msgid "Product Count"
+msgstr ""
+
+#: shop/models.py:86 shop/models.py:135
+msgid "Ordered"
+msgstr ""
+
+#: shop/models.py:91 shop/models.py:139
+msgid "Basket"
+msgstr ""
+
+#: shop/models.py:95
+msgid "Basket Product"
+msgstr ""
+
+#: shop/models.py:96
+msgid "Basket Products"
+msgstr ""
+
+#: shop/models.py:123
+msgid "Basket Open Date"
+msgstr ""
+
+#: shop/models.py:126
+msgid "Basket Order Date"
+msgstr ""
+
+#: shop/models.py:129
+msgid "Basket Changes Date"
+msgstr ""
+
+#: shop/models.py:140
+msgid "Baskets"
+msgstr ""
+
+#: shop/models.py:144
+#, python-brace-format
+msgid "Order #{self.pk} from {self.user}"
+msgstr ""
+
+#: shop/models.py:146
+#, python-brace-format
+msgid "Order(Anonymous) #{self.pk}"
+msgstr ""
+
+#: testimonials/cms_plugins.py:10 testimonials/models.py:38
+msgid "Testimonials"
+msgstr ""
+
+#: testimonials/cms_plugins.py:11
+msgid "Testimonials slider"
+msgstr ""
+
+#: testimonials/models.py:10
+msgid "Testimonial - Image Type?"
+msgstr ""
+
+#: testimonials/models.py:20
+msgid "Position"
+msgstr ""
+
+#: testimonials/models.py:31 testimonials/models.py:37
+msgid "Testimonial"
+msgstr ""
+
+#: testimonials/models.py:41
+msgid ""
+"Testimonial from {self.name if self.name else str(self.id) + ' client id'}"
+msgstr ""

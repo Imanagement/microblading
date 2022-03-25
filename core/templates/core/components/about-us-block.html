@@ -1,0 +1,47 @@
+{% load static %}
+<div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1522315319830 vc_row-has-fill about-us-block" style="position: relative; left: -231px; box-sizing: border-box; width: 1662px; padding-left: 231px; padding-right: 231px;">
+    <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-6 vc_col-xs-12">
+       <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+             <div class="gt3_spacing">
+                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:73px;"></div>
+             </div>
+             <h6 style="color: #fb90b1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">
+                 {{ instance.subtitle }}</h6>
+             <h2 style="color: #202020;line-height: 1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">
+                 {{ instance.title }}</h2>
+             <div class="gt3_spacing">
+                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:16px;"></div>
+             </div>
+             <div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1522224009133">
+                <figure class="wpb_wrapper vc_figure">
+                   <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="72" height="6" src="{% static 'core/img/divider.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+                </figure>
+             </div>
+             <div class="wpb_text_column wpb_content_element">
+                {% autoescape off %}
+                    {{ instance.content }}
+                {% endautoescape %}
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-6 vc_col-xs-12">
+       <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+             <div class="gt3_spacing">
+                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:55px;"></div>
+             </div>
+             <div class="wpb_single_image wpb_content_element vc_align_right">
+                <figure class="wpb_wrapper vc_figure">
+                   <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="571" height="577" src="{{ instance.image.url }}" class="vc_single_image-img attachment-full" alt="{{ instance.image.alt_text }}" loading="lazy"></div>
+                </figure>
+             </div>
+             <div class="gt3_spacing">
+                <div class="gt3_spacing-height gt3_spacing-height_default" style="height:65px;"></div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+<div class="vc_row-full-width vc_clearfix"></div>

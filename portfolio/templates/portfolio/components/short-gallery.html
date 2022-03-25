@@ -1,0 +1,127 @@
+{% load static %}
+<div class="vc_row wpb_row vc_row-fluid">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+        <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+                <div class="gt3_spacing">
+                    <div class="gt3_spacing-height gt3_spacing-height_default"
+                         style="height:68px;"></div>
+                </div>
+                <h6 style="color: #fb90b1;text-align: left"
+                    class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp">
+                    LOOK OUR GALLERY</h6>
+                <h2 style="color: #202020;line-height: 36px;text-align: left"
+                    class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp">
+                    Our Perfect Works</h2>
+                <div class="gt3_spacing">
+                    <div class="gt3_spacing-height gt3_spacing-height_default"
+                         style="height:14px;"></div>
+                </div>
+
+                <div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1522219240023">
+
+                    <figure class="wpb_wrapper vc_figure">
+                        <div class="vc_single_image-wrapper   vc_box_border_grey"><img
+                                width="72" height="6"
+                                src="{% static 'core/img/divider.png' %}"
+                                class="vc_single_image-img attachment-full" alt=""
+                                loading="lazy"></div>
+                    </figure>
+                </div>
+                <div style="font-size: 16px;color: #747a8c;line-height: 30px;text-align: left"
+                     class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp">
+                    If you have patchy eyebrows or simply wish you had more brows,
+                    eyebrow embroidery is your answer. The natural look achieved by
+                    3D<br>
+                    eyebrow microblading is incomparable to other solutions like eyebrow
+                    tattoos
+                </div>
+                <div class="gt3_spacing">
+                    <div class="gt3_spacing-height gt3_spacing-height_default"
+                         style="height:31px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-vc-full-width="true" data-vc-full-width-init="true"
+     data-vc-stretch-content="true"
+     class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+        <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+                <div class="vc_row">
+                    <div class="vc_col-sm-12 gt3_module_portfolio">
+{#                        <div class="filter_block">#}
+{#                            <ul id="options" class="splitter">#}
+{#                                <li>#}
+{#                                    <ul class="optionset" data-option-key="filter">#}
+{#                                        <li class="selected"><a#}
+{#                                                href="{% page_url request.current_page.get_root %}"#}
+{#                                                data-option-value="*"#}
+{#                                                class="selected">All</a>#}
+{#                                        </li>#}
+{#                                        <li><a data-option-value=".brow-coloring"#}
+{#                                               href="{% page_url request.current_page.get_root %}"#}
+{#                                               title="View all post filed under brow coloring ">brow#}
+{#                                            coloring</a>#}
+{#                                        </li>#}
+{#                                        <li><a data-option-value=".brow-shape"#}
+{#                                               href="{% page_url request.current_page.get_root %}"#}
+{#                                               title="View all post filed under brow shape ">brow#}
+{#                                            shape</a>#}
+{#                                        </li>#}
+{#                                        <li><a data-option-value=".microbladind"#}
+{#                                               href="{% page_url request.current_page.get_root %}"#}
+{#                                               title="View all post filed under microbladind ">microbladind</a>#}
+{#                                        </li>#}
+{#                                        <li><a data-option-value=".permanent-brows"#}
+{#                                               href="{% page_url request.current_page.get_root %}"#}
+{#                                               title="View all post filed under permanent brows ">permanent#}
+{#                                            brows</a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </li>#}
+{#                            </ul>#}
+{#                        </div>#}
+                        <div class="spacing_beetween_items_0 hover_type_center text_align-center">
+                            <div class="portfolio_button text_align-right"><a
+                                    href="javascript:void(0)"
+                                    class="load_more_works shortcode_button"><span>See More</span></a>
+                            </div>
+                            <div class="sorting_block ajax_sorting_block image-grid"
+                                 id="list" data-posts_per_page="8" data-view_type="grid"
+                                 data-posts_per_line="4"
+                                 data-post_type_terms="brow-coloring brow-shape microbladind permanent-brows"
+                                 data-order="DESC" data-orderby="date"
+                                 data-image_proportions="square"
+                                 data-items_per_click="4" data-already_showed="8"
+                                 style="position: relative; height: 789px;">
+                                {% for portfolio_item in portfolio_items %}
+                                    <div class="portfolio_columns_4 element">
+                                        <div class="portfolio_item">
+                                            <div class="portf_item_inner">
+                                                <div class="portfolio_overlay"></div>
+                                                <div class="portf_img">
+                                                    <a class="swipebox" href="{{ portfolio_item.image.url }}"></a><img
+                                                        src="{{ portfolio_item.image.url }}"
+                                                        alt="{{ portfolio_item.image.alt_text }}">
+                                                </div>
+                                                <div class="portf_descr">
+                                                    <h3>
+                                                        <a href="javascript:void(0)">{{ portfolio_item.name }}</a>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

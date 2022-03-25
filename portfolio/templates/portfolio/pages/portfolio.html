@@ -1,0 +1,176 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="title_block_wrapper block_has_bg_img" style="background-image: url({% static 'core/img/title_bg_08.jpg' %});">
+		<div class="container">
+			<div class="page_title_block">
+				<h1 class="title">Gallery</h1>
+				<div class="breadcrumbs"><a href="{% page_url request.current_page.get_root %}">Home</a><span>Our works</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="content_block row no-sidebar">
+			<div class="fl-container ">
+				<div class="posts-block ">
+					<div class="contentarea">
+						<div class="vc_row wpb_row vc_row-fluid">
+							<div class="wpb_column vc_column_container vc_col-sm-12">
+								<div class="vc_column-inner vc_custom_1519393801789">
+									<div class="wpb_wrapper">
+										<div class="gt3_spacing">
+											<div class="gt3_spacing-height gt3_spacing-height_default" style="height:83px;"></div>
+										</div>
+										<h6 style="color: #fb90b1;text-align: center" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">OUR WORKS</h6>
+										<h2 style="color: #202020;line-height: 1;text-align: center" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp wpb_start_animation animated">Enjoy Our Amazing Works</h2>
+										<div class="gt3_spacing">
+											<div class="gt3_spacing-height gt3_spacing-height_default" style="height:16px;"></div>
+										</div>
+										<div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1522222636318">
+											<figure class="wpb_wrapper vc_figure">
+												<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="72" height="6" src="{% static 'core/img/divider.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+											</figure>
+										</div>
+										<div class="gt3_spacing">
+											<div class="gt3_spacing-height gt3_spacing-height_default" style="height:10px;"></div>
+										</div>
+										<div class="vc_row wpb_row vc_inner vc_row-fluid">
+											<div class="wpb_column vc_column_container vc_col-sm-10 vc_col-sm-offset-1">
+												<div class="vc_column-inner">
+													<div class="wpb_wrapper">
+														<div style="font-size: 20px;line-height: 38px;text-align: center" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp vc_custom_1519993533751 wpb_start_animation animated">We’ve brought together the industry’s top talent to help you achieve the perfect brow shape and optimum skin health using the most effective, specialized products available today</div>
+														<div class="gt3_spacing">
+															<div class="gt3_spacing-height gt3_spacing-height_default" style="height:39px;"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1519984558711" style="position: relative; left: -182.5px; box-sizing: border-box; width: 1565px; padding-left: 182.5px; padding-right: 182.5px;">
+							<div class="wpb_column vc_column_container vc_col-sm-12">
+								<div class="vc_column-inner vc_custom_1519984551901">
+									<div class="wpb_wrapper">
+										<div class="grid_gallery_wrapper  personal_preloader grid_8204  vc_custom_1522223023066 " data-uniqid="8204" data-perload="3">
+											<div class="grid_gallery personal_preloader masonry_is_off grid_columns3" data-pad="30px" data-perload="3" data-overlay="">
+												{% for portfolio_item in portfolio_items %}
+                                                    <div class="grid-item element">
+                                                        <div class="grid_item_inner">
+                                                            <a class="swipebox" href="{{ portfolio_item.image.url }}" title="{{ portfolio_item.title }}"></a> <img src="{{ portfolio_item.image.url }}" alt="{{ portfolio_item.image.alt_text }}" class="grid_gallery_thmb">
+                                                            <div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>
+                                                            <div class="img-preloader"></div>
+                                                        </div>
+                                                    </div>
+												{% endfor %}
+
+{#												<!-- .grid-item -->#}
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(388.953px, 0px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_2" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_2-800x800.jpg" alt="img_gallery_2" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+												<!-- .grid-item -->
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(777.906px, 0px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_3" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_3-800x800.jpg" alt="img_gallery_3" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+{#												<!-- .grid-item -->#}
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(0px, 388.953px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_4" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_4-800x800.jpg" alt="img_gallery_4" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+{#												<!-- .grid-item -->#}
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(388.953px, 388.953px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_5" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_5-800x800.jpg" alt="img_gallery_5" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+{#												<!-- .grid-item -->#}
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(777.906px, 388.953px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_6" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_6-800x800.jpg" alt="img_gallery_6" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+{#												<!-- .grid-item -->#}
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(0px, 777.906px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_7" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_7-800x800.jpg" alt="img_gallery_7" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+{#												<!-- .grid-item -->#}
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(388.953px, 777.906px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_8" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_8-800x800.jpg" alt="img_gallery_8" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+{#												<!-- .grid-item -->#}
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(777.906px, 777.906px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_9" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_9-800x800.jpg" alt="img_gallery_9" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+{#												<!-- .grid-item -->#}
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(0px, 1166.86px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_10" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_10-800x800.jpg" alt="img_gallery_10" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+{#												<!-- .grid-item -->#}
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(388.953px, 1166.86px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_11" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_11-800x800.jpg" alt="img_gallery_11" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+{#												<!-- .grid-item -->#}
+{#												<div class="grid-item element block_loaded" style="position: absolute; left: 0px; top: 0px; transition-property: opacity, transform; transition-duration: 0.4s; transition-delay: 0ms; transform: translate3d(777.906px, 1166.86px, 0px); z-index: 15;">#}
+{#													<div class="grid_item_inner" style="margin: 15px;">#}
+{#														<a class="swipebox" href="" title="img_gallery_14" data-description=""></a> <img src="/wp-content/uploads/sites/7/2018/03/img_gallery_14-800x800.jpg" alt="img_gallery_14" class="grid_gallery_thmb>#}
+{#														<div class="grid_overlay"></div> <span class="gt3_plus_icon"></span>#}
+{#														<div class="img-preloader"></div>#}
+{#													</div>#}
+{#												</div>#}
+{#											</div>#}
+											<!-- .grid_gallery -->
+											<div class="gt3_grid_module_button"><a class="shortcode_button grid_load_more" href="javascript:void(0)" style="display: none;"><span>Load More</span></a></div>
+										</div>
+										<!-- .grid_gallery_wrapper -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="vc_row-full-width vc_clearfix"></div>
+						<div class="clea_r"></div>
+						<div class="clea_r"></div>
+					</div>
+                        <div class="vc_row-full-width vc_clearfix"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+{% endblock %}

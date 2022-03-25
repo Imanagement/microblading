@@ -1,0 +1,80 @@
+{% load static %}
+
+<div data-vc-full-width="true" data-vc-full-width-init="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
+  <div class="wpb_column vc_column_container vc_col-sm-12">
+     <div class="vc_column-inner">
+        <div class="wpb_wrapper">
+           <div class="gt3_spacing">
+              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:49px;"></div>
+           </div>
+           <div class="wpb_images_carousel wpb_content_element vc_clearfix vc_custom_1522663195400">
+              <div class="wpb_wrapper">
+{#                 <div id="vc_images-carousel" data-ride="vc_carousel" data-wrap="true" style="" data-interval="0" data-auto-height="yes" data-mode="horizontal" data-partial="false" data-per-view="4" data-hide-on-end="true" class="vc_slide vc_images_carousel vc_per-view-more vc_per-view-4 vc_build">#}
+{#                    <div class="vc_carousel-inner">#}
+{#                       <div class="vc_carousel-slideline">#}
+{#                          <div class="vc_carousel-slideline-inner">#}
+{##}
+{#                              {% if gallery_images %}#}
+{#                                  {% for gallery_image in gallery_images %}#}
+{#                                     <div class="vc_item">#}
+{#                                        <div class="vc_inner"><img width="{{ gallery_image.image.width }}" height="{{ gallery_image.image.height }}" src="{{ gallery_image.image.url }}" class="attachment-full" alt="" loading="lazy"></div>#}
+{#                                     </div>#}
+{#                                  {% endfor %}#}
+{#                              {% else %}#}
+{#                                  <div class="vc_item" style="">#}
+{#                                    <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_03.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>#}
+{#                                 </div>#}
+{#                                 <div class="vc_item" style="">#}
+{#                                    <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_04.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>#}
+{#                                 </div>#}
+{#                                 <div class="vc_item" style="">#}
+{#                                    <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_05.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>#}
+{#                                 </div>#}
+{#                                 <div class="vc_item" style="">#}
+{#                                    <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_06.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>#}
+{#                                 </div>#}
+{#                                 <div class="vc_item" style="">#}
+{#                                    <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_07.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>#}
+{#                                 </div>#}
+{#                                 <div class="vc_item" style="">#}
+{#                                    <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_08.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>#}
+{#                                 </div>#}
+{#                                 <div class="vc_item" style="">#}
+{#                                    <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_10.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>#}
+{#                                 </div>#}
+{#                                 <div class="vc_item" style="">#}
+{#                                    <div class="vc_inner"><img width="432" height="570" src="{% static 'services/img/img_services_09.jpg' %}" class="attachment-full" alt="" loading="lazy"></div>#}
+{#                                 </div>#}
+{#                              {% endif %}#}
+{#                          </div>#}
+{#                       </div>#}
+{#                    </div>#}
+{#                    <a class="vc_left vc_carousel-control" href="#vc_images-carousel" data-slide="prev"><span class="icon-prev"></span></a><a class="vc_right vc_carousel-control" href="#vc_images-carousel" data-slide="next"><span class="icon-next"></span></a>#}
+{#                 </div>#}
+                    <div class="splide">
+                      <div class="splide__track">
+                            <ul class="splide__list">
+                                {% if gallery_images %}
+                                  {% for gallery_image in gallery_images %}
+                                    <li class="splide__slide"><img width="{{ gallery_image.image.width }}" height="{{ gallery_image.image.height }}" src="{{ gallery_image.image.url }}" class="attachment-full" alt="" loading="lazy"></li>
+                                  {% endfor %}
+                                {% else %}
+                                    <li class="splide__slide"><img width="432" height="570" src="{% static 'services/img/img_services_03.jpg' %}" class="attachment-full" alt="" loading="lazy"></li>
+                                    <li class="splide__slide"><img width="432" height="570" src="{% static 'services/img/img_services_04.jpg' %}" class="attachment-full" alt="" loading="lazy"></li>
+                                    <li class="splide__slide"><img width="432" height="570" src="{% static 'services/img/img_services_05.jpg' %}" class="attachment-full" alt="" loading="lazy"></li>
+                                    <li class="splide__slide"><img width="432" height="570" src="{% static 'services/img/img_services_06.jpg' %}" class="attachment-full" alt="" loading="lazy"></li>
+                                    <li class="splide__slide"><img width="432" height="570" src="{% static 'services/img/img_services_07.jpg' %}" class="attachment-full" alt="" loading="lazy"></li>
+                                    <li class="splide__slide"><img width="432" height="570" src="{% static 'services/img/img_services_08.jpg' %}" class="attachment-full" alt="" loading="lazy"></li>
+                                    <li class="splide__slide"><img width="432" height="570" src="{% static 'services/img/img_services_10.jpg' %}" class="attachment-full" alt="" loading="lazy"></li>
+                                    <li class="splide__slide"><img width="432" height="570" src="{% static 'services/img/img_services_09.jpg' %}" class="attachment-full" alt="" loading="lazy"></li>
+
+                              {% endif %}
+                            </ul>
+                      </div>
+                    </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>

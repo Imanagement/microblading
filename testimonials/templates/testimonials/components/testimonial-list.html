@@ -1,0 +1,47 @@
+<div class="vc_row wpb_row vc_row-fluid">
+	<div class="wpb_animate_when_almost_visible wpb_slideInLeft slideInLeft wpb_column vc_column_container vc_col-sm-12 wpb_start_animation animated">
+		<div class="vc_column-inner vc_custom_1519637556075">
+			<div class="wpb_wrapper">
+				<div class="gt3_spacing">
+					<div class="gt3_spacing-height gt3_spacing-height_default" style="height:16px;"></div>
+				</div>
+				<div class="vc_row">
+					<div class="vc_col-sm-12 module_testimonial  active-carousel type1 " data-slides-per-line="3" data-slider-fade="" data-autoplay-time="4000">
+						<div class="module_content testimonials_list items3">
+							<div class="testimonials_rotator slick-slider" role="toolbar">
+                                {% if testimonials %}
+                                    {% for testimonial in testimonials %}
+                                        {% if testimonial.image_type %}
+                                            <div class="testimonials_item slick-slide" id="" aria-hidden="true">
+                                                <div class="testimonial_item_wrapper">
+                                                        <div class="testimonials_content">
+                                                            <img src="{{ testimonial.image.url }}" alt="">
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        {% else %}
+                                            <div class="testimonials_item slick-slide" id="" aria-hidden="true">
+                                                <div class="testimonial_item_wrapper">
+                                                    <div class="testimonials_content">
+                                                        <div class="testimonials_photo"><img class="testimonials_round_img" src="{{ testimonial.image.url }}" alt="testimonials_photo" style="width:70px; height:70px;"></div>
+                                                        <div class="testimonials_title">{{ testimonial.name }}
+                                                            <div class="testimonials_author_position">{{ testimonial.position }}</div>
+                                                        </div>
+                                                        <div class="testimonials-text" style=" font-size: 16px; line-height: 24px;">
+                                                            <p style="text-align: left">{{ testimonial.testimonial }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

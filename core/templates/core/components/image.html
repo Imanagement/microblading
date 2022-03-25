@@ -1,0 +1,7 @@
+<img
+    {% if instance.width %}width="{{ instance.width }}"{% endif %}
+    {% if instance.height %}height="{{ instance.height }}"{% endif %}
+    src="{{ instance.image.url }}"
+    alt="{{ instance.image.alt_text }}"
+    {% if instance.object_fit_cover %}style="object-fit: cover"{% endif %}
+>

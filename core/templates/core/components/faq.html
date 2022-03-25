@@ -1,0 +1,70 @@
+{% load static %}
+{% if faq %}
+<div class="wpb_column vc_column_container vc_col-sm-12">
+    <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+               <div class="gt3_spacing">
+                  <div class="gt3_spacing-height gt3_spacing-height_default" style="height:20px;"></div>
+               </div>
+               <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                  <div class="wpb_column vc_column_container vc_col-sm-9">
+                     <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                           <div class="gt3_spacing">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:38px;"></div>
+                           </div>
+                           <h6 style="color: #fb90b1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp">FAQ</h6>
+                           <h2 style="color: #202020;line-height: 1;text-align: left" class="vc_custom_heading wpb_animate_when_almost_visible wpb_slideInUp slideInUp">Frequently Asked Questions</h2>
+                           <div class="gt3_spacing">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:16px;"></div>
+                           </div>
+                           <div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1522221852293">
+                              <figure class="wpb_wrapper vc_figure">
+                                 <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="72" height="6" src="{% static 'core/img/divider.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+                              </figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="wpb_column vc_column_container vc_col-sm-3">
+                     <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                           <div class="gt3_spacing gt3_spacing-height_mobile-on">
+                              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:40px;"></div>
+                              <div class="gt3_spacing-height gt3_spacing-height_mobile" style="height:0px;"></div>
+                           </div>
+                           <div class="wpb_single_image wpb_content_element vc_align_right">
+                              <figure class="wpb_wrapper vc_figure">
+                                 <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="250" height="80" src="{% static 'core/img/img_services_04.png' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+                              </figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+</div>
+<div class="vc_row wpb_row vc_row-fluid">
+  <div class="wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp wpb_column vc_column_container vc_col-sm-12">
+     <div class="vc_column-inner">
+        <div class="wpb_wrapper">
+           {% for faq_item in faq %}
+                <div id="faq-{{ forloop.counter }}" class="vc_toggle vc_toggle_gt3_alternative">
+                  <div class="vc_toggle_title">
+                     <h4>{{ faq_item.question }}</h4>
+                     <i class="vc_toggle_icon"></i>
+                  </div>
+                  <div class="vc_toggle_content">
+                     <p>{% autoescape off %}{{ faq_item.answer }}{% endautoescape %}</p>
+                  </div>
+               </div>
+           {% endfor %}
+           </div>
+           <div class="gt3_spacing">
+              <div class="gt3_spacing-height gt3_spacing-height_default" style="height:100px;"></div>
+           </div>
+        </div>
+     </div>
+  </div>
+{% endif %}

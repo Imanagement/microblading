@@ -1,0 +1,56 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block banner_image %}{% static 'blog/img/title_bg_02.jpg' %}{% endblock %}
+{% block blog_content %}
+    <div class="fl-container hasRS" style="padding-top: 90px">
+       <div class="row">
+          <div class="posts-block ">
+             <div class="contentarea single_content single_page single_post">
+                <div class="pf_output_container pf_tag_ post_has_image "><img width="1170" height="740" src="{{ post.image.url }}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy"></div>
+                <div class="preview_top_wrapper single_top_wrapper">
+                   <div class="post_meta">
+                      <div class="meta-item">{{ post.created }}</div>
+                      <div class="meta-item"><a href="javascript:void(0)">{{ post.author.first_name }}</a></div>
+                    <div class="meta-item"><a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a></div>
+                   </div>
+                   <!-- .post_meta -->
+                   <h1 class="blog_post_title">{{ post.name }}</h1>
+                </div>
+                <!-- .preview_top_wrapper -->
+                <article class="contentarea single_contentarea">
+                   <h3 class="hidden">{{ post.name }}</h3>
+                   {% autoescape off %}
+                       {{ post.body }}
+                   {% endautoescape %}
+                </article>
+                <div class="single_post_ground">
+                   <div class="author_info">
+                      <div class="author_ava">
+                         <img alt="" src="" class="avatar avatar-220 photo" height="220" width="220" loading="lazy">
+                      </div>
+                      <div class="author_content">
+                         <div class="author_name">
+                            <h6>John</h6>
+                         </div>
+                         Sed vitae ante aliquet, vehicula lorem ac, vulputate odio. Pellentesque sit amet augue quis ipsum finibus facilisis eget vitae sem.
+                      </div>
+                   </div>
+                   <div class="single_prev_next_buttons">
+                      <div class="fright"><a href="{{ post.get_next_post }}" rel="prev">Next</a></div>
+                   </div>
+                </div>
+    {#            <div class="row">#}
+    {#               <div class="span12">#}
+    {#                  <div id="respond" class="comment-respond">#}
+    {#                     <h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/wp/md/browcraft/2018/03/21/permanent-makeup-methods/#respond" style="display:none;">Cancel reply</a></small></h3>#}
+    {#                     You must be logged in to post a comment.#}
+    {#                  </div>#}
+    {#                  <!-- #respond -->#}
+    {#               </div>#}
+    {#            </div>#}
+             </div>
+             <!-- .contentarea -->
+          </div>
+       </div>
+    </div>
+{% endblock %}

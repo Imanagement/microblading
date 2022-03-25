@@ -1,0 +1,8 @@
+{% load cms_tags %}
+<div class="vc_row vc_row-fluid vc_row-o-equal-height vc_row-flex"
+     style="{% if instance.background_image %}background-image: url({{ instance.background_image }}); background-size: cover;{% endif %}{% if instance.text_align %}text-align: {{ instance.text_align }}; {% endif %}padding: {% if instance.vertical_padding %}{{ instance.vertical_padding }}{% else %}0{% endif %} {% if instance.horizontal_padding %}{{ instance.horizontal_padding }}{% else %}0{% endif %}"
+>
+    {% for child_plugin_instance in instance.child_plugin_instances %}
+        {% render_plugin child_plugin_instance %}
+    {% endfor %}
+</div>
