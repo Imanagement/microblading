@@ -115,7 +115,6 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-<<<<<<< HEAD
         'NAME': 'ales_db',
         'HOST': 'localhost',
         'USER': 'allesthetic_user',
@@ -130,15 +129,6 @@ DATABASES = {
 #     }
 # }
 
-=======
-        'NAME': os.getenv('DB_NAME'),
-        'HOST': 'localhost',
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_USER_PASSWORD'),
-    }
-}
-
->>>>>>> bb81743a735c5c992810049742d23b6775901031
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
