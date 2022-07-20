@@ -29,7 +29,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'vps-b56c9c0d.vps.ovh.ca',
     'allestheticsnewyork.com',
-    'pred.prod.allestheticsnewyork.com'
+    'www.allestheticsnewyork.com'
 ]
 
 # Application definition
