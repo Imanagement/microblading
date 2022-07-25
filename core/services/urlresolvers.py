@@ -26,8 +26,6 @@ class SolidLocalePrefixPattern(LocalePrefixPattern):
 
     @property
     def language_prefix(self):
-        print(get_language(), 'get')
-        print(settings.LANGUAGE_CODE)
         language_code = get_language() or settings.LANGUAGE_CODE
         if language_code == settings.LANGUAGE_CODE:
             return ""
