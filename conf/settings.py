@@ -157,23 +157,21 @@ CMS_LANGUAGES = {
         {
             'code': 'en',
             'name': gettext('en'),
-            'fallbacks': ['es'],
-            'redirect_on_fallback': True,
+            'redirect_on_fallback': False,
             'public': True,
             'hide_untranslated': False,
         },
         {
             'code': 'es',
             'name': gettext('es'),
-            'redirect_on_fallback': True,
+            'redirect_on_fallback': False,
             'public': True,
             'hide_untranslated': False,
         },
     ],
     'default': {
-        'redirect_on_fallback': True,
+        'redirect_on_fallback': False,
         'public': True,
-        'fallbacks': ['es'],
         'hide_untranslated': False,
     },
 }
