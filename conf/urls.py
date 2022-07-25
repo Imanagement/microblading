@@ -31,6 +31,7 @@ urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('cms.urls')),
     path('core', include('core.urls')),
+    prefix_default_language=False
     # path('services/', include('services.urls')),
     # path('gallery/', include('portfolio.urls')),
     # path('blog/', include('blog.urls'))
