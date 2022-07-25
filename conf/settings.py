@@ -24,10 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_8y5zm4d+(chr3gan22-u@0$kzzavu14xilffa)!$6dy^2)3*5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.100.7', '127.0.0.1']
-
+ALLOWED_HOSTS = [
+    'vps-b56c9c0d.vps.ovh.ca',
+    'allestheticsnewyork.com',
+    'www.allestheticsnewyork.com'
+]
 
 # Application definition
 
@@ -112,10 +115,10 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres_db_4',
-        'HOST': 'db',
-        'USER': 'postgres_user',
-        'PASSWORD': 'postgres_pass',
+        'NAME': 'ales_db',
+        'HOST': 'localhost',
+        'USER': 'allesthetic_user',
+        'PASSWORD': 'Da\R[+3$DEfB(%jj',
     }
 }
 
@@ -154,23 +157,21 @@ CMS_LANGUAGES = {
         {
             'code': 'en',
             'name': gettext('en'),
-            'fallbacks': ['es'],
-            'redirect_on_fallback': True,
+            'redirect_on_fallback': False,
             'public': True,
             'hide_untranslated': False,
         },
         {
             'code': 'es',
             'name': gettext('es'),
-            'redirect_on_fallback': True,
+            'redirect_on_fallback': False,
             'public': True,
             'hide_untranslated': False,
         },
     ],
     'default': {
-        'redirect_on_fallback': True,
+        'redirect_on_fallback': False,
         'public': True,
-        'fallbacks': ['es'],
         'hide_untranslated': False,
     },
 }
@@ -389,21 +390,21 @@ CKEDITOR_SETTINGS = {
     'fontSize_sizes': '2/2px;4/4px;6/6px;8/8px;10/10px;12/12px;14/14px;16/16px;18/18px;20/20px;22/22px;24/24px;26/26px;28/28px;30/30px;32/32px;34/34px;36/36px;38/38px;40/40px;42/42px;44/44px;46/46px;48/48px;50/50px;51/51px;52/52px;53/53px;54/54px;55/55px;56/56px;57/57px;58/58px;59/59px;60/60px;70/70px;72/72px;',
 }
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': '/home/debian/src/microblading/debug.log',
-#         },
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['file'],
-#             'level': 'DEBUG',
-#             'propagate': True,
-#         },
-#     },
-# }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/home/debian/src/microblading/debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
