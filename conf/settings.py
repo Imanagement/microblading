@@ -183,7 +183,6 @@ MODELTRANSLATION_LANGUAGES = ('en', 'es')
 MODELTRANSLATION_FALLBACK_LANGUAGES = {
     gettext('default'): (gettext('en'), gettext('es')),
 }
-
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

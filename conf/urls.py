@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, re_path
 from django.conf.urls.i18n import i18n_patterns
+from core.services.urlresolvers import solid_i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
@@ -23,11 +24,11 @@ from django.views.i18n import JavaScriptCatalog
 
 admin.autodiscover()
 
-urlpatterns = i18n_patterns(
+urlpatterns = solid_i18n_patterns(
     re_path(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
 )
 
-urlpatterns += i18n_patterns(
+urlpatterns += solid_i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('cms.urls')),
     path('core', include('core.urls')),
