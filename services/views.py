@@ -22,10 +22,10 @@ def service_list(request):
 
 
 def service_detail(request, slug):
+    print('wel...')
+    print(request)
     try:
         service = get_object_or_404(Service, slug=slug)
-        print('I\'m here')
-        print(service)
     except Http404:
         return redirect('/')
     extra_prices = service.extraprice_set.all()
