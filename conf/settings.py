@@ -24,13 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_8y5zm4d+(chr3gan22-u@0$kzzavu14xilffa)!$6dy^2)3*5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    'vps-b56c9c0d.vps.ovh.ca',
-    'allestheticsnewyork.com',
-    'www.allestheticsnewyork.com'
-]
+ALLOWED_HOSTS = ['192.168.100.7', '127.0.0.1']
+
 
 # Application definition
 
@@ -115,10 +112,10 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ales_db',
-        'HOST': 'localhost',
-        'USER': 'allesthetic_user',
-        'PASSWORD': 'Da\R[+3$DEfB(%jj',
+        'NAME': 'postgres_db_4',
+        'HOST': 'db',
+        'USER': 'postgres_user',
+        'PASSWORD': 'postgres_pass',
     }
 }
 
@@ -186,6 +183,7 @@ MODELTRANSLATION_LANGUAGES = ('en', 'es')
 MODELTRANSLATION_FALLBACK_LANGUAGES = {
     gettext('default'): (gettext('en'), gettext('es')),
 }
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
