@@ -26,6 +26,7 @@ admin.autodiscover()
 
 urlpatterns = solid_i18n_patterns(
     re_path(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
+    prefix_default_language=False
 )
 
 urlpatterns += solid_i18n_patterns(
