@@ -1,9 +1,9 @@
-{% load static %}
+{% load static cms_tags %}
 <!DOCTYPE html>
 <html class="with_aside_header" lang="en">
     <head>
-        <title>{% block title %}{% endblock %}</title>
-        <meta name="description" content="{% block meta %}{% endblock %}">
+        <title>{% block title %}{% page_attribute 'page_title' %}{% endblock %}</title>
+        <meta name="description" content="{% block meta %}{% page_attribute 'meta_description' %}{% endblock %}">
         {% include 'core/components/head.html' %}
         {% block extra_css %}{% endblock %}
     </head>

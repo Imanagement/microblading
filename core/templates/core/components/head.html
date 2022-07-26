@@ -1,7 +1,8 @@
-{% load static pipeline%}
+{% load cms_tags static pipeline %}
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="description" content={% page_attribute "meta_description" %}>
 <link rel="shorcut icon" href="{% static 'core/img/favicon.jpg' %}">
 <link rel="apple-touch-icon" href="{% static 'core/img/favicon-1.jpg' %}">
 <link rel="apple-touch-icon" sizes="72x72" href{% static 'core/img/favicon-2.jpg' %}>
@@ -14,7 +15,6 @@
 {#    <link rel="stylesheet" href="{% static 'core/css/swipebox.min.css' %}">#}
 {#    <link rel="stylesheet" href="{% static 'core/css/responsive.css' %}">#}
 {#    <link rel="stylesheet" href="{% static 'core/css/extra.css' %}">#}
-<title>Browcraft – Just another MS Sites site</title>
 {##}
 <script src="{% static 'core/js/jquery.min.js' %}"></script>
 
